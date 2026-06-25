@@ -19,7 +19,7 @@ class SectionWildTruth {
                 <div class="wild-truth-container">
                     <div class="wild-truth-question" data-animate="text-reveal">
                         森の中に、動物病院はありません。<br>
-                        ではなぜ、野生の動物は病気にならないのか？
+                        ではどうやって、野生の動物は病気を治しているのか？
                     </div>
 
                     <div class="wild-truth-grid">

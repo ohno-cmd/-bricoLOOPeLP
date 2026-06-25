@@ -22,8 +22,8 @@ class SectionOffer {
                         <div class="offer-price-label">
                             初回価格
                         </div>
-                        <div class="offer-price" style="color: #E63946; font-weight: bold; font-size: 3.5rem; letter-spacing: 2px;">
-                            ¥5,808
+                        <div class="offer-price" style="color: #E63946; font-weight: bold; letter-spacing: 2px;">
+                            <span style="font-size: 1.5rem;">¥</span><span style="font-size: 3.5rem;">5,808</span>
                         </div>
                         <div class="offer-price-note">
                             税込 / 送料無料
