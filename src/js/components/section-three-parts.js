@@ -16,310 +16,56 @@ class SectionThreeParts {
         const liverImage = CONSTANTS.assets.images + 'liver.jpg';
 
         this.section.innerHTML = `
-            <div class="three-parts-header">
-                <h2 class="three-parts-heading">
-                    なぜ「鹿の内臓3種」なのか
-                </h2>
-                <p class="three-parts-subheading">3つの部位が揃う時、初めて野生のチカラが解き放たれる</p>
-            </div>
+            <h2 class="three-parts-heading">
+                なぜ「鹿の内臓3種」なのか
+            </h2>
 
             <div class="container">
                 <div class="parts-grid">
-                    <!-- Heart Card -->
-                    <div class="part-card part-card-heart">
-                        <div class="part-card-header">
-                            <img src="${heartImage}" alt="心臓（ハツ）" class="part-card-image" loading="lazy">
-                        </div>
+                    <div class="part-card">
+                        <img src="${heartImage}" alt="心臓（ハツ）" class="part-card-image" loading="lazy">
                         <div class="part-card-content">
-                            <div class="part-icon">♥</div>
                             <div class="part-card-title">心臓（ハツ）</div>
                             <div class="part-card-subtitle">毎日を元気に走り回る</div>
-
-                            <div class="part-benefits">
-                                <div class="benefit">
-                                    <span class="benefit-icon">⚡</span>
-                                    <span>タウリン</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">💪</span>
-                                    <span>CoQ10</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">🫀</span>
-                                    <span>心臓強化</span>
-                                </div>
-                            </div>
+                            <p class="part-card-description">
+                                タウリンやコエンザイムQ10の宝庫。心臓の強さと、全身への酸素供給を支える最高の栄養源。
+                                愛犬のエネルギッシュな毎日を支えます。
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Lung Card -->
-                    <div class="part-card part-card-lung">
-                        <div class="part-card-header">
-                            <img src="${lungImage}" alt="肺（ラング）" class="part-card-image" loading="lazy">
-                        </div>
+                    <div class="part-card">
+                        <img src="${lungImage}" alt="肺（ラング）" class="part-card-image" loading="lazy">
                         <div class="part-card-content">
-                            <div class="part-icon">💨</div>
                             <div class="part-card-title">肺（ラング）</div>
                             <div class="part-card-subtitle">食いつきと健康サポート</div>
-
-                            <div class="part-benefits">
-                                <div class="benefit">
-                                    <span class="benefit-icon">😋</span>
-                                    <span>食いつき最高</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">🦴</span>
-                                    <span>低カロリー</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">✨</span>
-                                    <span>ヘルシー</span>
-                                </div>
-                            </div>
+                            <p class="part-card-description">
+                                抜群の食いつきと、サクサクとした心地よい噛み応え。
+                                低カロリーでヘルシーなので、毎日のご褒美として最適です。
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Liver Card -->
-                    <div class="part-card part-card-liver">
-                        <div class="part-card-header">
-                            <img src="${liverImage}" alt="肝臓（レバー）" class="part-card-image" loading="lazy">
-                        </div>
+                    <div class="part-card">
+                        <img src="${liverImage}" alt="肝臓（レバー）" class="part-card-image" loading="lazy">
                         <div class="part-card-content">
-                            <div class="part-icon">🌟</div>
                             <div class="part-card-title">肝臓（レバー）</div>
                             <div class="part-card-subtitle">毛艶と皮膚の輝き</div>
-
-                            <div class="part-benefits">
-                                <div class="benefit">
-                                    <span class="benefit-icon">🎨</span>
-                                    <span>ビタミンA</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">🔴</span>
-                                    <span>鉄分豊富</span>
-                                </div>
-                                <div class="benefit">
-                                    <span class="benefit-icon">✨</span>
-                                    <span>毛艶UP</span>
-                                </div>
-                            </div>
+                            <p class="part-card-description">
+                                天然のビタミンAや鉄分の塊。毛艶や皮膚の健康維持をサポート。
+                                本能を揺さぶる最高のご褒美です。
+                            </p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Synergy Message -->
-                <div class="parts-synergy">
-                    <div class="synergy-animation">
-                        <div class="synergy-pulse"></div>
-                    </div>
-                    <p class="synergy-text">
-                        この3つが揃うことで、初めて<br>
-                        <span class="highlight">野生のチカラ</span>が解き放たれる。
-                    </p>
                 </div>
             </div>
 
-            <style>
-                .three-parts-header {
-                    text-align: center;
-                    margin-bottom: var(--space-5xl);
-                    animation: fadeInDown 0.8s ease-out;
-                }
-
-                .three-parts-subheading {
-                    font-size: var(--fs-lg);
-                    color: rgba(0, 0, 0, 0.5);
-                    margin-top: var(--space-lg);
-                }
-
-                .parts-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                    gap: var(--space-3xl);
-                    margin-bottom: var(--space-5xl);
-                }
-
-                .part-card {
-                    border-radius: var(--radius-lg);
-                    overflow: hidden;
-                    background: white;
-                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-                    transition: all var(--transition-base);
-                    cursor: pointer;
-                    transform-origin: center;
-                }
-
-                .part-card:hover {
-                    transform: translateY(-12px) scale(1.02);
-                    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-                }
-
-                .part-card-header {
-                    width: 100%;
-                    height: 240px;
-                    overflow: hidden;
-                    background: linear-gradient(135deg, #f5f5f5, #efefef);
-                }
-
-                .part-card-image {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: transform 0.4s ease-out;
-                }
-
-                .part-card:hover .part-card-image {
-                    transform: scale(1.08);
-                }
-
-                .part-card-content {
-                    padding: var(--space-2xl);
-                    text-align: center;
-                }
-
-                .part-icon {
-                    font-size: 40px;
-                    margin-bottom: var(--space-lg);
-                    display: inline-block;
-                    animation: bounce 2s infinite;
-                }
-
-                .part-card-title {
-                    font-size: var(--fs-2xl);
-                    font-weight: var(--fw-bold);
-                    color: var(--color-text-primary);
-                    margin-bottom: var(--space-md);
-                }
-
-                .part-card-subtitle {
-                    font-size: var(--fs-md);
-                    color: var(--color-primary-red);
-                    font-weight: var(--fw-semibold);
-                    margin-bottom: var(--space-2xl);
-                }
-
-                .part-benefits {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--space-md);
-                }
-
-                .benefit {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: var(--space-md);
-                    padding: var(--space-md);
-                    background: rgba(230, 57, 70, 0.05);
-                    border-radius: var(--radius-md);
-                    font-size: var(--fs-sm);
-                    color: var(--color-text-secondary);
-                    transition: all var(--transition-fast);
-                }
-
-                .benefit:hover {
-                    background: rgba(230, 57, 70, 0.12);
-                    color: var(--color-primary-red);
-                }
-
-                .benefit-icon {
-                    font-size: 18px;
-                }
-
-                .parts-synergy {
-                    background: linear-gradient(135deg, var(--color-primary-red), var(--color-primary-red-dark));
-                    color: white;
-                    padding: var(--space-4xl) var(--space-3xl);
-                    border-radius: var(--radius-lg);
-                    text-align: center;
-                    position: relative;
-                    overflow: hidden;
-                    animation: fadeInUp 0.8s ease-out;
-                }
-
-                .synergy-animation {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 100%;
-                    height: 100%;
-                }
-
-                .synergy-pulse {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 20px;
-                    height: 20px;
-                    background: rgba(255, 255, 255, 0.5);
-                    border-radius: 50%;
-                    animation: pulse-ring 2s ease-out infinite;
-                }
-
-                .synergy-text {
-                    position: relative;
-                    z-index: 1;
-                    font-size: var(--fs-2xl);
-                    line-height: var(--lh-relaxed);
-                    font-weight: var(--fw-semibold);
-                }
-
-                .synergy-text .highlight {
-                    font-size: var(--fs-3xl);
-                    font-weight: var(--fw-extrabold);
-                    display: inline-block;
-                    animation: pulse-text 1.2s ease-in-out infinite;
-                }
-
-                @keyframes fadeInDown {
-                    from { opacity: 0; transform: translateY(-30px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-
-                @keyframes fadeInUp {
-                    from { opacity: 0; transform: translateY(30px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-
-                @keyframes bounce {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-8px); }
-                }
-
-                @keyframes pulse-ring {
-                    0% {
-                        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-                    }
-                    70% {
-                        box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
-                    }
-                    100% {
-                        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-                    }
-                }
-
-                @keyframes pulse-text {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.7; }
-                }
-
-                @media (max-width: 768px) {
-                    .parts-grid {
-                        grid-template-columns: 1fr;
-                        gap: var(--space-2xl);
-                    }
-
-                    .synergy-text {
-                        font-size: var(--fs-lg);
-                    }
-
-                    .synergy-text .highlight {
-                        font-size: var(--fs-2xl);
-                    }
-                }
-            </style>
+            <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-primary-red); color: white; border-radius: var(--radius-lg); text-align: center; margin-left: var(--space-lg); margin-right: var(--space-lg);">
+                <p style="font-size: var(--fs-lg); line-height: var(--lh-relaxed);">
+                    この3つが揃うことで、初めて<br>
+                    <span style="font-size: var(--fs-2xl); font-weight: var(--fw-bold);">野生のチカラ</span>が解き放たれる。
+                </p>
+            </div>
         `;
 
         this.setupAnimations();

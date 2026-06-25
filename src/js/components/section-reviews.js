@@ -17,142 +17,86 @@ class SectionReviews {
 
     render() {
         this.section.innerHTML = `
-            <div class="reviews-header">
-                <h2 class="reviews-heading">
-                    お客様からの、リアルな喜びの声
-                </h2>
-                <p class="reviews-subheading">
-                    35人のお客様の笑顔と感動の瞬間
-                </p>
-            </div>
+            <h2 class="reviews-heading">
+                お客様からの、リアルな喜びの声
+            </h2>
 
             <div class="container">
                 <div class="reviews-container">
-                    <!-- Horizontal Carousel -->
-                    <div class="reviews-carousel-wrapper">
+                    <!-- Multi-Layer Carousel -->
+                    <div class="reviews-carousel-wrapper" style="position: relative; overflow: hidden; max-width: 100%; margin: 0 auto;">
                         <div class="reviews-carousel" id="reviews-carousel">
                             <!-- Reviews will be dynamically inserted -->
                         </div>
                     </div>
 
                     <!-- Carousel Controls -->
-                    <div class="reviews-controls">
-                        <button id="reviews-prev" class="carousel-btn carousel-btn-prev" aria-label="前のレビュー">
-                            ← 前へ
+                    <div style="display: flex; justify-content: center; gap: var(--space-lg); margin-top: var(--space-3xl);">
+                        <button id="reviews-prev" class="carousel-btn" aria-label="前のレビュー">
+                            <span style="font-size: 24px;">←</span>
                         </button>
-                        <div id="reviews-pagination" class="reviews-pagination"></div>
-                        <button id="reviews-next" class="carousel-btn carousel-btn-next" aria-label="次のレビュー">
-                            次へ →
+                        <button id="reviews-next" class="carousel-btn" aria-label="次のレビュー">
+                            <span style="font-size: 24px;">→</span>
                         </button>
                     </div>
+
+                    <!-- Pagination Dots -->
+                    <div id="reviews-pagination" style="display: flex; justify-content: center; gap: var(--space-sm); margin-top: var(--space-2xl); flex-wrap: wrap;"></div>
                 </div>
             </div>
 
             <style>
-                .reviews-header {
-                    text-align: center;
-                    margin-bottom: var(--space-5xl);
-                    animation: fadeInUp 0.8s ease-out;
-                }
-
-                .reviews-subheading {
-                    font-size: var(--fs-lg);
-                    color: rgba(0, 0, 0, 0.6);
-                    margin-top: var(--space-lg);
-                    font-weight: var(--fw-regular);
-                }
-
-                .reviews-carousel-wrapper {
-                    position: relative;
-                    overflow: hidden;
-                    margin: var(--space-3xl) 0;
-                    border-radius: var(--radius-lg);
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(230, 57, 70, 0.02));
-                    padding: var(--space-3xl) 0;
-                }
-
-                .reviews-carousel {
-                    display: flex;
-                    gap: var(--space-2xl);
-                    padding: 0 var(--space-2xl);
-                    overflow-x: auto;
-                    scroll-behavior: smooth;
-                    scroll-snap-type: x mandatory;
-                    -webkit-overflow-scrolling: touch;
-                }
-
-                .reviews-carousel::-webkit-scrollbar {
-                    height: 6px;
-                }
-
-                .reviews-carousel::-webkit-scrollbar-track {
-                    background: rgba(230, 57, 70, 0.1);
-                    border-radius: 10px;
-                }
-
-                .reviews-carousel::-webkit-scrollbar-thumb {
-                    background: var(--color-primary-red);
-                    border-radius: 10px;
-                }
-
-                .reviews-carousel::-webkit-scrollbar-thumb:hover {
-                    background: var(--color-primary-red-dark);
-                }
-
                 .carousel-btn {
-                    padding: var(--space-lg) var(--space-2xl);
-                    border-radius: var(--radius-lg);
-                    background: var(--color-primary-red);
-                    border: none;
-                    color: white;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: white;
+                    border: 2px solid var(--color-primary-red);
+                    color: var(--color-primary-red);
                     font-weight: var(--fw-bold);
                     cursor: pointer;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: all var(--transition-base);
-                    font-size: var(--fs-md);
-                    white-space: nowrap;
-                    gap: var(--space-sm);
+                    transition: all var(--transition-fast);
                 }
 
                 .carousel-btn:hover {
-                    background: var(--color-primary-red-dark);
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+                    background: var(--color-primary-red);
+                    color: white;
+                    transform: scale(1.1);
                 }
 
                 .carousel-btn:active {
-                    transform: translateY(0);
+                    transform: scale(0.95);
                 }
 
-                .reviews-controls {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: var(--space-2xl);
-                    margin-top: var(--space-4xl);
-                    flex-wrap: wrap;
+                .reviews-carousel {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                    gap: var(--space-lg);
+                    padding: var(--space-lg) 0;
+                    overflow-x: auto;
+                    scroll-behavior: smooth;
+                    scroll-snap-type: x mandatory;
                 }
 
                 .review-item {
                     scroll-snap-align: start;
                     flex-shrink: 0;
-                    width: 180px;
-                    height: 280px;
+                    width: 160px;
+                    height: 240px;
                     border-radius: var(--radius-lg);
                     overflow: hidden;
-                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+                    box-shadow: var(--shadow-md);
                     cursor: pointer;
                     transition: all var(--transition-base);
                     background: var(--color-light-gray);
-                    border: 2px solid transparent;
                 }
 
                 .review-item:hover {
-                    transform: translateY(-8px);
-                    box-shadow: 0 16px 40px rgba(230, 57, 70, 0.2);
-                    border-color: var(--color-primary-red);
+                    transform: scale(1.05);
+                    box-shadow: var(--shadow-lg);
                 }
 
                 .review-image {
@@ -161,16 +105,9 @@ class SectionReviews {
                     object-fit: cover;
                 }
 
-                .reviews-pagination {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: var(--space-sm);
-                }
-
                 .pagination-dot {
-                    width: 10px;
-                    height: 10px;
+                    width: 8px;
+                    height: 8px;
                     border-radius: 50%;
                     background: var(--color-medium-gray);
                     cursor: pointer;
@@ -249,7 +186,7 @@ class SectionReviews {
         // Snapping behavior
         carousel.addEventListener('scroll', () => {
             const scrollLeft = carousel.scrollLeft;
-            const itemWidth = 180 + 16; // width + gap
+            const itemWidth = 160 + 16; // width + gap
             const index = Math.round(scrollLeft / itemWidth);
             this.updatePagination(Math.min(index, this.reviewsData.length - 1));
         });
@@ -272,7 +209,7 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = Math.max(0, this.currentIndex - 1);
-        const itemWidth = 180 + 16;
+        const itemWidth = 160 + 16;
         carousel.scrollLeft = this.currentIndex * itemWidth;
         this.updatePagination(this.currentIndex);
     }
@@ -282,7 +219,7 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = Math.min(this.reviewsData.length - 1, this.currentIndex + 1);
-        const itemWidth = 180 + 16;
+        const itemWidth = 160 + 16;
         carousel.scrollLeft = this.currentIndex * itemWidth;
         this.updatePagination(this.currentIndex);
     }
@@ -292,7 +229,7 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = index;
-        const itemWidth = 180 + 16;
+        const itemWidth = 160 + 16;
         carousel.scrollLeft = index * itemWidth;
         this.updatePagination(index);
     }
