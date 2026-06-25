@@ -11,6 +11,7 @@ class SectionThreeParts {
     }
 
     render() {
+        const productImage = CONSTANTS.assets.images + 'product.jpg';
         const heartImage = CONSTANTS.assets.images + 'heart.jpg';
         const lungImage = CONSTANTS.assets.images + 'lung.jpg';
         const liverImage = CONSTANTS.assets.images + 'liver.jpg';
@@ -21,6 +22,11 @@ class SectionThreeParts {
             </h2>
 
             <div class="container">
+                <!-- Product Showcase -->
+                <div class="product-showcase" style="margin-bottom: var(--space-5xl); text-align: center;">
+                    <img src="${productImage}" alt="bricoLOOPe 3種セットパッケージ" loading="lazy" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+                </div>
+
                 <div class="parts-grid">
                     <div class="part-card">
                         <img src="${heartImage}" alt="心臓（ハツ）" class="part-card-image" loading="lazy">
