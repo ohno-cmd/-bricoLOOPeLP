@@ -21,7 +21,7 @@ class SectionClosing {
                 </div>
 
                 <div class="closing-content">
-                    <h2 class="closing-heading">
+                    <h2 class="closing-heading" style="font-size: 1.8rem; line-height: 1.4;">
                         愛犬の笑顔と身体を守れるのは、<br>
                         世界であなただけです。
                     </h2>

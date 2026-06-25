@@ -31,8 +31,9 @@ class SectionHero {
                     ${CONSTANTS.copy.badge}
                 </div>
 
-                <h1 class="hero-heading" style="font-size: 2.8rem; font-weight: 900; line-height: 1.2;">
-                    1日約194円で愛犬の健康を守る
+                <h1 class="hero-heading" style="font-size: 2.4rem; font-weight: 900; line-height: 1.3;">
+                    1日約194円で<br>
+                    愛犬の健康を守る
                 </h1>
 
                 <p class="hero-subheading">

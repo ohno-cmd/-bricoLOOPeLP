@@ -17,7 +17,8 @@ class SectionFoodIssues {
             <div class="container">
                 <div class="food-issues-container">
                     <h2 class="food-issues-heading">
-                        なんとなく体調が悪い、その本当の原因
+                        なんとなく体調が悪い<br>
+                        その本当の原因
                     </h2>
 
                     <!-- Problem Food Image -->
