@@ -41,16 +41,12 @@ class SectionClosing {
                         </div>
                     </div>
 
-                    <p class="closing-text" style="margin-bottom: var(--space-lg);">
-                        わたしたちが選んだのは、人間都合の加工しない自然そのものの鹿の内臓を愛犬に届ける。ただそれだけ
-                    </p>
-
                     <p class="closing-text" style="margin-bottom: var(--space-4xl);">
-                        愛犬を幸せにするグッドオーナーの皆様に<br>
-                        この最高級の鹿肉が届きますように
+                        愛犬を幸せにする<span style="color: #E63946; font-weight: bold;">グッドオーナー</span>の皆様に<br>
+                        この<span style="color: #E63946; font-weight: bold;">最高級の鹿肉</span>が届きますように
                     </p>
 
-                    <p style="font-size: 24px; font-weight: bold; color: var(--color-primary-red);">🥤</p>
+                    <p style="font-size: 20px; font-weight: bold; color: var(--color-primary-red); letter-spacing: 2px;">マグ</p>
                 </div>
             </div>
         `;
@@ -207,6 +203,29 @@ class SectionClosing {
                         trigger: this.section,
                         start: 'top 45%',
                         end: 'top 15%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Red text highlights entrance animations
+        const redHighlights = this.section.querySelectorAll('[style*="color: #E63946"]');
+        if (redHighlights.length > 0) {
+            gsap.fromTo(
+                redHighlights,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: 0.15,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 55%',
+                        end: 'top 25%',
                         scrub: false,
                         markers: false,
                     },

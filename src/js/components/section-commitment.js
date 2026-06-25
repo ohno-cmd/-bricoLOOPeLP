@@ -69,8 +69,8 @@ class SectionCommitment {
             <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-light-gray); border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--color-primary-red);">
                 <p style="font-size: var(--fs-lg); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
                     わたしたちが選んだのは、<br>
-                    <span style="color: var(--color-text-primary); font-weight: var(--fw-bold);">最短距離で、愛犬の元へ届ける</span><br>
-                    ただそれだけ。
+                    <span class="commitment-highlight" style="color: var(--color-primary-red); font-weight: var(--fw-bold); display: inline-block;">人間都合の加工をしない自然そのものの鹿の内臓</span><br>
+                    を愛犬に届けることです。
                 </p>
             </div>
         `;
@@ -165,6 +165,22 @@ class SectionCommitment {
                         scrub: false,
                         markers: false,
                     },
+                }
+            );
+        }
+
+        // Red text pulse animation
+        const highlightText = this.section.querySelector('.commitment-highlight');
+        if (highlightText) {
+            gsap.to(
+                highlightText,
+                {
+                    scale: 1.05,
+                    duration: 1.5,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.5,
                 }
             );
         }

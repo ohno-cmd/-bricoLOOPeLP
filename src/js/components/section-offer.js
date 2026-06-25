@@ -22,7 +22,7 @@ class SectionOffer {
                         <div class="offer-price-label">
                             初回価格
                         </div>
-                        <div class="offer-price">
+                        <div class="offer-price" style="color: #E63946; font-weight: bold; font-size: 3.5rem; letter-spacing: 2px;">
                             ¥5,808
                         </div>
                         <div class="offer-price-note">
@@ -136,6 +136,22 @@ class SectionOffer {
                     },
                 }
             );
+
+            // Price glow animation
+            const priceDisplay = priceBox.querySelector('.offer-price');
+            if (priceDisplay) {
+                gsap.to(
+                    priceDisplay,
+                    {
+                        textShadow: '0 0 20px rgba(230, 57, 70, 0.6)',
+                        duration: 2,
+                        ease: 'sine.inOut',
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 0.5,
+                    }
+                );
+            }
         }
 
         // Feature items staggered reveal

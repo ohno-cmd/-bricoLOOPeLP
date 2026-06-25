@@ -69,7 +69,7 @@ class SectionThreeParts {
             <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-primary-red); color: white; border-radius: var(--radius-lg); text-align: center; margin-left: var(--space-lg); margin-right: var(--space-lg);">
                 <p style="font-size: var(--fs-lg); line-height: var(--lh-relaxed);">
                     この3つが揃うことで、初めて<br>
-                    <span style="font-size: var(--fs-2xl); font-weight: var(--fw-bold);">野生のチカラ</span>が解き放たれる。
+                    <span class="wild-power-highlight" style="font-size: var(--fs-2xl); font-weight: var(--fw-bold); display: inline-block;">野生のチカラ</span>が解き放たれる。
                 </p>
             </div>
         `;
@@ -185,6 +185,22 @@ class SectionThreeParts {
                         scrub: false,
                         markers: false,
                     },
+                }
+            );
+        }
+
+        // "野生のチカラ" pulse animation
+        const wildPowerText = this.section.querySelector('.wild-power-highlight');
+        if (wildPowerText) {
+            gsap.to(
+                wildPowerText,
+                {
+                    scale: 1.08,
+                    duration: 1.2,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.5,
                 }
             );
         }

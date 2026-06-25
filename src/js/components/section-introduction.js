@@ -28,7 +28,7 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text">
-                        世界で一番大切な「愛犬」の為に、<span class="intro-highlight">完全無添加の鹿の内臓</span>を在庫最優先でお届けする定期便が遂に完成しました。
+                        世界で一番大切な「愛犬」の為に、<span class="intro-highlight" style="color: #E63946; font-weight: bold;">完全無添加の鹿の内臓</span>を在庫最優先でお届けする定期便が遂に完成しました。
                     </p>
 
                     <p class="intro-text" style="font-size: var(--fs-lg); margin-top: var(--space-3xl); color: var(--color-primary-red);">
@@ -82,6 +82,41 @@ class SectionIntroduction {
                         trigger: this.section,
                         start: 'top 65%',
                         end: 'top 25%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Highlight text underline slide animation on scroll
+        const highlightSpan = this.section.querySelector('.intro-highlight');
+        if (highlightSpan) {
+            // Create an underline element
+            const underline = document.createElement('span');
+            underline.style.cssText = `
+                display: block;
+                height: 3px;
+                background: #E63946;
+                width: 100%;
+                margin-top: 4px;
+                transform-origin: left;
+                scaleX: 0;
+            `;
+            highlightSpan.appendChild(underline);
+
+            // Animate underline on scroll
+            gsap.to(
+                underline,
+                {
+                    scaleX: 1,
+                    transformOrigin: 'left center',
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: highlightSpan,
+                        start: 'top 60%',
+                        end: 'top 40%',
                         scrub: false,
                         markers: false,
                     },

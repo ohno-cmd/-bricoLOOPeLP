@@ -8,6 +8,7 @@ class SectionHero {
 
     init() {
         this.render();
+        this.setupAnimations();
     }
 
     render() {
@@ -31,8 +32,8 @@ class SectionHero {
                 </div>
 
                 <h1 class="hero-heading">
-                    1日約194円で<br>
-                    愛犬の健康を守る
+                    <span style="color: #E63946; font-weight: bold;">1日約194円</span>で<br>
+                    <span style="color: #E63946; font-weight: bold;">愛犬の健康を守る</span>
                 </h1>
 
                 <p class="hero-subheading">
@@ -41,7 +42,7 @@ class SectionHero {
                     内臓3種セットのご案内
                 </p>
 
-                <div style="
+                <div class="hero-promo-box" style="
                     background: rgba(255, 255, 255, 0.1);
                     backdrop-filter: blur(10px);
                     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -53,7 +54,7 @@ class SectionHero {
                     margin-top: 32px;
                     animation: fadeInUp 0.8s ease-out 0.3s both;
                 ">
-                    <div style="font-size: 24px; color: #D4AF37; margin-bottom: 8px;">1日約194円</div>
+                    <div style="font-size: 24px; color: #E63946; margin-bottom: 8px; font-weight: bold;">1日約194円</div>
                     <div>愛犬の人生が変わる</div>
                 </div>
             </div>
@@ -74,6 +75,23 @@ class SectionHero {
     onCTAClick() {
         // Scroll to offer section with animation
         SCROLL.scrollToElementById('offer-section');
+    }
+
+    setupAnimations() {
+        // Promo box glow animation
+        const promoBox = this.section.querySelector('.hero-promo-box');
+        if (promoBox) {
+            gsap.to(
+                promoBox,
+                {
+                    boxShadow: '0 0 25px rgba(230, 57, 70, 0.5)',
+                    duration: 2,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                }
+            );
+        }
     }
 }
 
