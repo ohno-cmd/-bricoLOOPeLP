@@ -16,9 +16,8 @@ class SectionFoodIssues {
         this.section.innerHTML = `
             <div class="container">
                 <div class="food-issues-container">
-                    <h2 class="food-issues-heading">
-                        なんとなく体調が悪い<br>
-                        その本当の原因
+                    <h2 class="food-issues-heading" style="font-size: 1.8rem;">
+                        なんとなく体調が悪いその本当の原因
                     </h2>
 
                     <!-- Problem Food Image -->

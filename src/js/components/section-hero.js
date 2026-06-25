@@ -37,9 +37,7 @@ class SectionHero {
                 </h1>
 
                 <p class="hero-subheading">
-                    犬の寿命は、飼い主の選択で変わります。<br>
-                    常識が覆される<br>
-                    内臓3種セットのご案内
+                    犬の寿命は、飼い主の選択で変わります。
                 </p>
 
                 <div class="hero-promo-box" style="
@@ -54,8 +52,8 @@ class SectionHero {
                     margin-top: 32px;
                     animation: fadeInUp 0.8s ease-out 0.3s both;
                 ">
-                    <div style="font-size: 24px; color: white; margin-bottom: 8px; font-weight: bold;">1日約194円</div>
-                    <div>愛犬の人生が変わる</div>
+                    <div style="font-size: 20px; color: white; margin-bottom: 8px; font-weight: bold;">常識が変わる</div>
+                    <div>内臓3種セットのご案内</div>
                 </div>
             </div>
         `;

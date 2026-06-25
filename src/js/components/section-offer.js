@@ -22,7 +22,7 @@ class SectionOffer {
                         <div class="offer-price-label">
                             初回価格
                         </div>
-                        <div class="offer-price" style="color: #E63946; font-weight: bold; letter-spacing: 2px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                        <div class="offer-price" style="color: #E63946; font-weight: bold; letter-spacing: 2px; display: flex; align-items: baseline; justify-content: center; gap: 4px;">
                             <span style="font-size: 1.75rem; line-height: 1;">¥</span><span style="font-size: 3.5rem; line-height: 1;">5,808</span>
                         </div>
                         <div class="offer-price-note">

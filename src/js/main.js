@@ -181,8 +181,8 @@ class App {
 
                         <!-- Benefits Text -->
                         <div style="color: white; font-size: 13px; line-height: 1.4;">
-                            <div style="font-weight: bold; margin-bottom: 3px; text-decoration: line-through; opacity: 0.6;"><span style="font-size: 6.5px; vertical-align: super;">¥</span>7,260</div>
-                            <div style="font-weight: bold; margin-bottom: 3px; font-size: 15px; color: #F44E5C;"><span style="font-size: 7.5px; vertical-align: super;">¥</span>5,808</div>
+                            <div style="font-weight: bold; margin-bottom: 3px; text-decoration: line-through; opacity: 0.6;"><span style="font-size: 6.5px; vertical-align: baseline;">¥</span>7,260</div>
+                            <div style="font-weight: bold; margin-bottom: 3px; font-size: 15px; color: #F44E5C;"><span style="font-size: 7.5px; vertical-align: baseline;">¥</span>5,808</div>
                             <div style="color: #D4AF37; font-weight: bold;">✓ 3ヶ月返金保証</div>
                             <div style="color: rgba(255,255,255,0.8); font-size: 11px;">1日あたり約194円</div>
                         </div>
@@ -205,6 +205,7 @@ class App {
                             transition: all 0.2s;
                             text-transform: uppercase;
                             letter-spacing: 0.5px;
+                            animation: buttonPulse 2s ease-in-out infinite;
                         ">
                             1か月試してみる
                         </button>
@@ -245,6 +246,17 @@ class App {
                 to {
                     transform: translateY(0);
                     opacity: 1;
+                }
+            }
+
+            @keyframes buttonPulse {
+                0%, 100% {
+                    transform: scale(1);
+                    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+                }
+                50% {
+                    transform: scale(1.05);
+                    box-shadow: 0 8px 28px rgba(230, 57, 70, 0.6);
                 }
             }
 
