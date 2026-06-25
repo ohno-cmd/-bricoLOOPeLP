@@ -12,19 +12,15 @@ class SectionHero {
     }
 
     render() {
-        const videoPath = CONSTANTS.assets.videos + 'dog.mp4';
+        const mountainImagePath = CONSTANTS.assets.images + 'mountain.jpg';
 
         this.section.innerHTML = `
-            <video
+            <img
                 class="hero-video-bg"
-                autoplay
-                muted
-                playsinline
-                loop
-                preload="metadata"
-            >
-                <source src="${videoPath}" type="video/mp4">
-            </video>
+                src="${mountainImagePath}"
+                alt="Mountain background"
+                loading="lazy"
+            />
 
             <div class="hero-content">
                 <div class="hero-badge">
