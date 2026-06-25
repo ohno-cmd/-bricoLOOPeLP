@@ -51,9 +51,6 @@ class SectionOffer {
                         <div class="feature-item">
                             送料・手数料無料
                         </div>
-                        <div class="feature-item">
-                            初回限定特典：専用スコップ付属
-                        </div>
                         <div class="feature-item guarantee-highlight-box">
                             3ヶ月返金保証付き
                         </div>
