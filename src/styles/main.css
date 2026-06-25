@@ -63,16 +63,6 @@
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: var(--space-sm) var(--space-lg);
-    border-radius: var(--radius-full);
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-semibold);
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: var(--ls-wide);
 }
 
 .hero-heading {
