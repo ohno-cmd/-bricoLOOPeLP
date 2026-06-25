@@ -156,7 +156,7 @@ class App {
                 right: 0;
                 background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
                 border-top: 3px solid #E63946;
-                padding: 12px 16px;
+                padding: 18px 16px;
                 z-index: 1000;
                 box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
                 animation: slideUp 0.4s ease-out;
@@ -180,11 +180,11 @@ class App {
                         </div>
 
                         <!-- Benefits Text -->
-                        <div style="color: white; font-size: 13px; line-height: 1.4;">
-                            <div style="font-weight: bold; margin-bottom: 3px; text-decoration: line-through; opacity: 0.6;"><span style="font-size: 6.5px; vertical-align: baseline;">¥</span>7,260</div>
-                            <div style="font-weight: bold; margin-bottom: 3px; font-size: 15px; color: #F44E5C;"><span style="font-size: 7.5px; vertical-align: baseline;">¥</span>5,808</div>
+                        <div style="color: white; font-size: 14px; line-height: 1.5;">
+                            <div style="font-weight: bold; margin-bottom: 4px; text-decoration: line-through; opacity: 0.6;"><span style="font-size: 7px; vertical-align: baseline;">¥</span>7,260</div>
+                            <div style="font-weight: bold; margin-bottom: 4px; font-size: 16px; color: #F44E5C;"><span style="font-size: 8px; vertical-align: baseline;">¥</span>5,808</div>
                             <div style="color: #D4AF37; font-weight: bold;">✓ 3ヶ月返金保証</div>
-                            <div style="color: rgba(255,255,255,0.8); font-size: 11px;">1日あたり約194円</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 12px;">1日あたり約194円</div>
                         </div>
                     </div>
 
@@ -195,10 +195,10 @@ class App {
                             background: linear-gradient(135deg, #E63946, #F44E5C);
                             color: white;
                             border: none;
-                            padding: 14px 28px;
+                            padding: 16px 32px;
                             border-radius: 8px;
                             font-weight: bold;
-                            font-size: 15px;
+                            font-size: 16px;
                             cursor: pointer;
                             white-space: nowrap;
                             box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
@@ -209,7 +209,7 @@ class App {
                         ">
                             1か月試してみる
                         </button>
-                        <div style="text-align: center; color: rgba(255,255,255,0.6); font-size: 11px; margin-top: 4px;">
+                        <div style="text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 6px;">
                             3日間限定募集
                         </div>
                     </div>

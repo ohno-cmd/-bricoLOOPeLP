@@ -52,7 +52,7 @@ class SectionHero {
                     margin-top: 32px;
                     animation: fadeInUp 0.8s ease-out 0.3s both;
                 ">
-                    <div style="font-size: 20px; color: white; margin-bottom: 8px; font-weight: bold;">常識が変わる</div>
+                    <div style="font-size: 20px; color: white; margin-bottom: 8px; font-weight: bold;">常識が覆される</div>
                     <div>内臓3種セットのご案内</div>
                 </div>
             </div>

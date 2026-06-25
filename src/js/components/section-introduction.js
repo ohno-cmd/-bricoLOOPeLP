@@ -28,7 +28,7 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text">
-                        世界で一番大切な「愛犬」の為に、<br>
+                        世界で一番大切な「あなたの愛犬」の為に、<br>
                         <span class="intro-highlight" style="font-size: 1.3em; display: inline-block; margin: 8px 0; padding: 8px 16px; background: rgba(230, 57, 70, 0.08); border-radius: 8px;">完全無添加の鹿肉</span><br>
                         を在庫最優先でお届けする定期便が遂に完成しました。
                     </p>
