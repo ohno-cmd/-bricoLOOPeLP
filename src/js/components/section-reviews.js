@@ -72,18 +72,19 @@ class SectionReviews {
                 }
 
                 .reviews-carousel {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                    display: flex;
                     gap: var(--space-lg);
-                    padding: var(--space-lg) 0;
+                    padding: var(--space-lg);
                     overflow-x: auto;
                     scroll-behavior: smooth;
                     scroll-snap-type: x mandatory;
+                    -webkit-overflow-scrolling: touch;
                 }
 
                 .review-item {
                     scroll-snap-align: start;
                     flex-shrink: 0;
+                    flex-basis: 160px;
                     width: 160px;
                     height: 240px;
                     border-radius: var(--radius-lg);
@@ -209,8 +210,9 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = Math.max(0, this.currentIndex - 1);
-        const itemWidth = 160 + 16;
-        carousel.scrollLeft = this.currentIndex * itemWidth;
+        const itemWidth = 160 + 16; // width + gap
+        const padding = 16; // carousel padding
+        carousel.scrollLeft = this.currentIndex * itemWidth + padding;
         this.updatePagination(this.currentIndex);
     }
 
@@ -219,8 +221,9 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = Math.min(this.reviewsData.length - 1, this.currentIndex + 1);
-        const itemWidth = 160 + 16;
-        carousel.scrollLeft = this.currentIndex * itemWidth;
+        const itemWidth = 160 + 16; // width + gap
+        const padding = 16; // carousel padding
+        carousel.scrollLeft = this.currentIndex * itemWidth + padding;
         this.updatePagination(this.currentIndex);
     }
 
@@ -229,8 +232,9 @@ class SectionReviews {
         if (!carousel) return;
 
         this.currentIndex = index;
-        const itemWidth = 160 + 16;
-        carousel.scrollLeft = index * itemWidth;
+        const itemWidth = 160 + 16; // width + gap
+        const padding = 16; // carousel padding
+        carousel.scrollLeft = index * itemWidth + padding;
         this.updatePagination(index);
     }
 
