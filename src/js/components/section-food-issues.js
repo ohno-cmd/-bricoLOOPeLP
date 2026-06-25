@@ -1,0 +1,116 @@
+// Section Component: Modern Food Issues (⑤現代フードへの問題提起)
+
+class SectionFoodIssues {
+    constructor() {
+        this.section = document.getElementById('food-issues-section');
+        this.init();
+    }
+
+    init() {
+        this.render();
+    }
+
+    render() {
+        this.section.innerHTML = `
+            <div class="container">
+                <div class="food-issues-container">
+                    <h2 class="food-issues-heading">
+                        なんとなく体調が悪い、その本当の原因
+                    </h2>
+
+                    <div class="food-issues-problem">
+                        <div class="food-issues-problem-title">
+                            ドライフード + お肉だけ = 栄養不足
+                        </div>
+                        <div class="food-issues-problem-text">
+                            人間に例えるなら、毎日「カロリーメイトとお肉だけで生きている」ようなもの。
+                            十分なカロリーはあるかもしれませんが、本当に必要な微量栄養素が圧倒的に不足しています。
+                        </div>
+                    </div>
+
+                    <div class="food-issues-problem">
+                        <div class="food-issues-problem-title">
+                            人間都合の添加物フード
+                        </div>
+                        <div class="food-issues-problem-text">
+                            長期保存のための化学薬品、流通管理のための着色料や香料。
+                            犬の本能は、これらを「本物の食べもの」として認識していません。
+                        </div>
+                    </div>
+
+                    <div class="food-issues-problem">
+                        <div class="food-issues-problem-title">
+                            腸内環境の悪化
+                        </div>
+                        <div class="food-issues-problem-text">
+                            野生の食べもの（内臓に含まれる生きた乳酸菌や酵素）がないと、
+                            腸内の善玉菌が減少。免疫低下、皮膚トラブル、歯周病...が増える。
+                        </div>
+                    </div>
+
+                    <div style="margin-top: var(--space-4xl); padding: var(--space-3xl); background: white; border-radius: var(--radius-lg); text-align: center; border-left: 6px solid var(--color-accent-gold);">
+                        <p style="font-size: var(--fs-lg); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
+                            <span style="color: var(--color-primary-red); font-weight: var(--fw-bold);">毎日何を食べさせるか</span>は、<br>
+                            5年後、10年後の愛犬の人生を左右します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        this.setupAnimations();
+    }
+
+    setupAnimations() {
+        const heading = this.section.querySelector('.food-issues-heading');
+        const problems = this.section.querySelectorAll('.food-issues-problem');
+
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        if (problems.length > 0) {
+            gsap.fromTo(
+                problems,
+                { opacity: 0, x: -30 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.7,
+                    stagger: 0.15,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 60%',
+                        end: 'top 20%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+    }
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    const sectionFoodIssues = new SectionFoodIssues();
+    window.sectionFoodIssues = sectionFoodIssues;
+    console.log('✓ Section Food Issues Rendered');
+});
