@@ -11,12 +11,19 @@ class SectionFoodIssues {
     }
 
     render() {
+        const dryfoodImage = CONSTANTS.assets.images + 'dryfood.jpg';
+
         this.section.innerHTML = `
             <div class="container">
                 <div class="food-issues-container">
                     <h2 class="food-issues-heading">
                         なんとなく体調が悪い、その本当の原因
                     </h2>
+
+                    <!-- Problem Food Image -->
+                    <div style="margin: var(--space-4xl) 0; text-align: center;">
+                        <img src="${dryfoodImage}" alt="一般的なドライフード" loading="lazy" style="max-width: 100%; max-height: 300px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
 
                     <div class="food-issues-problem">
                         <div class="food-issues-problem-title">

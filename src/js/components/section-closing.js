@@ -11,8 +11,15 @@ class SectionClosing {
     }
 
     render() {
+        const cheerfulDogImage = CONSTANTS.assets.images + 'cheerful dog.jpg';
+
         this.section.innerHTML = `
             <div class="container">
+                <!-- Hero Image -->
+                <div style="margin-bottom: var(--space-5xl); text-align: center;">
+                    <img src="${cheerfulDogImage}" alt="幸せな愛犬" loading="lazy" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); max-height: 400px; object-fit: cover;">
+                </div>
+
                 <div class="closing-content">
                     <h2 class="closing-heading">
                         愛犬の笑顔と身体を守れるのは、<br>

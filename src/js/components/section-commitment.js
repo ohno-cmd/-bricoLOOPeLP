@@ -11,12 +11,19 @@ class SectionCommitment {
     }
 
     render() {
+        const processingImage = CONSTANTS.assets.images + 'processing within 24 hours.jpg';
+
         this.section.innerHTML = `
             <h2 class="commitment-heading">
                 bricoのこだわり
             </h2>
 
             <div class="container">
+                <!-- Processing Speed Showcase -->
+                <div style="margin-bottom: var(--space-5xl); text-align: center;">
+                    <img src="${processingImage}" alt="24時間以内の処理" loading="lazy" style="max-width: 100%; max-height: 350px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+                </div>
+
                 <div class="commitment-grid">
                     <div class="commitment-item">
                         <div class="commitment-icon">⚡</div>
