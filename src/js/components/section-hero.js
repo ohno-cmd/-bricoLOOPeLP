@@ -41,6 +41,22 @@ class SectionHero {
                     野生の力を秘めた天然鹿内臓が、<br>
                     愛犬の人生を180度変える
                 </p>
+
+                <div style="
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    padding: 16px 32px;
+                    border-radius: 12px;
+                    color: white;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-top: 32px;
+                    animation: fadeInUp 0.8s ease-out 0.3s both;
+                ">
+                    <div style="font-size: 24px; color: #D4AF37; margin-bottom: 8px;">1日約194円</div>
+                    <div>愛犬の人生が変わる</div>
+                </div>
             </div>
         `;
 

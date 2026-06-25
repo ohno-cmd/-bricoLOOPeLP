@@ -29,12 +29,14 @@ class SectionOffer {
                             税込 / 送料無料
                         </div>
                         <div class="offer-price-details">
-                            <p style="margin-bottom: var(--space-lg);">
-                                <strong>2回目以降：¥6,534（税込）</strong>
+                            <p style="margin-bottom: var(--space-lg); color: #D4AF37; font-weight: bold; font-size: 16px;">
+                                1日あたり約194円
                             </p>
-                            <p>
-                                1日あたり<strong>約218円</strong>（コーヒー1杯分）の投資で、<br>
-                                愛犬の人生が変わります。
+                            <p style="margin-bottom: var(--space-lg);">
+                                <strong>2回目以降：¥6,534（税込）/ 1日約218円</strong>
+                            </p>
+                            <p style="background: rgba(255,255,255,0.1); padding: var(--space-lg); border-radius: var(--radius-md); border-left: 3px solid #D4AF37;">
+                                <strong>コーヒー1杯分の価格で、<br>愛犬の人生が変わります。</strong>
                             </p>
                         </div>
                     </div>
