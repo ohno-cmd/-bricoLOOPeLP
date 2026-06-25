@@ -181,9 +181,10 @@ class App {
 
                         <!-- Benefits Text -->
                         <div style="color: white; font-size: 13px; line-height: 1.4;">
-                            <div style="font-weight: bold; margin-bottom: 3px;">¥5,808 → ¥4,646</div>
+                            <div style="font-weight: bold; margin-bottom: 3px; text-decoration: line-through; opacity: 0.6;">¥7,260</div>
+                            <div style="font-weight: bold; margin-bottom: 3px; font-size: 15px; color: #F44E5C;">¥5,808</div>
                             <div style="color: #D4AF37; font-weight: bold;">✓ 3ヶ月返金保証</div>
-                            <div style="color: rgba(255,255,255,0.8); font-size: 11px;">1日あたり約155円</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 11px;">1日あたり約194円</div>
                         </div>
                     </div>
 
