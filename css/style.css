@@ -192,6 +192,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -222,16 +223,17 @@ p {
 }
 
 .hero__top-section {
-    padding-top: 24px;
+    padding-top: 16px;
+    padding-bottom: 8px;
     opacity: 0;
     animation: fadeInDown 0.8s ease-out 0.2s both;
 }
 
 .hero__badge-limited {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 900;
     color: #fff;
-    margin: 0 0 6px 0;
+    margin: 0 0 4px 0;
     padding: 0;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -239,7 +241,7 @@ p {
 }
 
 .hero__badge-crowd {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -259,7 +261,7 @@ p {
 }
 
 .hero__main-title {
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 900;
     line-height: 1.1;
     color: #fff;
@@ -1292,7 +1294,7 @@ p {
     }
 
     .hero__main-title {
-        font-size: 52px;
+        font-size: 48px;
         font-weight: 900;
     }
 
@@ -1301,7 +1303,7 @@ p {
     }
 
     .hero__badge-crowd {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .hero__tagline {
