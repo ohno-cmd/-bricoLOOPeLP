@@ -57,6 +57,16 @@ class SectionWildTruth {
                                     ✓ 本能を揺さぶる香り → 袋を開けた瞬間に目の色が変わる
                                 </div>
                             </div>
+
+                            <!-- Critical Nutrition Information -->
+                            <div style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: rgba(230, 57, 70, 0.12); border-left: 4px solid var(--color-primary-red); border-radius: var(--radius-md);">
+                                <p style="font-size: var(--fs-base); color: var(--color-text-secondary); line-height: var(--lh-relaxed); margin: 0;">
+                                    <span style="color: var(--color-primary-red); font-weight: var(--fw-bold); font-size: 1.1em;">⚠️ 重要：</span><br>
+                                    内臓に含まれるこれらの栄養素は、<br>
+                                    <span style="color: var(--color-primary-red); font-weight: var(--fw-bold);">犬が体内で作り出すことができない必須栄養素</span>です。<br>
+                                    つまり、<span style="color: var(--color-primary-red); font-weight: var(--fw-bold);">食事からの補給が絶対に必要</span>なのです。
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -119,6 +129,38 @@ class SectionWildTruth {
                     },
                 }
             );
+        }
+
+        // Animate critical information box
+        const infoBox = this.section.querySelector('[style*="border-left: 4px"]');
+        if (infoBox) {
+            gsap.fromTo(
+                infoBox,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: infoBox,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+
+            // Add subtle pulse animation to info box
+            gsap.to(infoBox, {
+                boxShadow: '0 0 20px rgba(230, 57, 70, 0.2)',
+                duration: 2,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+                delay: 0.5,
+            });
         }
     }
 }
