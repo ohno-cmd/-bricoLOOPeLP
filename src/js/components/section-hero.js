@@ -13,6 +13,7 @@ class SectionHero {
 
     render() {
         const mountainImagePath = CONSTANTS.assets.images + 'mountain.jpg';
+        const logoImagePath = CONSTANTS.assets.images + 'logo.png';
 
         this.section.innerHTML = `
             <img
@@ -24,7 +25,7 @@ class SectionHero {
 
             <div class="hero-content">
                 <div class="hero-badge">
-                    ${CONSTANTS.copy.badge}
+                    <img src="${logoImagePath}" alt="bricoLOOPe logo" loading="lazy" style="max-width: 200px; height: auto; display: block;">
                 </div>
 
                 <h1 class="hero-heading" style="font-size: 2.4rem; font-weight: 900; line-height: 1.3;">
@@ -72,6 +73,22 @@ class SectionHero {
     }
 
     setupAnimations() {
+        // Logo entrance animation
+        const badge = this.section.querySelector('.hero-badge');
+        if (badge) {
+            gsap.fromTo(
+                badge,
+                { opacity: 0, y: -20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    delay: 0.3,
+                }
+            );
+        }
+
         // Promo box glow animation
         const promoBox = this.section.querySelector('.hero-promo-box');
         if (promoBox) {
