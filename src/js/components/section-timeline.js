@@ -11,6 +11,8 @@ class SectionTimeline {
     }
 
     render() {
+        const dogVideoPath = CONSTANTS.assets.videos + 'dog.mp4';
+
         this.section.innerHTML = `
             <h2 class="timeline-heading">
                 飼い主様が目撃する、4つの変化
@@ -58,6 +60,20 @@ class SectionTimeline {
                             飼い主さんの人生まで変えます。
                         </div>
                     </div>
+                </div>
+
+                <!-- Dog Video Showcase -->
+                <div style="margin-top: var(--space-5xl); text-align: center;">
+                    <video
+                        style="max-width: 100%; max-height: 500px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);"
+                        autoplay
+                        muted
+                        playsinline
+                        loop
+                        preload="metadata"
+                    >
+                        <source src="${dogVideoPath}" type="video/mp4">
+                    </video>
                 </div>
             </div>
         `;
@@ -134,6 +150,28 @@ class SectionTimeline {
                     );
                 }
             });
+        }
+
+        // Dog video animation
+        const video = this.section.querySelector('video');
+        if (video) {
+            gsap.fromTo(
+                video,
+                { opacity: 0, scale: 0.95 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: video,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
         }
     }
 }
