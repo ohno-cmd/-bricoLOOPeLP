@@ -44,25 +44,50 @@ class SectionIntroduction {
     }
 
     setupAnimations() {
-        const elements = this.section.querySelectorAll('.intro-heading, .intro-text');
-        gsap.fromTo(
-            elements,
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: this.section,
-                    start: 'top 70%',
-                    end: 'top 30%',
-                    scrub: false,
-                    markers: false,
-                },
-            }
-        );
+        // Heading animation - slide up
+        const heading = this.section.querySelector('.intro-heading');
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Paragraphs with staggered fade-in
+        const texts = this.section.querySelectorAll('.intro-text');
+        if (texts.length > 0) {
+            gsap.fromTo(
+                texts,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.7,
+                    stagger: 0.15,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 65%',
+                        end: 'top 25%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
     }
 }
 

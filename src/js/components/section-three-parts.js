@@ -78,8 +78,52 @@ class SectionThreeParts {
     }
 
     setupAnimations() {
-        const cards = this.section.querySelectorAll('.part-card');
+        // Heading entrance animation
+        const heading = this.section.querySelector('.three-parts-heading');
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 75%',
+                        end: 'top 45%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
 
+        // Product showcase image with scale reveal
+        const productShowcase = this.section.querySelector('.product-showcase');
+        if (productShowcase) {
+            gsap.fromTo(
+                productShowcase,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Part cards with staggered entrance
+        const cards = this.section.querySelectorAll('.part-card');
         if (cards.length > 0) {
             gsap.fromTo(
                 cards,
@@ -89,12 +133,12 @@ class SectionThreeParts {
                     y: 0,
                     scale: 1,
                     duration: 0.8,
-                    stagger: 0.15,
+                    stagger: 0.14,
                     ease: 'back.out',
                     scrollTrigger: {
                         trigger: this.section,
-                        start: 'top 70%',
-                        end: 'top 30%',
+                        start: 'top 60%',
+                        end: 'top 20%',
                         scrub: false,
                         markers: false,
                     },
@@ -121,6 +165,28 @@ class SectionThreeParts {
                     });
                 });
             });
+        }
+
+        // Red callout box animation
+        const calloutBox = this.section.querySelector('[style*="background: var(--color-primary-red)"]');
+        if (calloutBox) {
+            gsap.fromTo(
+                calloutBox,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 50%',
+                        end: 'top 20%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
         }
     }
 }

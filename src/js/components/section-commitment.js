@@ -17,7 +17,7 @@ class SectionCommitment {
 
         this.section.innerHTML = `
             <h2 class="commitment-heading">
-                bricoのこだわり
+                LOOPeのこだわり
             </h2>
 
             <div class="container">
@@ -27,7 +27,7 @@ class SectionCommitment {
                             <img src="${processingImage}" alt="24時間以内の処理" loading="lazy">
                         </div>
                         <h3 class="commitment-title">
-                            狩猟から24時間以内
+                            狩猟から24時間以内に商品化
                         </h3>
                         <p class="commitment-description">
                             鮮度が命。狩猟から加工まで、
@@ -79,8 +79,30 @@ class SectionCommitment {
     }
 
     setupAnimations() {
-        const items = this.section.querySelectorAll('.commitment-item');
+        // Heading entrance animation
+        const heading = this.section.querySelector('.commitment-heading');
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 75%',
+                        end: 'top 45%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
 
+        // Commitment items with staggered reveal
+        const items = this.section.querySelectorAll('.commitment-item');
         if (items.length > 0) {
             gsap.fromTo(
                 items,
@@ -89,12 +111,12 @@ class SectionCommitment {
                     opacity: 1,
                     y: 0,
                     duration: 0.7,
-                    stagger: 0.15,
+                    stagger: 0.13,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 70%',
-                        end: 'top 30%',
+                        end: 'top 25%',
                         scrub: false,
                         markers: false,
                     },
@@ -102,26 +124,50 @@ class SectionCommitment {
             );
         }
 
-        // Image reveal animation
+        // Image reveal animation with mask effect
         const images = this.section.querySelectorAll('.commitment-image img');
-        gsap.fromTo(
-            images,
-            { opacity: 0, scale: 0.9 },
-            {
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: 'back.out',
-                scrollTrigger: {
-                    trigger: this.section,
-                    start: 'top 70%',
-                    end: 'top 30%',
-                    scrub: false,
-                    markers: false,
-                },
-            }
-        );
+        if (images.length > 0) {
+            gsap.fromTo(
+                images,
+                { opacity: 0, scale: 0.85 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    stagger: 0.12,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 68%',
+                        end: 'top 28%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Info box entrance animation
+        const infoBox = this.section.querySelector('[style*="border-top"]');
+        if (infoBox) {
+            gsap.fromTo(
+                infoBox,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 50%',
+                        end: 'top 20%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
     }
 }
 

@@ -66,8 +66,30 @@ class SectionTimeline {
     }
 
     setupAnimations() {
-        const timelineItems = this.section.querySelectorAll('.timeline-item');
+        // Heading animation
+        const heading = this.section.querySelector('.timeline-heading');
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 75%',
+                        end: 'top 45%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
 
+        // Timeline items with staggered entrance and slide from left
+        const timelineItems = this.section.querySelectorAll('.timeline-item');
         if (timelineItems.length > 0) {
             gsap.fromTo(
                 timelineItems,
@@ -75,18 +97,43 @@ class SectionTimeline {
                 {
                     opacity: 1,
                     x: 0,
-                    duration: 0.7,
-                    stagger: 0.2,
+                    duration: 0.75,
+                    stagger: 0.16,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 70%',
-                        end: 'top 20%',
+                        end: 'top 15%',
                         scrub: false,
                         markers: false,
                     },
                 }
             );
+
+            // Add number reveal animation to each timeline item number
+            timelineItems.forEach((item, index) => {
+                const numberEl = item.querySelector('.timeline-item-number');
+                if (numberEl) {
+                    gsap.fromTo(
+                        numberEl,
+                        { opacity: 0, scale: 0.5 },
+                        {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.6,
+                            ease: 'back.out',
+                            delay: 0.1 + index * 0.16,
+                            scrollTrigger: {
+                                trigger: this.section,
+                                start: 'top 70%',
+                                end: 'top 15%',
+                                scrub: false,
+                                markers: false,
+                            },
+                        }
+                    );
+                }
+            });
         }
     }
 }

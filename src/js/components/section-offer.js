@@ -93,15 +93,12 @@ class SectionOffer {
     }
 
     setupAnimations() {
+        // Heading slide-in animation
         const heading = this.section.querySelector('.offer-heading');
-        const priceBox = this.section.querySelector('.offer-price-box');
-        const features = this.section.querySelector('.offer-features');
-        const ctaButton = this.section.querySelector('.offer-cta');
-
         if (heading) {
             gsap.fromTo(
                 heading,
-                { opacity: 0, y: 30 },
+                { opacity: 0, y: 40 },
                 {
                     opacity: 1,
                     y: 0,
@@ -118,14 +115,17 @@ class SectionOffer {
             );
         }
 
+        // Price box scale and fade-in
+        const priceBox = this.section.querySelector('.offer-price-box');
         if (priceBox) {
             gsap.fromTo(
                 priceBox,
-                { opacity: 0, scale: 0.9 },
+                { opacity: 0, scale: 0.85, y: 30 },
                 {
                     opacity: 1,
                     scale: 1,
-                    duration: 0.8,
+                    y: 0,
+                    duration: 0.9,
                     ease: 'back.out',
                     scrollTrigger: {
                         trigger: this.section,
@@ -138,20 +138,45 @@ class SectionOffer {
             );
         }
 
+        // Feature items staggered reveal
+        const features = this.section.querySelector('.offer-features');
         if (features) {
             const featureItems = features.querySelectorAll('.feature-item');
             gsap.fromTo(
                 featureItems,
-                { opacity: 0, x: -20 },
+                { opacity: 0, x: -30 },
                 {
                     opacity: 1,
                     x: 0,
-                    duration: 0.6,
-                    stagger: 0.1,
+                    duration: 0.7,
+                    stagger: 0.11,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 50%',
+                        end: 'top 15%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // CTA button entrance
+        const ctaButton = this.section.querySelector('.offer-cta');
+        if (ctaButton) {
+            gsap.fromTo(
+                ctaButton,
+                { opacity: 0, y: 30, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 40%',
                         end: 'top 20%',
                         scrub: false,
                         markers: false,
@@ -160,19 +185,21 @@ class SectionOffer {
             );
         }
 
-        if (ctaButton) {
+        // Note text entrance
+        const noteText = this.section.querySelector('[style*="font-size: var(--fs-sm)"]');
+        if (noteText) {
             gsap.fromTo(
-                ctaButton,
-                { opacity: 0, y: 30 },
+                noteText,
+                { opacity: 0, y: 20 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 0.7,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
-                        start: 'top 40%',
-                        end: 'top 20%',
+                        start: 'top 35%',
+                        end: 'top 15%',
                         scrub: false,
                         markers: false,
                     },

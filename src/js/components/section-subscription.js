@@ -82,25 +82,72 @@ class SectionSubscription {
     }
 
     setupAnimations() {
-        const textElements = this.section.querySelectorAll('.subscription-heading, .subscription-text');
-        gsap.fromTo(
-            textElements,
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.7,
-                stagger: 0.15,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: this.section,
-                    start: 'top 70%',
-                    end: 'top 30%',
-                    scrub: false,
-                    markers: false,
-                },
-            }
-        );
+        // Heading slide up animation
+        const heading = this.section.querySelector('.subscription-heading');
+        if (heading) {
+            gsap.fromTo(
+                heading,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Image fade-in with scale
+        const image = this.section.querySelector('.subscription-image');
+        if (image) {
+            gsap.fromTo(
+                image,
+                { opacity: 0, scale: 0.95 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 30%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Text elements staggered
+        const textElements = this.section.querySelectorAll('.subscription-text');
+        if (textElements.length > 0) {
+            gsap.fromTo(
+                textElements,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.7,
+                    stagger: 0.12,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 65%',
+                        end: 'top 25%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
     }
 }
 

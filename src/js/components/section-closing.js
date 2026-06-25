@@ -41,10 +41,16 @@ class SectionClosing {
                         </div>
                     </div>
 
+                    <p class="closing-text" style="margin-bottom: var(--space-lg);">
+                        わたしたちが選んだのは、人間都合の加工しない自然そのものの鹿の内臓を愛犬に届ける。ただそれだけ
+                    </p>
+
                     <p class="closing-text" style="margin-bottom: var(--space-4xl);">
                         愛犬を幸せにするグッドオーナーの皆様に<br>
                         この最高級の鹿肉が届きますように
                     </p>
+
+                    <p style="font-size: 24px; font-weight: bold; color: var(--color-primary-red);">🥤</p>
                 </div>
             </div>
         `;
@@ -82,12 +88,36 @@ class SectionClosing {
     }
 
     setupAnimations() {
+        const heroImage = this.section.querySelector('[style*="max-height: 400px"]');
         const heading = this.section.querySelector('.closing-heading');
         const texts = this.section.querySelectorAll('.closing-text');
         const highlight = this.section.querySelector('.closing-highlight');
+        const emoji = this.section.querySelector('[style*="font-size: 24px"]');
 
         this.setupCountdown();
 
+        // Hero image reveal
+        if (heroImage) {
+            gsap.fromTo(
+                heroImage,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 70%',
+                        end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Heading entrance animation
         if (heading) {
             gsap.fromTo(
                 heading,
@@ -95,8 +125,8 @@ class SectionClosing {
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
-                    ease: 'power3.out',
+                    duration: 0.8,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 60%',
@@ -108,6 +138,7 @@ class SectionClosing {
             );
         }
 
+        // Text elements staggered entrance
         if (texts.length > 0) {
             gsap.fromTo(
                 texts,
@@ -115,13 +146,13 @@ class SectionClosing {
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                    stagger: 0.2,
+                    duration: 0.7,
+                    stagger: 0.12,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 55%',
-                        end: 'top 25%',
+                        end: 'top 20%',
                         scrub: false,
                         markers: false,
                     },
@@ -129,19 +160,53 @@ class SectionClosing {
             );
         }
 
+        // Countdown highlight box with scale and glow
         if (highlight) {
             gsap.fromTo(
                 highlight,
-                { opacity: 0, scale: 0.9 },
+                { opacity: 0, scale: 0.85, y: 30 },
                 {
                     opacity: 1,
                     scale: 1,
-                    duration: 1,
+                    y: 0,
+                    duration: 0.9,
                     ease: 'back.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 50%',
-                        end: 'top 20%',
+                        end: 'top 15%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+
+            // Add subtle pulsing glow effect to highlight
+            gsap.to(highlight, {
+                boxShadow: '0 0 20px rgba(230, 57, 70, 0.3)',
+                duration: 2,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+                delay: 0.5,
+            });
+        }
+
+        // Emoji entrance with bounce
+        if (emoji) {
+            gsap.fromTo(
+                emoji,
+                { opacity: 0, scale: 0, y: 20 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 45%',
+                        end: 'top 15%',
                         scrub: false,
                         markers: false,
                     },

@@ -70,12 +70,14 @@ class SectionFoodIssues {
 
     setupAnimations() {
         const heading = this.section.querySelector('.food-issues-heading');
+        const image = this.section.querySelector('img[alt*="ドライフード"]');
         const problems = this.section.querySelectorAll('.food-issues-problem');
 
+        // Heading entrance animation
         if (heading) {
             gsap.fromTo(
                 heading,
-                { opacity: 0, y: 30 },
+                { opacity: 0, y: 40 },
                 {
                     opacity: 1,
                     y: 0,
@@ -92,19 +94,63 @@ class SectionFoodIssues {
             );
         }
 
+        // Image reveal with scale
+        if (image) {
+            gsap.fromTo(
+                image,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 65%',
+                        end: 'top 35%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Problem cards with staggered entrance
         if (problems.length > 0) {
             gsap.fromTo(
                 problems,
-                { opacity: 0, x: -30 },
+                { opacity: 0, x: -40 },
                 {
                     opacity: 1,
                     x: 0,
                     duration: 0.7,
-                    stagger: 0.15,
+                    stagger: 0.13,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 60%',
+                        end: 'top 15%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Info box at bottom with fade and slide
+        const infoBox = this.section.querySelector('[style*="border-left"]');
+        if (infoBox) {
+            gsap.fromTo(
+                infoBox,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 50%',
                         end: 'top 20%',
                         scrub: false,
                         markers: false,
