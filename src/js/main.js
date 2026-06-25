@@ -145,52 +145,139 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create floating banner
+        // Create premium floating banner for CVR optimization
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
-        banner.style.cssText = `
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #E63946, #B81C28);
-            padding: 16px;
-            z-index: 1000;
-            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            animation: slideUp 0.4s ease-out;
+        banner.innerHTML = `
+            <div style="
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+                border-top: 3px solid #E63946;
+                padding: 12px 16px;
+                z-index: 1000;
+                box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
+                animation: slideUp 0.4s ease-out;
+            ">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+
+                    <!-- Left: Key Benefits -->
+                    <div style="flex: 1; min-width: 250px; display: flex; gap: 12px; align-items: center;">
+                        <!-- Offer Badge -->
+                        <div style="
+                            background: linear-gradient(135deg, #E63946, #F44E5C);
+                            color: white;
+                            padding: 8px 12px;
+                            border-radius: 6px;
+                            text-align: center;
+                            flex-shrink: 0;
+                            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+                        ">
+                            <div style="font-weight: bold; font-size: 16px; line-height: 1;">初回</div>
+                            <div style="font-size: 13px; font-weight: bold; line-height: 1; margin-top: 2px;">20%OFF</div>
+                        </div>
+
+                        <!-- Benefits Text -->
+                        <div style="color: white; font-size: 13px; line-height: 1.4;">
+                            <div style="font-weight: bold; margin-bottom: 3px;">¥5,808 → ¥4,646</div>
+                            <div style="color: #D4AF37; font-weight: bold;">✓ 3ヶ月返金保証</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 11px;">1日あたり約155円</div>
+                        </div>
+                    </div>
+
+                    <!-- Center: Trust Badges -->
+                    <div style="display: flex; gap: 12px; align-items: center; font-size: 12px; color: rgba(255,255,255,0.8);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 18px; margin-bottom: 2px;">🛡️</div>
+                            <div>完全無添加</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 18px; margin-bottom: 2px;">📦</div>
+                            <div>送料無料</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 18px; margin-bottom: 2px;">🔄</div>
+                            <div>いつでも解約</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: CTA Button -->
+                    <div style="flex-shrink: 0;">
+                        <button id="floating-cta-btn" style="
+                            background: linear-gradient(135deg, #E63946, #F44E5C);
+                            color: white;
+                            border: none;
+                            padding: 14px 28px;
+                            border-radius: 8px;
+                            font-weight: bold;
+                            font-size: 15px;
+                            cursor: pointer;
+                            white-space: nowrap;
+                            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+                            transition: all 0.2s;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                        ">
+                            1か月試してみる
+                        </button>
+                        <div style="text-align: center; color: rgba(255,255,255,0.6); font-size: 11px; margin-top: 4px;">
+                            3日間限定募集
+                        </div>
+                    </div>
+                </div>
+            </div>
         `;
 
-        const text = document.createElement('span');
-        text.style.cssText = 'color: white; font-weight: bold; font-size: 14px; flex: 1; max-width: 300px;';
-        text.textContent = '犬の健康に最重要な内臓3種セット';
-
-        const button = document.createElement('button');
-        button.textContent = '1か月試してみる';
-        button.style.cssText = `
-            background: white;
-            color: #E63946;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: all 0.2s;
-            font-size: 14px;
-        `;
-        button.onmouseover = () => button.style.transform = 'scale(1.05)';
-        button.onmouseout = () => button.style.transform = 'scale(1)';
-        button.addEventListener('click', () => {
-            SCROLL.scrollToElementById('offer-section');
-        });
-
-        banner.appendChild(text);
-        banner.appendChild(button);
         document.body.appendChild(banner);
+
+        // Setup button interaction
+        const btn = document.getElementById('floating-cta-btn');
+        if (btn) {
+            btn.addEventListener('mouseover', () => {
+                btn.style.transform = 'translateY(-2px)';
+                btn.style.boxShadow = '0 10px 28px rgba(230, 57, 70, 0.5)';
+            });
+            btn.addEventListener('mouseout', () => {
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = '0 6px 20px rgba(230, 57, 70, 0.4)';
+            });
+            btn.addEventListener('click', () => {
+                SCROLL.scrollToElementById('offer-section');
+            });
+        }
+
+        // Add CSS keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 768px) {
+                #floating-banner {
+                    padding: 10px 12px !important;
+                }
+
+                #floating-banner > div > div {
+                    gap: 8px !important;
+                }
+
+                #floating-banner button {
+                    padding: 12px 20px !important;
+                    font-size: 13px !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     setupSharing() {

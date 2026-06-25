@@ -41,10 +41,6 @@ class SectionHero {
                     野生の力を秘めた天然鹿内臓が、<br>
                     愛犬の人生を180度変える
                 </p>
-
-                <button class="hero-cta" aria-label="1か月試してみる">
-                    1か月試してみる
-                </button>
             </div>
         `;
 
