@@ -60,11 +60,6 @@ class SectionWildTruth {
                         </div>
                     </div>
 
-                    <!-- Dried Venison Showcase -->
-                    <div style="margin-top: var(--space-5xl); margin-bottom: var(--space-4xl); text-align: center;">
-                        <img src="${CONSTANTS.assets.images}dried venison.jpg" alt="乾燥した天然鹿内臓" loading="lazy" style="max-width: 100%; max-height: 300px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);">
-                    </div>
-
                     <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: rgba(230, 57, 70, 0.05); border-radius: var(--radius-lg); text-align: center;">
                         <p style="font-size: var(--fs-2xl); font-weight: var(--fw-bold); color: white; line-height: var(--lh-relaxed);">
                             愛犬の本能が求める、<br>

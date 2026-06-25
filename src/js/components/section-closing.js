@@ -44,40 +44,17 @@ class SectionClosing {
                         野生の力を秘めた天然鹿内臓が、<br>
                         これからあなたの愛犬の人生の一部になります。
                     </p>
-
-                    <button class="closing-cta" aria-label="今すぐ定期購入を申し込む">
-                        ${CONSTANTS.copy.ctaPrimary}
-                    </button>
-
-                    <p style="margin-top: var(--space-3xl); font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.6);">
-                        ${CONSTANTS.copy.badge} / ${CONSTANTS.copy.countdownDays}
-                    </p>
                 </div>
             </div>
         `;
 
-        this.setupEventListeners();
         this.setupAnimations();
-    }
-
-    setupEventListeners() {
-        const ctaButton = this.section.querySelector('.closing-cta');
-        if (ctaButton) {
-            ctaButton.addEventListener('click', () => {
-                this.onCTAClick();
-            });
-        }
-    }
-
-    onCTAClick() {
-        SCROLL.scrollToElementById('offer-section');
     }
 
     setupAnimations() {
         const heading = this.section.querySelector('.closing-heading');
         const texts = this.section.querySelectorAll('.closing-text');
         const highlight = this.section.querySelector('.closing-highlight');
-        const ctaButton = this.section.querySelector('.closing-cta');
 
         if (heading) {
             gsap.fromTo(
@@ -132,26 +109,6 @@ class SectionClosing {
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 50%',
-                        end: 'top 20%',
-                        scrub: false,
-                        markers: false,
-                    },
-                }
-            );
-        }
-
-        if (ctaButton) {
-            gsap.fromTo(
-                ctaButton,
-                { opacity: 0, y: 40 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: this.section,
-                        start: 'top 40%',
                         end: 'top 20%',
                         scrub: false,
                         markers: false,
