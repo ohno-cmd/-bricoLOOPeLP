@@ -161,10 +161,10 @@ class App {
                 box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
                 animation: slideUp 0.4s ease-out;
             ">
-                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
 
                     <!-- Left: Key Benefits -->
-                    <div style="flex: 1; min-width: 250px; display: flex; gap: 12px; align-items: center;">
+                    <div style="flex: 1; display: flex; gap: 16px; align-items: center;">
                         <!-- Offer Badge -->
                         <div style="
                             background: linear-gradient(135deg, #E63946, #F44E5C);
@@ -188,21 +188,6 @@ class App {
                         </div>
                     </div>
 
-                    <!-- Center: Trust Badges -->
-                    <div style="display: flex; gap: 12px; align-items: center; font-size: 12px; color: rgba(255,255,255,0.8);">
-                        <div style="text-align: center;">
-                            <div style="font-size: 18px; margin-bottom: 2px;">🛡️</div>
-                            <div>完全無添加</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 18px; margin-bottom: 2px;">📦</div>
-                            <div>送料無料</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 18px; margin-bottom: 2px;">🔄</div>
-                            <div>いつでも解約</div>
-                        </div>
-                    </div>
 
                     <!-- Right: CTA Button -->
                     <div style="flex-shrink: 0;">

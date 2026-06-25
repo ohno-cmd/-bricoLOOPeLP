@@ -57,11 +57,7 @@ class SectionOffer {
                         </div>
                     </div>
 
-                    <button class="offer-cta" aria-label="今すぐ定期購入を申し込む">
-                        ${CONSTANTS.copy.ctaPrimary}
-                    </button>
-
-                    <p style="margin-top: var(--space-2xl); font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.7);">
+                    <p style="margin-top: var(--space-3xl); font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.7); text-align: center;">
                         ※ クレジットカード、銀行振込に対応しています
                     </p>
                 </div>
