@@ -19,16 +19,22 @@ class SectionIntroduction {
                     </h2>
 
                     <p class="intro-text">
-                        クラウドファンディングの支援者様、そして素晴らしい愛犬たちの変化を知っているリピーター様へ。
+                        クラウドファンディングの支援者様、<br>
+                        そして素晴らしい愛犬たちの変化を<br>
+                        知っているリピーター様へ。
                     </p>
 
                     <p class="intro-text">
-                        世界で一番大切な「その子」のために、<span class="intro-highlight">完全無添加の天然鹿内臓</span>を、
-                        在庫最優先でお届けする定期便がついに誕生しました。
+                        世界で一番大切な「その子」のために、<br>
+                        <span class="intro-highlight">完全無添加の天然鹿内臓</span>を、<br>
+                        在庫最優先でお届けする<br>
+                        定期便がついに誕生しました。
                     </p>
 
                     <p class="intro-text" style="font-size: var(--fs-lg); margin-top: var(--space-3xl); color: var(--color-primary-red);">
-                        ここは、あなたの愛犬の人生が変わる、きっかけの場所です。
+                        ここは、あなたの愛犬の<br>
+                        人生が変わる、<br>
+                        きっかけの場所です。
                     </p>
                 </div>
             </div>

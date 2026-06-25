@@ -31,26 +31,20 @@ class SectionHero {
                 </div>
 
                 <h1 class="hero-heading">
-                    犬の寿命は、<br>飼い主の選択で<br>変わります。
+                    犬の健康に最重要な<br>
+                    内臓3種セットの<br>
+                    ご案内
                 </h1>
 
                 <p class="hero-subheading">
+                    犬の寿命は、飼い主の選択で変わります。<br>
                     野生の力を秘めた天然鹿内臓が、<br>
                     愛犬の人生を180度変える
                 </p>
 
-                <div class="hero-price">
-                    初回 5,808円（税込）
-                </div>
-
-                <button class="hero-cta" aria-label="今すぐ定期購入を申し込む">
-                    ${CONSTANTS.copy.ctaPrimary}
+                <button class="hero-cta" aria-label="1か月試してみる">
+                    1か月試してみる
                 </button>
-            </div>
-
-            <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: white;" data-scroll-indicator>
-                <div style="font-size: 12px; opacity: 0.7; margin-bottom: 8px;">下にスクロール</div>
-                <div style="font-size: 20px; animation: bounce 2s infinite;">↓</div>
             </div>
         `;
 

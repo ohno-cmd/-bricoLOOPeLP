@@ -27,6 +27,7 @@ class App {
         this.setupAccessibility();
         this.setupAnalytics();
         this.setupSharing();
+        this.setupFloatingBanner();
 
         this.isInitialized = true;
         console.log('✅ bricoLOOPe LP Fully Initialized');
@@ -141,6 +142,55 @@ class App {
                 }
             });
         }
+    }
+
+    setupFloatingBanner() {
+        // Create floating banner
+        const banner = document.createElement('div');
+        banner.id = 'floating-banner';
+        banner.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #E63946, #B81C28);
+            padding: 16px;
+            z-index: 1000;
+            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            animation: slideUp 0.4s ease-out;
+        `;
+
+        const text = document.createElement('span');
+        text.style.cssText = 'color: white; font-weight: bold; font-size: 14px; flex: 1; max-width: 300px;';
+        text.textContent = '犬の健康に最重要な内臓3種セット';
+
+        const button = document.createElement('button');
+        button.textContent = '1か月試してみる';
+        button.style.cssText = `
+            background: white;
+            color: #E63946;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.2s;
+            font-size: 14px;
+        `;
+        button.onmouseover = () => button.style.transform = 'scale(1.05)';
+        button.onmouseout = () => button.style.transform = 'scale(1)';
+        button.addEventListener('click', () => {
+            SCROLL.scrollToElementById('offer-section');
+        });
+
+        banner.appendChild(text);
+        banner.appendChild(button);
+        document.body.appendChild(banner);
     }
 
     setupSharing() {

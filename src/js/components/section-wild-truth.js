@@ -31,11 +31,16 @@ class SectionWildTruth {
                                 答えは、内臓にあります。
                             </div>
                             <p class="wild-truth-explanation">
-                                肉食動物は、獲物を倒した瞬間、<span style="color: var(--color-primary-red); font-weight: var(--fw-bold);">まず最初に内臓を食べます。</span>
+                                肉食動物は、<br>
+                                獲物を倒した瞬間、<br>
+                                <span style="color: var(--color-primary-red); font-weight: var(--fw-bold);">まず最初に内臓を食べます。</span>
                             </p>
                             <p class="wild-truth-explanation">
-                                筋肉（普通のお肉）ではなく、<span style="color: var(--color-accent-gold); font-weight: var(--fw-bold);">生きた酵素・乳酸菌・ビタミンが凝縮した内臓</span>こそが、
-                                野生が教える究極の栄養源。
+                                筋肉（普通のお肉）ではなく、<br>
+                                <span style="color: var(--color-accent-gold); font-weight: var(--fw-bold);">生きた酵素・乳酸菌・<br>
+                                ビタミンが凝縮した内臓</span><br>
+                                こそが、野生が教える<br>
+                                究極の栄養源。
                             </p>
 
                             <div class="wild-truth-benefits">
