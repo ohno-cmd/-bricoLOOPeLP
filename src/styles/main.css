@@ -546,9 +546,19 @@
     text-align: center;
 }
 
-.commitment-icon {
-    font-size: var(--fs-6xl);
+.commitment-image {
+    width: 100%;
+    height: 220px;
     margin-bottom: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.commitment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .commitment-title {
