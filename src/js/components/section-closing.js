@@ -46,7 +46,7 @@ class SectionClosing {
                         この<span style="color: #E63946; font-weight: bold;">最高級の鹿肉</span>が届きますように
                     </p>
 
-                    <p style="font-size: 20px; font-weight: bold; color: var(--color-primary-red); letter-spacing: 2px;">マグ</p>
+                    <p style="font-size: 20px; font-weight: bold; color: var(--color-text-primary); letter-spacing: 2px;">マグ</p>
                 </div>
             </div>
         `;

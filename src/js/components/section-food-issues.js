@@ -135,6 +135,36 @@ class SectionFoodIssues {
                     },
                 }
             );
+
+            // Add subtle border highlight glow animation to each card on scroll
+            problems.forEach((card, index) => {
+                gsap.to(
+                    card,
+                    {
+                        boxShadow: '0 0 1px rgba(230, 57, 70, 0.3), 0 0 25px rgba(230, 57, 70, 0.2)',
+                        duration: 1.5,
+                        ease: 'sine.inOut',
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 0.2 + index * 0.15,
+                        scrollTrigger: {
+                            trigger: this.section,
+                            start: 'top 60%',
+                            end: 'bottom 20%',
+                            onEnter: () => {
+                                gsap.to(card, {
+                                    boxShadow: '0 0 1px rgba(230, 57, 70, 0.3), 0 0 25px rgba(230, 57, 70, 0.2)',
+                                    duration: 1.5,
+                                    ease: 'sine.inOut',
+                                    yoyo: true,
+                                    repeat: -1,
+                                    delay: 0.2 + index * 0.15,
+                                });
+                            },
+                        },
+                    }
+                );
+            });
         }
 
         // Info box at bottom with fade and slide

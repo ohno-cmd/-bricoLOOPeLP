@@ -54,7 +54,7 @@ class SectionOffer {
                         <div class="feature-item">
                             初回限定特典：専用スコップ付属
                         </div>
-                        <div class="feature-item">
+                        <div class="feature-item guarantee-highlight-box">
                             3ヶ月返金保証付き
                         </div>
                     </div>
@@ -93,6 +93,20 @@ class SectionOffer {
     }
 
     setupAnimations() {
+        // Add styles for guarantee highlight box
+        const style = document.createElement('style');
+        style.textContent = `
+            .guarantee-highlight-box {
+                background: rgba(230, 57, 70, 0.15) !important;
+                border-left: 4px solid #D4AF37 !important;
+                border-radius: 6px;
+                padding: var(--space-lg) !important;
+                margin: var(--space-lg) 0 !important;
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            }
+        `;
+        document.head.appendChild(style);
+
         // Heading slide-in animation
         const heading = this.section.querySelector('.offer-heading');
         if (heading) {
@@ -219,6 +233,22 @@ class SectionOffer {
                         scrub: false,
                         markers: false,
                     },
+                }
+            );
+        }
+
+        // Guarantee highlight box pulse animation
+        const guaranteeBox = this.section.querySelector('.guarantee-highlight-box');
+        if (guaranteeBox) {
+            gsap.to(
+                guaranteeBox,
+                {
+                    boxShadow: '0 0 25px rgba(212, 175, 55, 0.4)',
+                    duration: 1.5,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.4,
                 }
             );
         }

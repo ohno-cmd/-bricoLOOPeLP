@@ -66,7 +66,7 @@ class SectionCommitment {
                 </div>
             </div>
 
-            <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-light-gray); border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--color-primary-red);">
+            <div class="commitment-info-box" style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-light-gray); border-radius: var(--radius-lg); text-align: center; border-top: 4px solid var(--color-primary-red);">
                 <p style="font-size: var(--fs-lg); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
                     わたしたちが選んだのは、<br>
                     <span class="commitment-highlight" style="color: var(--color-primary-red); font-weight: var(--fw-bold); display: inline-block;">人間都合の加工をしない自然そのものの鹿の内臓</span><br>
@@ -148,7 +148,7 @@ class SectionCommitment {
         }
 
         // Info box entrance animation
-        const infoBox = this.section.querySelector('[style*="border-top"]');
+        const infoBox = this.section.querySelector('.commitment-info-box');
         if (infoBox) {
             gsap.fromTo(
                 infoBox,
@@ -165,6 +165,19 @@ class SectionCommitment {
                         scrub: false,
                         markers: false,
                     },
+                }
+            );
+
+            // Add subtle background glow pulse to info box
+            gsap.to(
+                infoBox,
+                {
+                    boxShadow: '0 0 20px rgba(230, 57, 70, 0.15)',
+                    duration: 1.8,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.3,
                 }
             );
         }

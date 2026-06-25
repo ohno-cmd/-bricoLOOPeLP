@@ -28,7 +28,9 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text">
-                        世界で一番大切な「愛犬」の為に、<span class="intro-highlight" style="color: #E63946; font-weight: bold;">完全無添加の鹿の内臓</span>を在庫最優先でお届けする定期便が遂に完成しました。
+                        世界で一番大切な「愛犬」の為に、<br>
+                        <span class="intro-highlight" style="font-size: 1.3em; display: inline-block; margin: 8px 0; padding: 8px 16px; background: rgba(230, 57, 70, 0.08); border-radius: 8px;">完全無添加の鹿肉</span><br>
+                        を在庫最優先でお届けする定期便が遂に完成しました。
                     </p>
 
                     <p class="intro-text" style="font-size: var(--fs-lg); margin-top: var(--space-3xl); color: var(--color-primary-red);">
@@ -89,33 +91,20 @@ class SectionIntroduction {
             );
         }
 
-        // Highlight text underline slide animation on scroll
+        // Highlight text entrance animation
         const highlightSpan = this.section.querySelector('.intro-highlight');
         if (highlightSpan) {
-            // Create an underline element
-            const underline = document.createElement('span');
-            underline.style.cssText = `
-                display: block;
-                height: 3px;
-                background: #E63946;
-                width: 100%;
-                margin-top: 4px;
-                transform-origin: left;
-                scaleX: 0;
-            `;
-            highlightSpan.appendChild(underline);
-
-            // Animate underline on scroll
-            gsap.to(
-                underline,
+            gsap.fromTo(
+                highlightSpan,
+                { opacity: 0, scale: 0.9 },
                 {
-                    scaleX: 1,
-                    transformOrigin: 'left center',
+                    opacity: 1,
+                    scale: 1,
                     duration: 0.8,
-                    ease: 'power2.out',
+                    ease: 'back.out',
                     scrollTrigger: {
                         trigger: highlightSpan,
-                        start: 'top 60%',
+                        start: 'top 65%',
                         end: 'top 40%',
                         scrub: false,
                         markers: false,

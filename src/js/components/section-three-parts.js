@@ -66,7 +66,7 @@ class SectionThreeParts {
                 </div>
             </div>
 
-            <div style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-primary-red); color: white; border-radius: var(--radius-lg); text-align: center; margin-left: var(--space-lg); margin-right: var(--space-lg);">
+            <div class="three-parts-callout-box" style="margin-top: var(--space-5xl); padding: var(--space-3xl); background: var(--color-primary-red); color: white; border-radius: var(--radius-lg); text-align: center; margin-left: var(--space-lg); margin-right: var(--space-lg);">
                 <p style="font-size: var(--fs-lg); line-height: var(--lh-relaxed);">
                     この3つが揃うことで、初めて<br>
                     <span class="wild-power-highlight" style="font-size: var(--fs-2xl); font-weight: var(--fw-bold); display: inline-block;">野生のチカラ</span>が解き放たれる。
@@ -168,7 +168,7 @@ class SectionThreeParts {
         }
 
         // Red callout box animation
-        const calloutBox = this.section.querySelector('[style*="background: var(--color-primary-red)"]');
+        const calloutBox = this.section.querySelector('.three-parts-callout-box');
         if (calloutBox) {
             gsap.fromTo(
                 calloutBox,
@@ -185,6 +185,19 @@ class SectionThreeParts {
                         scrub: false,
                         markers: false,
                     },
+                }
+            );
+
+            // Add glow effect animation on scroll
+            gsap.to(
+                calloutBox,
+                {
+                    boxShadow: '0 0 30px rgba(230, 57, 70, 0.6)',
+                    duration: 2,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.5,
                 }
             );
         }

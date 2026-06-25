@@ -30,11 +30,13 @@ class SectionSubscription {
                             大きく左右されます。
                         </p>
 
-                        <p class="subscription-text" style="margin-top: var(--space-3xl); font-size: var(--fs-2xl); font-weight: var(--fw-bold);">
-                            愛犬の命を支える<br>
-                            「毎日の必須栄養源」<br>
-                            だからこそ。
-                        </p>
+                        <div class="highlight-box highlight-box-subscription">
+                            <p class="subscription-text" style="margin: 0; font-size: var(--fs-2xl); font-weight: var(--fw-bold);">
+                                愛犬の命を支える<br>
+                                「毎日の必須栄養源」<br>
+                                だからこそ。
+                            </p>
+                        </div>
 
                         <p class="subscription-text" style="margin-top: var(--space-2xl);">
                             この内臓の価値を理解している愛犬家の皆様に確実に届けたい。<br>
@@ -69,6 +71,14 @@ class SectionSubscription {
                     display: block;
                 }
 
+                .highlight-box-subscription {
+                    background-color: rgba(230, 57, 70, 0.08);
+                    border-left: 4px solid #E63946;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin: var(--space-3xl) 0 0 0;
+                }
+
                 @media (max-width: 968px) {
                     .subscription-grid {
                         grid-template-columns: 1fr;
@@ -97,6 +107,28 @@ class SectionSubscription {
                         trigger: this.section,
                         start: 'top 70%',
                         end: 'top 40%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+        }
+
+        // Highlight box scale entrance animation
+        const highlightBox = this.section.querySelector('.highlight-box-subscription');
+        if (highlightBox) {
+            gsap.fromTo(
+                highlightBox,
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 55%',
+                        end: 'top 25%',
                         scrub: false,
                         markers: false,
                     },
