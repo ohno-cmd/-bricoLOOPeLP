@@ -30,12 +30,6 @@ class SectionSubscription {
                             大きく左右されます。
                         </p>
 
-                        <p class="subscription-text">
-                            大量生産は、<br>
-                            この自然の恵みを<br>
-                            破壊します。
-                        </p>
-
                         <p class="subscription-text" style="margin-top: var(--space-3xl); font-size: var(--fs-2xl); font-weight: var(--fw-bold);">
                             愛犬の命を支える<br>
                             「毎日の必須栄養源」<br>
@@ -43,7 +37,9 @@ class SectionSubscription {
                         </p>
 
                         <p class="subscription-text" style="margin-top: var(--space-2xl);">
-                            わたしたちは、<br>
+                            この内臓の価値を理解している愛犬家の皆様に確実に届けたい。<br>
+                            <br>
+                            そこで私たちは、<br>
                             <span style="color: var(--color-accent-gold); font-weight: var(--fw-bold);">在庫を最優先で確保し、<br>
                             お届けする定期便</span><br>
                             という形を選びました。

@@ -35,14 +35,15 @@ class SectionClosing {
                     </p>
 
                     <div class="closing-highlight">
-                        5年後、10年後に<br>
-                        「あの時始めてよかった」<br>
-                        そう思える選択を。
+                        オファー終了まで<br>
+                        <div id="countdown" style="font-size: 24px; font-weight: bold; color: var(--color-primary-red); margin-top: 12px;">
+                            カウントダウン中...
+                        </div>
                     </div>
 
                     <p class="closing-text" style="margin-bottom: var(--space-4xl);">
-                        野生の力を秘めた天然鹿内臓が、<br>
-                        これからあなたの愛犬の人生の一部になります。
+                        愛犬を幸せにするグッドオーナーの皆様に<br>
+                        この最高級の鹿肉が届きますように
                     </p>
                 </div>
             </div>
@@ -51,10 +52,41 @@ class SectionClosing {
         this.setupAnimations();
     }
 
+    setupCountdown() {
+        // Set target date: June 30, 2026 10:00 JST
+        const targetDate = new Date('2026-06-30T10:00:00+09:00').getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) countdownEl.textContent = 'オファー終了';
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            const countdownEl = document.getElementById('countdown');
+            if (countdownEl) {
+                countdownEl.textContent = `${days}日${hours}時間${minutes}分${seconds}秒`;
+            }
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
     setupAnimations() {
         const heading = this.section.querySelector('.closing-heading');
         const texts = this.section.querySelectorAll('.closing-text');
         const highlight = this.section.querySelector('.closing-highlight');
+
+        this.setupCountdown();
 
         if (heading) {
             gsap.fromTo(

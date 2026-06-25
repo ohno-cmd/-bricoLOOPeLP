@@ -11,19 +11,13 @@ class SectionGuarantee {
     }
 
     render() {
+        const guaranteeImage = CONSTANTS.assets.images + 'guarantee.jpg';
+
         this.section.innerHTML = `
             <div class="container">
                 <div class="guarantee-content">
-                    <div class="guarantee-badge">
-                        <div class="guarantee-seal">
-                            🏆
-                        </div>
-                        <h3 style="font-size: var(--fs-xl); color: var(--color-primary-red); margin-bottom: var(--space-lg);">
-                            3ヶ月間
-                        </h3>
-                        <p style="font-size: var(--fs-base); color: var(--color-text-secondary); line-height: var(--lh-normal);">
-                            全額返金保証
-                        </p>
+                    <div class="guarantee-badge" style="width: 100%; max-width: 300px; margin: 0 auto var(--space-3xl);">
+                        <img src="${guaranteeImage}" alt="3ヶ月全額返金保証" loading="lazy" style="width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
                     </div>
 
                     <h2 class="guarantee-heading">
@@ -73,12 +67,12 @@ class SectionGuarantee {
         if (badge) {
             gsap.fromTo(
                 badge,
-                { opacity: 0, scale: 0.8 },
+                { opacity: 0, y: 30 },
                 {
                     opacity: 1,
-                    scale: 1,
+                    y: 0,
                     duration: 0.8,
-                    ease: 'back.out',
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: this.section,
                         start: 'top 70%',
@@ -88,15 +82,6 @@ class SectionGuarantee {
                     },
                 }
             );
-
-            // Seal pulse animation
-            gsap.to(badge.querySelector('.guarantee-seal'), {
-                scale: 1.15,
-                duration: 1,
-                ease: 'sine.inOut',
-                yoyo: true,
-                repeat: -1,
-            });
         }
 
         if (heading) {

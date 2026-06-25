@@ -31,15 +31,14 @@ class SectionHero {
                 </div>
 
                 <h1 class="hero-heading">
-                    犬の健康に最重要な<br>
-                    内臓3種セットの<br>
-                    ご案内
+                    1日約194円で<br>
+                    愛犬の健康を守る
                 </h1>
 
                 <p class="hero-subheading">
                     犬の寿命は、飼い主の選択で変わります。<br>
-                    野生の力を秘めた天然鹿内臓が、<br>
-                    愛犬の人生を180度変える
+                    常識が覆される<br>
+                    内臓3種セットのご案内
                 </p>
 
                 <div style="

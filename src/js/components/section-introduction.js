@@ -15,26 +15,26 @@ class SectionIntroduction {
             <div class="container">
                 <div class="intro-content">
                     <h2 class="intro-heading">
-                        あなただけに、最初に届けたい
+                        あなただけに<br>
+                        最初に届けたい
                     </h2>
 
                     <p class="intro-text">
-                        クラウドファンディングの支援者様、<br>
-                        そして素晴らしい愛犬たちの変化を<br>
-                        知っているリピーター様へ。
+                        クラウドファンディングの支援者の皆様、そして愛犬たちの素晴らしい変化を知っているリピーターの皆様へ。
                     </p>
 
                     <p class="intro-text">
-                        世界で一番大切な「その子」のために、<br>
-                        <span class="intro-highlight">完全無添加の天然鹿内臓</span>を、<br>
-                        在庫最優先でお届けする<br>
-                        定期便がついに誕生しました。
+                        いつもbricoをご愛顧いただき誠にありがとうございます。
+                    </p>
+
+                    <p class="intro-text">
+                        世界で一番大切な「愛犬」の為に、<span class="intro-highlight">完全無添加の鹿の内臓</span>を在庫最優先でお届けする定期便が遂に完成しました。
                     </p>
 
                     <p class="intro-text" style="font-size: var(--fs-lg); margin-top: var(--space-3xl); color: var(--color-primary-red);">
-                        ここは、あなたの愛犬の<br>
-                        人生が変わる、<br>
-                        きっかけの場所です。
+                        限りのある自然の食べ物なので、<br>
+                        まずは皆様と皆様の愛犬に<br>
+                        しっかりとお届けすることを約束します。
                     </p>
                 </div>
             </div>
