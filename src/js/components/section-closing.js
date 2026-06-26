@@ -61,39 +61,35 @@ class SectionClosing {
 
         const updateCountdown = () => {
             const now = new Date().getTime();
-
-            // Before offer starts
-            if (now < startDate) {
-                const timeUntilStart = startDate - now;
-                const days = Math.floor(timeUntilStart / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeUntilStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeUntilStart % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeUntilStart % (1000 * 60)) / 1000);
-
-                const countdownEl = document.getElementById('countdown');
-                if (countdownEl) {
-                    countdownEl.textContent = `オファー開始まで ${days}日${hours}時間${minutes}分${seconds}秒`;
-                }
-                return;
-            }
+            const timeLeft = endDate - now;
 
             // After offer ends
-            const timeLeft = endDate - now;
             if (timeLeft <= 0) {
                 const countdownEl = document.getElementById('countdown');
                 if (countdownEl) countdownEl.textContent = 'オファー終了';
                 return;
             }
 
-            // During offer period
+            // Before offer starts or during offer
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+
+            // If before offer starts, show only days
+            if (now < startDate) {
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) {
+                    countdownEl.textContent = `オファー終了まで ${days}日`;
+                }
+                return;
+            }
+
+            // During offer period, show days, hours, minutes, seconds
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
             const countdownEl = document.getElementById('countdown');
             if (countdownEl) {
-                countdownEl.textContent = `${days}日${hours}時間${minutes}分${seconds}秒`;
+                countdownEl.textContent = `オファー終了まで ${days}日${hours}時間${minutes}分${seconds}秒`;
             }
         };
 
