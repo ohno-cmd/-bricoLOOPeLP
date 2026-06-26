@@ -251,10 +251,11 @@ class App {
                 max-width: 1200px;
                 margin: 0 auto;
                 padding: 8px 16px;
-                display: flex;
-                gap: 12px;
+                display: grid;
+                grid-template-columns: 1fr auto 160px;
+                grid-template-rows: auto auto;
+                gap: 12px 16px;
                 align-items: center;
-                justify-content: space-between;
                 width: 100%;
                 box-sizing: border-box;
             }
@@ -264,15 +265,16 @@ class App {
                 height: 160px;
                 object-fit: contain;
                 flex-shrink: 0;
-                order: 3;
+                grid-column: 3;
+                grid-row: 1 / 3;
             }
 
             .floating-banner-text {
-                flex: 1;
                 color: white;
                 min-width: 0;
                 text-align: left;
-                order: 1;
+                grid-column: 1;
+                grid-row: 1 / 3;
             }
 
             .floating-banner-label {
@@ -317,27 +319,37 @@ class App {
                 box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
                 letter-spacing: 0.5px;
                 transition: all 0.2s ease;
-                order: 2;
+                grid-column: 2;
+                grid-row: 1 / 3;
             }
 
             @media (max-width: 768px) {
                 .floating-banner-inner {
-                    flex-wrap: wrap;
-                    gap: 8px;
+                    grid-template-columns: 1fr 100px;
+                    grid-template-rows: auto auto;
+                    gap: 8px 10px;
                     padding: 8px 12px;
-                    justify-content: flex-start;
                 }
 
                 .floating-banner-image {
                     width: 100px;
                     height: 100px;
-                    order: 3;
+                    grid-column: 2;
+                    grid-row: 1 / 3;
                 }
 
                 .floating-banner-text {
-                    order: 1;
-                    flex: 1;
-                    min-width: 100px;
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .floating-banner-btn {
+                    grid-column: 1;
+                    grid-row: 2;
+                    width: 100%;
+                    padding: 12px 16px;
+                    font-size: 14px;
+                    margin: 0;
                 }
 
                 .floating-banner-label {
@@ -359,14 +371,6 @@ class App {
                 .floating-banner-sub {
                     font-size: 10px;
                     margin-top: 1px;
-                }
-
-                .floating-banner-btn {
-                    order: 2;
-                    width: 100%;
-                    padding: 14px 20px;
-                    font-size: 15px;
-                    margin-top: 8px;
                 }
             }
         `;
