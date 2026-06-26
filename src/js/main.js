@@ -161,33 +161,12 @@ class App {
                 box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
                 animation: slideUp 0.4s ease-out;
             ">
-                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px;">
 
-                    <!-- Left: Key Benefits -->
-                    <div style="flex: 1; display: flex; gap: 16px; align-items: center;">
-                        <!-- Offer Badge -->
-                        <div style="
-                            background: linear-gradient(135deg, #E63946, #F44E5C);
-                            color: white;
-                            padding: 8px 12px;
-                            border-radius: 6px;
-                            text-align: center;
-                            flex-shrink: 0;
-                            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
-                        ">
-                            <div style="font-weight: bold; font-size: 16px; line-height: 1;">初回</div>
-                            <div style="font-size: 13px; font-weight: bold; line-height: 1; margin-top: 2px;">20%OFF</div>
-                        </div>
-
-                        <!-- Benefits Text -->
-                        <div style="color: white; font-size: 14px; line-height: 1.5;">
-                            <div style="font-weight: bold; margin-bottom: 4px; text-decoration: line-through; opacity: 0.6;"><span style="font-size: 7px; vertical-align: baseline;">¥</span>7,260</div>
-                            <div style="font-weight: bold; margin-bottom: 4px; font-size: 16px; color: #F44E5C;"><span style="font-size: 8px; vertical-align: baseline;">¥</span>5,808</div>
-                            <div style="color: #D4AF37; font-weight: bold;">✓ 3ヶ月返金保証</div>
-                            <div style="color: rgba(255,255,255,0.8); font-size: 12px;">1日あたり約194円</div>
-                        </div>
+                    <!-- Left: Price Only -->
+                    <div style="flex: 1; color: white; font-size: 20px; font-weight: bold;">
+                        1日約194円
                     </div>
-
 
                     <!-- Right: CTA Button -->
                     <div style="flex-shrink: 0;">
@@ -195,23 +174,19 @@ class App {
                             background: linear-gradient(135deg, #E63946, #F44E5C);
                             color: white;
                             border: none;
-                            padding: 16px 32px;
+                            padding: 18px 40px;
                             border-radius: 8px;
                             font-weight: bold;
-                            font-size: 16px;
+                            font-size: 18px;
                             cursor: pointer;
                             white-space: nowrap;
                             box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
                             transition: all 0.2s;
-                            text-transform: uppercase;
                             letter-spacing: 0.5px;
                             animation: buttonPulse 2s ease-in-out infinite;
                         ">
                             1か月試してみる
                         </button>
-                        <div style="text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 6px;">
-                            3日間限定募集
-                        </div>
                     </div>
                 </div>
             </div>
