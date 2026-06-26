@@ -788,6 +788,10 @@
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
+    #header-section {
+        display: none !important;
+    }
+
     .section-hero {
         padding-top: 0 !important;
         margin-top: 0 !important;
