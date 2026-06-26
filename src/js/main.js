@@ -155,7 +155,7 @@ class App {
                 <img src="${productImagePath}" alt="3種セット" class="floating-banner-image" />
                 <div class="floating-banner-text">
                     <div class="floating-banner-label">内臓3種セット</div>
-                    <div class="floating-banner-main">1日約 <span class="floating-banner-price">194円</span> で愛犬が生まれ変わる</div>
+                    <div class="floating-banner-main">1日約<span class="floating-banner-price">194円</span>で<br>愛犬が生まれ変わる</div>
                     <div class="floating-banner-sub">2日間限定 20% OFF • 3ヶ月返金保証</div>
                 </div>
                 <button id="floating-banner-btn" class="floating-banner-btn">> 1ヶ月試してみる</button>
@@ -272,27 +272,31 @@ class App {
             }
 
             .floating-banner-label {
-                font-size: 13px;
+                font-size: 12px;
                 color: rgba(255, 255, 255, 0.7);
-                margin-bottom: 4px;
+                margin-bottom: 2px;
+                line-height: 1;
             }
 
             .floating-banner-main {
-                font-size: 18px;
+                font-size: 22px;
                 font-weight: 700;
                 color: white;
-                line-height: 1.3;
+                line-height: 1.2;
+                margin-bottom: 2px;
             }
 
             .floating-banner-price {
                 color: #E63946;
-                font-size: 22px;
+                font-size: 26px;
+                margin: 0 2px;
             }
 
             .floating-banner-sub {
-                font-size: 12px;
+                font-size: 11px;
                 color: rgba(255, 255, 255, 0.7);
-                margin-top: 6px;
+                margin-top: 2px;
+                line-height: 1.1;
             }
 
             .floating-banner-btn {
@@ -331,19 +335,24 @@ class App {
                 }
 
                 .floating-banner-label {
-                    font-size: 11px;
+                    font-size: 10px;
+                    margin-bottom: 1px;
                 }
 
                 .floating-banner-main {
-                    font-size: 15px;
+                    font-size: 18px;
+                    margin-bottom: 1px;
+                    line-height: 1.15;
                 }
 
                 .floating-banner-price {
-                    font-size: 18px;
+                    font-size: 22px;
+                    margin: 0 1px;
                 }
 
                 .floating-banner-sub {
-                    font-size: 11px;
+                    font-size: 10px;
+                    margin-top: 1px;
                 }
 
                 .floating-banner-btn {
