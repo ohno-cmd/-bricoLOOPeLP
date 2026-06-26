@@ -55,19 +55,37 @@ class SectionClosing {
     }
 
     setupCountdown() {
-        // Set target date: June 28, 2026 10:30 JST
-        const targetDate = new Date('2026-06-28T10:30:00+09:00').getTime();
+        // Offer period: June 27, 2026 10:30 ~ June 28, 2026 10:30 JST
+        const startDate = new Date('2026-06-27T10:30:00+09:00').getTime();
+        const endDate = new Date('2026-06-28T10:30:00+09:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
-            const timeLeft = targetDate - now;
 
+            // Before offer starts
+            if (now < startDate) {
+                const timeUntilStart = startDate - now;
+                const days = Math.floor(timeUntilStart / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeUntilStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeUntilStart % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeUntilStart % (1000 * 60)) / 1000);
+
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) {
+                    countdownEl.textContent = `オファー開始まで ${days}日${hours}時間${minutes}分${seconds}秒`;
+                }
+                return;
+            }
+
+            // After offer ends
+            const timeLeft = endDate - now;
             if (timeLeft <= 0) {
                 const countdownEl = document.getElementById('countdown');
                 if (countdownEl) countdownEl.textContent = 'オファー終了';
                 return;
             }
 
+            // During offer period
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
