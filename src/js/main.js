@@ -208,14 +208,14 @@ class App {
                 SCROLL.scrollToElementById('offer-section');
             });
 
-            // Continuous pulse animation
+            // Continuous breathing animation (always active)
             gsap.to(btn, {
-                boxShadow: '0 2px 20px rgba(230, 57, 70, 0.6)',
-                duration: 2,
+                scale: 1.08,
+                boxShadow: '0 4px 16px rgba(230, 57, 70, 0.6)',
+                duration: 1.5,
                 ease: 'sine.inOut',
                 yoyo: true,
                 repeat: -1,
-                delay: 0.5,
             });
         }
 
@@ -259,8 +259,8 @@ class App {
             }
 
             .floating-banner-image {
-                width: 130px;
-                height: 130px;
+                width: 150px;
+                height: 150px;
                 object-fit: contain;
                 flex-shrink: 0;
             }
@@ -299,15 +299,16 @@ class App {
                 background: #E63946;
                 color: white;
                 border: none;
-                padding: 12px 20px;
-                border-radius: 6px;
-                font-weight: 600;
-                font-size: 14px;
+                padding: 16px 32px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 16px;
                 cursor: pointer;
                 white-space: nowrap;
                 flex-shrink: 0;
                 box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
-                letter-spacing: 0.3px;
+                letter-spacing: 0.5px;
+                transition: all 0.2s ease;
             }
 
             @media (max-width: 768px) {
@@ -318,8 +319,8 @@ class App {
                 }
 
                 .floating-banner-image {
-                    width: 90px;
-                    height: 90px;
+                    width: 110px;
+                    height: 110px;
                     order: 1;
                 }
 
@@ -348,8 +349,8 @@ class App {
                 .floating-banner-btn {
                     order: 3;
                     width: 100%;
-                    padding: 10px 16px;
-                    font-size: 13px;
+                    padding: 14px 20px;
+                    font-size: 15px;
                 }
             }
         `;
