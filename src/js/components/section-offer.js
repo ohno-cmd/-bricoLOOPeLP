@@ -26,14 +26,14 @@ class SectionOffer {
                             <span style="font-size: 1.75rem; line-height: 1;">¥</span><span style="font-size: 3.5rem; line-height: 1;">5,808</span>
                         </div>
                         <div class="offer-price-note">
-                            税込 / 通常送料880円（税込）が特別価格で500円（税込）
+                            ¥5,808(税込)<br>
+                            通常送料880円(税込)が<br>
+                            特別価格500円(税込)
                         </div>
                         <div class="offer-price-details">
-                            <p style="margin-bottom: var(--space-lg); color: #D4AF37; font-weight: bold; font-size: 16px;">
-                                1日あたり約194円
-                            </p>
-                            <p style="margin-bottom: var(--space-lg);">
-                                <strong>2回目以降：¥6,534（税込）/ 1日約218円</strong>
+                            <p style="margin-bottom: var(--space-lg); color: #D4AF37; font-weight: bold; font-size: 16px; margin-top: var(--space-lg);">
+                                <br>2回目以降：¥6,534(税込)<br>
+                                1日約218円
                             </p>
                             <p style="background: rgba(255,255,255,0.1); padding: var(--space-lg); border-radius: var(--radius-md); border-left: 3px solid #D4AF37;">
                                 <strong>コーヒー1杯分の価格で、<br>愛犬の人生が変わります。</strong>
