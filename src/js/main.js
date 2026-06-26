@@ -145,8 +145,9 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create premium floating banner with HTML/CSS
-        const productImagePath = CONSTANTS.assets.images + '3set.png';
+        // Create floating banner with image
+        const bannerImagePath = CONSTANTS.assets.images + 'banner.jpg';
+        console.log('🎯 Floating Banner Path:', bannerImagePath);
 
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
@@ -156,129 +157,49 @@ class App {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-                padding: 24px 16px;
                 z-index: 1000;
                 animation: slideUp 0.4s ease-out;
-                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
             ">
-                <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center;">
-
-                    <!-- Left: Text Content -->
-                    <div style="color: white;">
-                        <!-- Ribbon Text -->
-                        <div style="
-                            font-size: 14px;
-                            color: #2c2c2c;
-                            background: #E8D5B7;
-                            padding: 6px 16px;
-                            border-radius: 20px;
-                            display: inline-block;
-                            margin-bottom: 12px;
-                            font-weight: 600;
-                            letter-spacing: 0.5px;
-                        ">
-                            内臓3種セットを
-                        </div>
-
-                        <!-- Main Headline -->
-                        <div style="font-size: 32px; font-weight: 700; color: #D4AF37; margin-bottom: 8px; line-height: 1.3;">
-                            1日約<span style="font-size: 42px;">194</span>円で
-                        </div>
-
-                        <!-- Subheading -->
-                        <div style="
-                            font-size: 24px;
-                            color: #D4AF37;
-                            font-style: italic;
-                            font-weight: 500;
-                            margin-bottom: 16px;
-                            letter-spacing: 1px;
-                        ">
-                            愛犬が生まれ変わる
-                        </div>
-
-                        <!-- Divider -->
-                        <div style="
-                            border-top: 2px dotted rgba(255, 255, 255, 0.3);
-                            margin: 16px 0;
-                        "></div>
-
-                        <!-- Secondary Info -->
-                        <div style="color: rgba(255, 255, 255, 0.8); font-size: 13px;">
-                            2日間限定 20% OFF • 3ヶ月返金保証
-                        </div>
-                    </div>
-
-                    <!-- Center: Product Image -->
-                    <div style="position: relative; width: 200px; height: 140px; flex-shrink: 0;">
-                        <img
-                            src="${productImagePath}"
-                            alt="3種セット"
-                            style="
-                                width: 100%;
-                                height: auto;
-                                max-height: 140px;
-                                object-fit: contain;
-                            "
-                        />
-                    </div>
-
-                    <!-- Right: CTA Button -->
-                    <div style="flex-shrink: 0;">
-                        <button id="floating-cta-btn" style="
-                            background: #999999;
-                            color: #2c2c2c;
-                            border: none;
-                            padding: 16px 32px;
-                            border-radius: 28px;
-                            font-weight: 600;
-                            font-size: 16px;
-                            cursor: pointer;
-                            white-space: nowrap;
-                            transition: all 0.2s ease;
-                            letter-spacing: 0.5px;
-                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                            min-width: 180px;
-                        ">
-                            > 1ヶ月試してみる
-                        </button>
-                    </div>
-                </div>
+                <img
+                    id="floating-banner-img"
+                    src="${bannerImagePath}"
+                    alt="bricoLOOPe フローティングバナー"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    "
+                    onload="console.log('✓ Banner image loaded')"
+                    onerror="console.error('✗ Banner image failed to load:', '${bannerImagePath}')"
+                />
             </div>
         `;
 
         document.body.appendChild(banner);
-        console.log('✓ Floating banner created with HTML');
+        console.log('✓ Floating banner created');
 
-        // Setup button interaction with animations
-        const btn = document.getElementById('floating-cta-btn');
-        if (btn) {
+        // Setup banner interaction with animations
+        const bannerImg = document.getElementById('floating-banner-img');
+        if (bannerImg) {
             // Hover effect
-            btn.addEventListener('mouseover', () => {
-                gsap.to(btn, {
-                    background: '#888888',
-                    boxShadow: '0 6px 16px rgba(0, 0, 0, 0.3)',
-                    duration: 0.2
-                });
+            bannerImg.addEventListener('mouseover', () => {
+                gsap.to(bannerImg, { opacity: 0.95, duration: 0.2 });
             });
 
-            btn.addEventListener('mouseout', () => {
-                gsap.to(btn, {
-                    background: '#999999',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                    duration: 0.2
-                });
+            bannerImg.addEventListener('mouseout', () => {
+                gsap.to(bannerImg, { opacity: 1, duration: 0.2 });
             });
 
             // Click handler
-            btn.addEventListener('click', () => {
+            bannerImg.addEventListener('click', () => {
                 SCROLL.scrollToElementById('offer-section');
             });
 
             // Continuous pulse animation
-            gsap.to(btn, {
-                boxShadow: '0 4px 16px rgba(230, 57, 70, 0.3)',
+            gsap.to(bannerImg, {
+                boxShadow: '0 -4px 20px rgba(230, 57, 70, 0.3)',
                 duration: 2,
                 ease: 'sine.inOut',
                 yoyo: true,
@@ -287,7 +208,7 @@ class App {
             });
         }
 
-        // Add CSS keyframes and responsive styles
+        // Add CSS keyframes
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideUp {
@@ -298,27 +219,6 @@ class App {
                 to {
                     transform: translateY(0);
                     opacity: 1;
-                }
-            }
-
-            @media (max-width: 768px) {
-                #floating-banner {
-                    padding: 16px 12px !important;
-                }
-
-                #floating-banner > div {
-                    grid-template-columns: 1fr !important;
-                    gap: 16px !important;
-                }
-
-                #floating-banner > div > div:last-child {
-                    width: 100% !important;
-                }
-
-                #floating-banner button {
-                    width: 100% !important;
-                    padding: 14px 24px !important;
-                    font-size: 14px !important;
                 }
             }
         `;
