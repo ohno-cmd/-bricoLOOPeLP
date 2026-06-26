@@ -145,7 +145,8 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create simple, natural floating banner
+        // Create floating banner with image
+        const bannerImagePath = CONSTANTS.assets.images + 'banner.jpg';
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
@@ -154,83 +155,36 @@ class App {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: #1a1a1a;
-                border-top: 2px solid #E63946;
-                padding: 20px 16px;
                 z-index: 1000;
-                box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
                 animation: slideUp 0.4s ease-out;
             ">
-                <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;">
-
-                    <!-- Left: Product Info -->
-                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;">
-
-                        <!-- Product Badge -->
-                        <div style="
-                            background: rgba(255, 255, 255, 0.08);
-                            border: 1px solid rgba(230, 57, 70, 0.3);
-                            border-radius: 6px;
-                            padding: 12px 16px;
-                            text-align: center;
-                            white-space: nowrap;
-                            flex-shrink: 0;
-                        ">
-                            <div style="color: rgba(255, 255, 255, 0.7); font-size: 12px; letter-spacing: 0.5px;">内臓</div>
-                            <div style="color: white; font-size: 16px; font-weight: 600; margin-top: 4px;">3種セット</div>
-                        </div>
-
-                        <!-- Text Content -->
-                        <div style="color: white; line-height: 1.6;">
-                            <div style="font-size: 15px; margin-bottom: 8px;">
-                                1日約 <span style="font-size: 18px; font-weight: 700; color: #E63946;">194円</span> で 愛犬が生まれ変わる
-                            </div>
-                            <div style="display: flex; gap: 16px; font-size: 13px; color: rgba(255, 255, 255, 0.8);">
-                                <span style="color: #E63946; font-weight: 600;">2日間限定 20% OFF</span>
-                                <span>•</span>
-                                <span>3ヶ月返金保証</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Button -->
-                    <div style="flex-shrink: 0;">
-                        <button id="floating-cta-btn" style="
-                            background: #E63946;
-                            color: white;
-                            border: none;
-                            padding: 14px 28px;
-                            border-radius: 6px;
-                            font-weight: 600;
-                            font-size: 15px;
-                            cursor: pointer;
-                            white-space: nowrap;
-                            transition: all 0.2s ease;
-                            letter-spacing: 0.3px;
-                            box-shadow: 0 2px 8px rgba(230, 57, 70, 0.25);
-                        ">
-                            > 1ヶ月試してみる
-                        </button>
-                    </div>
-
-                </div>
+                <img
+                    id="floating-banner-img"
+                    src="${bannerImagePath}"
+                    alt="bricoLOOPe フローティングバナー"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        cursor: pointer;
+                        transition: opacity 0.2s ease;
+                    "
+                />
             </div>
         `;
 
         document.body.appendChild(banner);
 
-        // Setup button interaction
-        const btn = document.getElementById('floating-cta-btn');
-        if (btn) {
-            btn.addEventListener('mouseover', () => {
-                btn.style.background = '#d32c38';
-                btn.style.boxShadow = '0 4px 12px rgba(230, 57, 70, 0.35)';
+        // Setup banner interaction
+        const bannerImg = document.getElementById('floating-banner-img');
+        if (bannerImg) {
+            bannerImg.addEventListener('mouseover', () => {
+                bannerImg.style.opacity = '0.95';
             });
-            btn.addEventListener('mouseout', () => {
-                btn.style.background = '#E63946';
-                btn.style.boxShadow = '0 2px 8px rgba(230, 57, 70, 0.25)';
+            bannerImg.addEventListener('mouseout', () => {
+                bannerImg.style.opacity = '1';
             });
-            btn.addEventListener('click', () => {
+            bannerImg.addEventListener('click', () => {
                 SCROLL.scrollToElementById('offer-section');
             });
         }
@@ -249,31 +203,6 @@ class App {
                 }
             }
 
-            @media (max-width: 768px) {
-                #floating-banner {
-                    padding: 16px 12px !important;
-                }
-
-                #floating-banner > div {
-                    grid-template-columns: 1fr !important;
-                    gap: 16px !important;
-                }
-
-                #floating-banner > div > div:first-child {
-                    grid-template-columns: 1fr !important;
-                    gap: 12px !important;
-                }
-
-                #floating-banner > div > div:first-child > div:first-child {
-                    padding: 10px 12px !important;
-                }
-
-                #floating-banner button {
-                    width: 100%;
-                    padding: 16px 20px !important;
-                    font-size: 14px !important;
-                }
-            }
         `;
         document.head.appendChild(style);
     }
