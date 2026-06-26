@@ -145,84 +145,20 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create premium floating banner with LP color harmony
+        // Create code-based floating banner matching LP colors
         const productImagePath = CONSTANTS.assets.images + '3set.png';
 
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
-            <div style="
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: #1A1A1A;
-                border-top: 2px solid #E63946;
-                padding: 16px;
-                z-index: 1000;
-                animation: slideUp 0.4s ease-out;
-                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
-            ">
-                <div style="
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    display: grid;
-                    grid-template-columns: auto 1fr auto;
-                    gap: 24px;
-                    align-items: center;
-                ">
-                    <!-- Product Image -->
-                    <div style="
-                        flex-shrink: 0;
-                        width: 100px;
-                        height: 100px;
-                    ">
-                        <img
-                            src="${productImagePath}"
-                            alt="3種セット"
-                            style="
-                                width: 100%;
-                                height: 100%;
-                                object-fit: contain;
-                            "
-                        />
-                    </div>
-
-                    <!-- Text Content -->
-                    <div style="color: white; line-height: 1.6;">
-                        <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); margin-bottom: 4px;">
-                            内臓3種セット
-                        </div>
-                        <div style="font-size: 18px; font-weight: 700; color: white;">
-                            1日約 <span style="color: #E63946; font-size: 22px;">194円</span> で愛犬が生まれ変わる
-                        </div>
-                        <div style="font-size: 12px; color: rgba(255, 255, 255, 0.7); margin-top: 6px;">
-                            2日間限定 20% OFF • 3ヶ月返金保証
-                        </div>
-                    </div>
-
-                    <!-- CTA Button -->
-                    <button
-                        id="floating-banner-btn"
-                        style="
-                            flex-shrink: 0;
-                            background: #E63946;
-                            color: white;
-                            border: none;
-                            padding: 12px 24px;
-                            border-radius: 6px;
-                            font-weight: 600;
-                            font-size: 14px;
-                            cursor: pointer;
-                            white-space: nowrap;
-                            transition: all 0.2s ease;
-                            box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
-                            letter-spacing: 0.3px;
-                        "
-                    >
-                        > 1ヶ月試してみる
-                    </button>
+            <div class="floating-banner-inner">
+                <img src="${productImagePath}" alt="3種セット" class="floating-banner-image" />
+                <div class="floating-banner-text">
+                    <div class="floating-banner-label">内臓3種セット</div>
+                    <div class="floating-banner-main">1日約 <span class="floating-banner-price">194円</span> で愛犬が生まれ変わる</div>
+                    <div class="floating-banner-sub">2日間限定 20% OFF • 3ヶ月返金保証</div>
                 </div>
+                <button id="floating-banner-btn" class="floating-banner-btn">> 1ヶ月試してみる</button>
             </div>
         `;
 
@@ -265,7 +201,7 @@ class App {
             });
         }
 
-        // Add CSS keyframes and responsive styles
+        // Add CSS styles
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideUp {
@@ -279,41 +215,123 @@ class App {
                 }
             }
 
+            #floating-banner {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #1A1A1A;
+                border-top: 2px solid #E63946;
+                z-index: 1000;
+                animation: slideUp 0.4s ease-out;
+                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .floating-banner-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 12px 16px;
+                display: flex;
+                gap: 16px;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .floating-banner-image {
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                flex-shrink: 0;
+            }
+
+            .floating-banner-text {
+                flex: 1;
+                color: white;
+                min-width: 0;
+            }
+
+            .floating-banner-label {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 4px;
+            }
+
+            .floating-banner-main {
+                font-size: 18px;
+                font-weight: 700;
+                color: white;
+                line-height: 1.3;
+            }
+
+            .floating-banner-price {
+                color: #E63946;
+                font-size: 22px;
+            }
+
+            .floating-banner-sub {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.7);
+                margin-top: 6px;
+            }
+
+            .floating-banner-btn {
+                background: #E63946;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                cursor: pointer;
+                white-space: nowrap;
+                flex-shrink: 0;
+                box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+                letter-spacing: 0.3px;
+            }
+
             @media (max-width: 768px) {
-                #floating-banner > div {
-                    grid-template-columns: auto 1fr !important;
-                    gap: 12px !important;
-                    padding: 12px !important;
+                .floating-banner-inner {
+                    flex-wrap: wrap;
+                    gap: 12px;
+                    padding: 12px;
                 }
 
-                #floating-banner-btn {
-                    grid-column: 1 / -1 !important;
-                    width: 100% !important;
+                .floating-banner-image {
+                    width: 70px;
+                    height: 70px;
+                    order: 1;
                 }
 
-                #floating-banner > div > div:nth-child(1) {
-                    width: 70px !important;
-                    height: 70px !important;
+                .floating-banner-text {
+                    order: 2;
+                    flex: 1;
+                    min-width: 200px;
                 }
 
-                #floating-banner > div > div:nth-child(2) {
-                    font-size: 14px !important;
+                .floating-banner-label {
+                    font-size: 11px;
                 }
 
-                #floating-banner > div > div:nth-child(2) > div:first-child {
-                    font-size: 12px !important;
+                .floating-banner-main {
+                    font-size: 15px;
                 }
 
-                #floating-banner > div > div:nth-child(2) > div:nth-child(2) {
-                    font-size: 15px !important;
+                .floating-banner-price {
+                    font-size: 18px;
                 }
 
-                #floating-banner > div > div:nth-child(2) > div:nth-child(2) span {
-                    font-size: 18px !important;
+                .floating-banner-sub {
+                    font-size: 11px;
                 }
 
-                #floating-banner > div > div:nth-child(2) > div:nth-child(3) {
-                    font-size: 11px !important;
+                .floating-banner-btn {
+                    order: 3;
+                    width: 100%;
+                    padding: 10px 16px;
+                    font-size: 13px;
                 }
             }
         `;
