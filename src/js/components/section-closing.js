@@ -35,7 +35,6 @@ class SectionClosing {
                     </p>
 
                     <div class="closing-highlight">
-                        オファー終了まで<br>
                         <div id="countdown" style="font-size: 24px; font-weight: bold; color: var(--color-primary-red); margin-top: 12px;">
                             カウントダウン中...
                         </div>
