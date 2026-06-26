@@ -54,8 +54,8 @@ class SectionClosing {
     }
 
     setupCountdown() {
-        // Offer period: June 27, 2026 10:30 ~ June 29, 2026 10:30 JST
-        const endDate = new Date('2026-06-29T10:30:00+09:00').getTime();
+        // Offer period: June 27, 2026 10:30 ~ June 28, 2026 22:00 JST
+        const endDate = new Date('2026-06-28T22:00:00+09:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
