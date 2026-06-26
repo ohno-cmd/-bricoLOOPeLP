@@ -184,13 +184,23 @@ class App {
         const bannerImg = document.getElementById('floating-banner-img');
         if (bannerImg) {
             bannerImg.addEventListener('mouseover', () => {
-                bannerImg.style.opacity = '0.95';
+                gsap.to(bannerImg, { opacity: 0.95, duration: 0.2 });
             });
             bannerImg.addEventListener('mouseout', () => {
-                bannerImg.style.opacity = '1';
+                gsap.to(bannerImg, { opacity: 1, duration: 0.2 });
             });
             bannerImg.addEventListener('click', () => {
                 SCROLL.scrollToElementById('offer-section');
+            });
+
+            // Add subtle pulse animation to banner
+            gsap.to(bannerImg, {
+                boxShadow: '0 -4px 20px rgba(230, 57, 70, 0.3)',
+                duration: 2,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+                delay: 0.5,
             });
         }
 
