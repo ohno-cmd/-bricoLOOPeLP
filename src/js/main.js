@@ -205,7 +205,10 @@ class App {
                         duration: 0.1
                     }, 0.3);
 
-                SCROLL.scrollToElementById('offer-section');
+                // Navigate to external link
+                setTimeout(() => {
+                    window.location.href = 'https://bricodog.official.ec/items/148533123';
+                }, 100);
             });
 
             // Continuous breathing animation (always active)
