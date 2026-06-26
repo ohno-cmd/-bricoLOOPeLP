@@ -65,7 +65,7 @@ class SectionTimeline {
                 <!-- Dog Video Showcase -->
                 <div style="margin-top: var(--space-5xl); text-align: center;">
                     <video
-                        style="max-width: 100%; max-height: 500px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);"
+                        style="width: 100%; max-height: 500px; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);"
                         autoplay
                         muted
                         playsinline
@@ -74,6 +74,9 @@ class SectionTimeline {
                     >
                         <source src="${dogVideoPath}" type="video/mp4">
                     </video>
+                    <p style="margin-top: 12px; font-size: 13px; color: var(--color-text-secondary); font-weight: 500;">
+                        LOOPe試食シーン
+                    </p>
                 </div>
             </div>
         `;
