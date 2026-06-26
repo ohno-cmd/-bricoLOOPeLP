@@ -24,7 +24,7 @@ class SectionWildTruth {
 
                     <div class="wild-truth-grid">
                         <div data-animate="image-reveal" style="cursor: pointer;">
-                            <img src="${rawOrgansImage}" alt="天然の鹿内臓" class="wild-truth-image wild-truth-image-clickable" loading="lazy" style="opacity: 0.7; transition: opacity 0.3s ease;">
+                            <img src="${rawOrgansImage}" alt="天然の鹿内臓" class="wild-truth-image wild-truth-image-clickable" loading="lazy" style="opacity: 0.7; transition: all 0.3s ease; filter: blur(10px);">
                             <div style="text-align: center; margin-top: 8px; font-size: 12px; color: var(--color-text-secondary);">
                                 内臓の画像を見る
                             </div>
@@ -135,9 +135,11 @@ class SectionWildTruth {
                 this.showImageModal(clickableImage.src);
             });
             clickableImage.addEventListener('mouseenter', () => {
+                clickableImage.style.filter = 'blur(0px)';
                 gsap.to(clickableImage, { opacity: 1, duration: 0.2 });
             });
             clickableImage.addEventListener('mouseleave', () => {
+                clickableImage.style.filter = 'blur(10px)';
                 gsap.to(clickableImage, { opacity: 0.7, duration: 0.2 });
             });
         }
