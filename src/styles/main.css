@@ -35,7 +35,6 @@
     position: relative;
     overflow: hidden;
     color: white;
-    padding-top: 60px;
 }
 
 .hero-video-bg {
@@ -790,7 +789,8 @@
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
     .section-hero {
-        padding-top: 60px;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
     }
 
     .hero-heading {
