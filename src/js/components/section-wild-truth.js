@@ -26,7 +26,7 @@ class SectionWildTruth {
                         <div data-animate="image-reveal" style="cursor: pointer;">
                             <img src="${rawOrgansImage}" alt="天然の鹿内臓" class="wild-truth-image wild-truth-image-clickable" loading="lazy" style="opacity: 0.7; transition: all 0.3s ease; filter: blur(10px);">
                             <div style="text-align: center; margin-top: 12px; font-size: 14px; color: #E63946; font-weight: bold;">
-                                ☝ あよとタップして内臓の画像を見る
+                                ☝ タップして内臓の画像を見る
                             </div>
                         </div>
                         <div class="wild-truth-content">
