@@ -250,25 +250,29 @@ class App {
             .floating-banner-inner {
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 12px 16px;
+                padding: 8px 16px;
                 display: flex;
-                gap: 16px;
+                gap: 12px;
                 align-items: center;
+                justify-content: space-between;
                 width: 100%;
                 box-sizing: border-box;
             }
 
             .floating-banner-image {
-                width: 150px;
-                height: 150px;
+                width: 160px;
+                height: 160px;
                 object-fit: contain;
                 flex-shrink: 0;
+                order: 3;
             }
 
             .floating-banner-text {
                 flex: 1;
                 color: white;
                 min-width: 0;
+                text-align: left;
+                order: 1;
             }
 
             .floating-banner-label {
@@ -313,25 +317,27 @@ class App {
                 box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
                 letter-spacing: 0.5px;
                 transition: all 0.2s ease;
+                order: 2;
             }
 
             @media (max-width: 768px) {
                 .floating-banner-inner {
                     flex-wrap: wrap;
-                    gap: 12px;
-                    padding: 12px;
+                    gap: 8px;
+                    padding: 8px 12px;
+                    justify-content: flex-start;
                 }
 
                 .floating-banner-image {
-                    width: 110px;
-                    height: 110px;
-                    order: 1;
+                    width: 100px;
+                    height: 100px;
+                    order: 3;
                 }
 
                 .floating-banner-text {
-                    order: 2;
+                    order: 1;
                     flex: 1;
-                    min-width: 200px;
+                    min-width: 100px;
                 }
 
                 .floating-banner-label {
@@ -356,10 +362,11 @@ class App {
                 }
 
                 .floating-banner-btn {
-                    order: 3;
+                    order: 2;
                     width: 100%;
                     padding: 14px 20px;
                     font-size: 15px;
+                    margin-top: 8px;
                 }
             }
         `;
