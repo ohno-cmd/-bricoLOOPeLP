@@ -145,7 +145,7 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create premium floating banner for CVR optimization
+        // Create simple, natural floating banner
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
@@ -154,40 +154,65 @@ class App {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-                border-top: 3px solid #E63946;
-                padding: 18px 16px;
+                background: #1a1a1a;
+                border-top: 2px solid #E63946;
+                padding: 20px 16px;
                 z-index: 1000;
-                box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
                 animation: slideUp 0.4s ease-out;
             ">
-                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px;">
+                <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;">
 
-                    <!-- Left: Price Only -->
-                    <div style="flex: 1; color: white; font-size: 20px; font-weight: bold;">
-                        1日約194円
+                    <!-- Left: Product Info -->
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;">
+
+                        <!-- Product Badge -->
+                        <div style="
+                            background: rgba(255, 255, 255, 0.08);
+                            border: 1px solid rgba(230, 57, 70, 0.3);
+                            border-radius: 6px;
+                            padding: 12px 16px;
+                            text-align: center;
+                            white-space: nowrap;
+                            flex-shrink: 0;
+                        ">
+                            <div style="color: rgba(255, 255, 255, 0.7); font-size: 12px; letter-spacing: 0.5px;">内臓</div>
+                            <div style="color: white; font-size: 16px; font-weight: 600; margin-top: 4px;">3種セット</div>
+                        </div>
+
+                        <!-- Text Content -->
+                        <div style="color: white; line-height: 1.6;">
+                            <div style="font-size: 15px; margin-bottom: 8px;">
+                                1日約 <span style="font-size: 18px; font-weight: 700; color: #E63946;">194円</span> で 愛犬が生まれ変わる
+                            </div>
+                            <div style="display: flex; gap: 16px; font-size: 13px; color: rgba(255, 255, 255, 0.8);">
+                                <span style="color: #E63946; font-weight: 600;">2日間限定 20% OFF</span>
+                                <span>•</span>
+                                <span>3ヶ月返金保証</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Right: CTA Button -->
+                    <!-- Right: Button -->
                     <div style="flex-shrink: 0;">
                         <button id="floating-cta-btn" style="
-                            background: linear-gradient(135deg, #E63946, #F44E5C);
+                            background: #E63946;
                             color: white;
                             border: none;
-                            padding: 18px 40px;
-                            border-radius: 8px;
-                            font-weight: bold;
-                            font-size: 18px;
+                            padding: 14px 28px;
+                            border-radius: 6px;
+                            font-weight: 600;
+                            font-size: 15px;
                             cursor: pointer;
                             white-space: nowrap;
-                            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
-                            transition: all 0.2s;
-                            letter-spacing: 0.5px;
-                            animation: buttonPulse 2s ease-in-out infinite;
+                            transition: all 0.2s ease;
+                            letter-spacing: 0.3px;
+                            box-shadow: 0 2px 8px rgba(230, 57, 70, 0.25);
                         ">
-                            1か月試してみる
+                            > 1ヶ月試してみる
                         </button>
                     </div>
+
                 </div>
             </div>
         `;
@@ -198,12 +223,12 @@ class App {
         const btn = document.getElementById('floating-cta-btn');
         if (btn) {
             btn.addEventListener('mouseover', () => {
-                btn.style.transform = 'translateY(-2px)';
-                btn.style.boxShadow = '0 10px 28px rgba(230, 57, 70, 0.5)';
+                btn.style.background = '#d32c38';
+                btn.style.boxShadow = '0 4px 12px rgba(230, 57, 70, 0.35)';
             });
             btn.addEventListener('mouseout', () => {
-                btn.style.transform = 'translateY(0)';
-                btn.style.boxShadow = '0 6px 20px rgba(230, 57, 70, 0.4)';
+                btn.style.background = '#E63946';
+                btn.style.boxShadow = '0 2px 8px rgba(230, 57, 70, 0.25)';
             });
             btn.addEventListener('click', () => {
                 SCROLL.scrollToElementById('offer-section');
@@ -224,29 +249,29 @@ class App {
                 }
             }
 
-            @keyframes buttonPulse {
-                0%, 100% {
-                    transform: scale(1);
-                    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
-                }
-                50% {
-                    transform: scale(1.05);
-                    box-shadow: 0 8px 28px rgba(230, 57, 70, 0.6);
-                }
-            }
-
             @media (max-width: 768px) {
                 #floating-banner {
+                    padding: 16px 12px !important;
+                }
+
+                #floating-banner > div {
+                    grid-template-columns: 1fr !important;
+                    gap: 16px !important;
+                }
+
+                #floating-banner > div > div:first-child {
+                    grid-template-columns: 1fr !important;
+                    gap: 12px !important;
+                }
+
+                #floating-banner > div > div:first-child > div:first-child {
                     padding: 10px 12px !important;
                 }
 
-                #floating-banner > div > div {
-                    gap: 8px !important;
-                }
-
                 #floating-banner button {
-                    padding: 12px 20px !important;
-                    font-size: 13px !important;
+                    width: 100%;
+                    padding: 16px 20px !important;
+                    font-size: 14px !important;
                 }
             }
         `;
