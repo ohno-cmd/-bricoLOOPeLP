@@ -135,7 +135,7 @@
     font-size: var(--fs-3xl);
     font-weight: var(--fw-bold);
     line-height: 1.3;
-    color: var(--color-text-primary);
+    color: #1A1A1A;
     margin-bottom: var(--space-3xl);
 }
 
@@ -318,7 +318,7 @@
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     margin-bottom: var(--space-5xl);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
 }
 
 .parts-grid {
@@ -371,7 +371,7 @@
 .part-card-subtitle {
     font-size: var(--fs-xl);
     font-weight: var(--fw-semibold);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
     margin-bottom: var(--space-lg);
 }
 
@@ -466,7 +466,7 @@
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     margin-bottom: var(--space-5xl);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
 }
 
 .reviews-container {
@@ -515,7 +515,7 @@
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     margin-bottom: var(--space-5xl);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
 }
 
 .commitment-grid {
@@ -554,7 +554,7 @@
 .commitment-title {
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
     margin-bottom: var(--space-lg);
 }
 
@@ -713,7 +713,7 @@
 .guarantee-period {
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    color: var(--color-text-primary);
+    color: #1A1A1A;
     margin-bottom: var(--space-2xl);
 }
 
