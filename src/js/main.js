@@ -250,31 +250,34 @@ class App {
             .floating-banner-inner {
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 8px 16px;
+                padding: 0;
                 display: grid;
-                grid-template-columns: 1fr auto 160px;
-                grid-template-rows: auto auto;
-                gap: 12px 16px;
+                grid-template-columns: 140px 1fr auto;
+                grid-template-rows: 1fr;
+                gap: 0;
                 align-items: center;
                 width: 100%;
                 box-sizing: border-box;
+                height: 100%;
             }
 
             .floating-banner-image {
-                width: 160px;
-                height: 160px;
+                width: 140px;
+                height: 140px;
                 object-fit: contain;
                 flex-shrink: 0;
-                grid-column: 3;
-                grid-row: 1 / 3;
+                grid-column: 1;
+                grid-row: 1;
+                padding: 8px;
             }
 
             .floating-banner-text {
                 color: white;
                 min-width: 0;
                 text-align: left;
-                grid-column: 1;
-                grid-row: 1 / 3;
+                grid-column: 2;
+                grid-row: 1;
+                padding: 8px 12px 8px 0;
             }
 
             .floating-banner-label {
@@ -309,68 +312,74 @@ class App {
                 background: #E63946;
                 color: white;
                 border: none;
-                padding: 16px 32px;
+                padding: 12px 24px;
                 border-radius: 8px;
                 font-weight: 700;
-                font-size: 16px;
+                font-size: 15px;
                 cursor: pointer;
                 white-space: nowrap;
                 flex-shrink: 0;
                 box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
                 letter-spacing: 0.5px;
                 transition: all 0.2s ease;
-                grid-column: 2;
-                grid-row: 1 / 3;
+                grid-column: 3;
+                grid-row: 1;
+                margin: 8px 12px 8px 0;
+                height: fit-content;
             }
 
             @media (max-width: 768px) {
                 .floating-banner-inner {
-                    grid-template-columns: 1fr 100px;
-                    grid-template-rows: auto auto;
-                    gap: 8px 10px;
-                    padding: 8px 12px;
+                    grid-template-columns: 110px 1fr auto;
+                    grid-template-rows: 1fr;
+                    gap: 0;
+                    padding: 0;
                 }
 
                 .floating-banner-image {
-                    width: 100px;
-                    height: 100px;
-                    grid-column: 2;
-                    grid-row: 1 / 3;
+                    width: 110px;
+                    height: 110px;
+                    grid-column: 1;
+                    grid-row: 1;
+                    padding: 6px;
                 }
 
                 .floating-banner-text {
-                    grid-column: 1;
+                    grid-column: 2;
                     grid-row: 1;
+                    padding: 6px 10px 6px 0;
                 }
 
                 .floating-banner-btn {
-                    grid-column: 1;
-                    grid-row: 2;
-                    width: 100%;
-                    padding: 12px 16px;
-                    font-size: 14px;
-                    margin: 0;
+                    grid-column: 3;
+                    grid-row: 1;
+                    padding: 8px 16px;
+                    font-size: 13px;
+                    margin: 6px 8px;
+                    min-width: fit-content;
                 }
 
                 .floating-banner-label {
                     font-size: 10px;
-                    margin-bottom: 1px;
+                    margin-bottom: 0;
+                    line-height: 1;
                 }
 
                 .floating-banner-main {
-                    font-size: 18px;
-                    margin-bottom: 1px;
-                    line-height: 1.15;
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    line-height: 1.1;
                 }
 
                 .floating-banner-price {
-                    font-size: 22px;
-                    margin: 0 1px;
+                    font-size: 20px;
+                    margin: 0;
                 }
 
                 .floating-banner-sub {
-                    font-size: 10px;
+                    font-size: 9px;
                     margin-top: 1px;
+                    line-height: 1;
                 }
             }
         `;
