@@ -8,7 +8,6 @@ class MicroInteractions {
 
     init() {
         this.bindCTAButtons();
-        this.setupButtonAnimations();
     }
 
     bindCTAButtons() {
