@@ -55,8 +55,8 @@ class SectionClosing {
     }
 
     setupCountdown() {
-        // Set target date: June 30, 2026 10:00 JST
-        const targetDate = new Date('2026-06-30T10:00:00+09:00').getTime();
+        // Set target date: June 28, 2026 10:30 JST
+        const targetDate = new Date('2026-06-28T10:30:00+09:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();

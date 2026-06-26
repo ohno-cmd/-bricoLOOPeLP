@@ -23,8 +23,11 @@ class SectionWildTruth {
                     </div>
 
                     <div class="wild-truth-grid">
-                        <div data-animate="image-reveal">
-                            <img src="${rawOrgansImage}" alt="天然の鹿内臓" class="wild-truth-image" loading="lazy">
+                        <div data-animate="image-reveal" style="cursor: pointer;">
+                            <img src="${rawOrgansImage}" alt="天然の鹿内臓" class="wild-truth-image wild-truth-image-clickable" loading="lazy" style="opacity: 0.7; transition: opacity 0.3s ease;">
+                            <div style="text-align: center; margin-top: 8px; font-size: 12px; color: var(--color-text-secondary);">
+                                内臓の画像を見る
+                            </div>
                         </div>
                         <div class="wild-truth-content">
                             <div class="wild-truth-fact">
@@ -125,6 +128,80 @@ class SectionWildTruth {
             );
         }
 
+        // Image modal functionality
+        const clickableImage = this.section.querySelector('.wild-truth-image-clickable');
+        if (clickableImage) {
+            clickableImage.addEventListener('click', () => {
+                this.showImageModal(clickableImage.src);
+            });
+            clickableImage.addEventListener('mouseenter', () => {
+                gsap.to(clickableImage, { opacity: 1, duration: 0.2 });
+            });
+            clickableImage.addEventListener('mouseleave', () => {
+                gsap.to(clickableImage, { opacity: 0.7, duration: 0.2 });
+            });
+        }
+    }
+
+    showImageModal(imageSrc) {
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+        `;
+
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.style.cssText = `
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            cursor: auto;
+        `;
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        `;
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            modal.remove();
+        });
+
+        modal.addEventListener('click', () => {
+            modal.remove();
+        });
+
+        modal.appendChild(img);
+        modal.appendChild(closeBtn);
+        document.body.appendChild(modal);
+
+        gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.3 });
     }
 }
 

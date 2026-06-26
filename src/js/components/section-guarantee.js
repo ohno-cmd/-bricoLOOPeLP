@@ -43,14 +43,14 @@ class SectionGuarantee {
                             <strong>返金条件：</strong><br>
                             ・定期購入を3回お受け取りいただいた後、お申し出ください<br>
                             ・返送の送料はお客様負担となります<br>
-                            ・返品理由を教えていただくと、今後の改善の参考になります<br>
+                            ・返金理由を教えていただくと、今後の改善の参考になります<br>
                             ・返金処理は申請後10営業日以内に完了いたします
                         </p>
                     </div>
 
                     <p style="margin-top: var(--space-3xl); font-size: var(--fs-lg); color: var(--color-text-secondary); font-weight: var(--fw-semibold);">
                         つまり、リスクはお客様にはありません。<br>
-                        この確信と自信が、証書です。
+                        この確信と自信が、証拠です。
                     </p>
                 </div>
             </div>
