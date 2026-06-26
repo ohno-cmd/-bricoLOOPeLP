@@ -168,12 +168,14 @@ class App {
         // Setup button interaction
         const btn = document.getElementById('floating-banner-btn');
         if (btn) {
-            // Hover effect
+            // Hover effect with scale and shadow
             btn.addEventListener('mouseover', () => {
                 gsap.to(btn, {
                     background: '#d32c38',
-                    boxShadow: '0 4px 12px rgba(230, 57, 70, 0.4)',
-                    duration: 0.2
+                    boxShadow: '0 6px 16px rgba(230, 57, 70, 0.5)',
+                    scale: 1.05,
+                    duration: 0.2,
+                    ease: 'power2.out'
                 });
             });
 
@@ -181,18 +183,34 @@ class App {
                 gsap.to(btn, {
                     background: '#E63946',
                     boxShadow: '0 2px 8px rgba(230, 57, 70, 0.3)',
-                    duration: 0.2
+                    scale: 1,
+                    duration: 0.2,
+                    ease: 'power2.out'
                 });
             });
 
-            // Click handler
+            // Click animation - ripple effect
             btn.addEventListener('click', () => {
+                gsap.timeline()
+                    .to(btn, {
+                        scale: 0.95,
+                        duration: 0.1
+                    }, 0)
+                    .to(btn, {
+                        scale: 1.05,
+                        duration: 0.2
+                    }, 0.1)
+                    .to(btn, {
+                        scale: 1,
+                        duration: 0.1
+                    }, 0.3);
+
                 SCROLL.scrollToElementById('offer-section');
             });
 
-            // Pulse animation
+            // Continuous pulse animation
             gsap.to(btn, {
-                boxShadow: '0 2px 16px rgba(230, 57, 70, 0.5)',
+                boxShadow: '0 2px 20px rgba(230, 57, 70, 0.6)',
                 duration: 2,
                 ease: 'sine.inOut',
                 yoyo: true,
@@ -241,8 +259,8 @@ class App {
             }
 
             .floating-banner-image {
-                width: 100px;
-                height: 100px;
+                width: 130px;
+                height: 130px;
                 object-fit: contain;
                 flex-shrink: 0;
             }
@@ -300,8 +318,8 @@ class App {
                 }
 
                 .floating-banner-image {
-                    width: 70px;
-                    height: 70px;
+                    width: 90px;
+                    height: 90px;
                     order: 1;
                 }
 
