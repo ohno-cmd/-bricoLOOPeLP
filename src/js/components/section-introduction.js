@@ -20,7 +20,7 @@ class SectionIntroduction {
                     </h2>
 
                     <p class="intro-text">
-                        クラウドファンディングの支援者の皆様、そしebricoで5回以上注文して頂いているリピータの皆様へ。
+                        クラウドファンディングの支援者の皆様、そしbricoで5回以上注文して頂いているリピータの皆様へ。
                     </p>
 
                     <p class="intro-text">
