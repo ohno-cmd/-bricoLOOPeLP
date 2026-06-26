@@ -147,6 +147,8 @@ class App {
     setupFloatingBanner() {
         // Create floating banner with image
         const bannerImagePath = CONSTANTS.assets.images + 'banner.jpg';
+        console.log('🎯 Floating Banner Path:', bannerImagePath);
+
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
@@ -169,11 +171,14 @@ class App {
                         cursor: pointer;
                         transition: opacity 0.2s ease;
                     "
+                    onload="console.log('✓ Banner image loaded')"
+                    onerror="console.error('✗ Banner image failed to load:', '${bannerImagePath}')"
                 />
             </div>
         `;
 
         document.body.appendChild(banner);
+        console.log('✓ Floating banner created');
 
         // Setup banner interaction
         const bannerImg = document.getElementById('floating-banner-img');
