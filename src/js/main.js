@@ -191,6 +191,15 @@ class App {
 
             // Click animation - ripple effect
             btn.addEventListener('click', () => {
+                // Track event in Google Analytics
+                if (window.gtag) {
+                    gtag('event', 'floating_banner_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'floating_banner_cta_button',
+                        'value': 1
+                    });
+                }
+
                 gsap.timeline()
                     .to(btn, {
                         scale: 0.95,
