@@ -25,13 +25,21 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text">
-                        この商品は「<span style="font-weight: bold; color: #1A1A1A;">brico代表：マグ</span>」が監修している最高級の鹿肉です。
+                        この商品は総SNSフォロワー10万人の「<span style="font-weight: bold; color: #1A1A1A;">brico代表：マグ</span>」が監修している最高級の鹿肉です。
                     </p>
 
                     <!-- Mag Image -->
                     <div style="margin: var(--space-4xl) 0; text-align: center;">
                         <img src="${magImage}" alt="brico代表マグ" loading="lazy" style="width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); max-height: 350px; object-fit: cover;">
                     </div>
+
+                    <p class="intro-text" style="margin-bottom: var(--space-lg); text-align: center; font-weight: bold; color: #E63946; font-size: 1.1rem;">
+                        マグからのメッセージ
+                    </p>
+
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl); text-align: center; font-style: italic;">
+                        皆さん、こんにちはマグです。
+                    </p>
 
                     <p class="intro-text" style="margin-bottom: var(--space-3xl);">
                         17年間犬の事業をしてきた中で、数万人のお客様から何度も「涙やけ」や「毛のパサつき」や「口臭」などのお悩みをいただきました。
@@ -50,7 +58,7 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text" style="margin-bottom: var(--space-3xl);">
-                        しかし現在の犬は飼い主が与えるものしか食べることができません。
+                        しかし犬は飼い主が与えるものしか食べることができません。
                     </p>
 
                     <p class="intro-text" style="margin-bottom: var(--space-3xl);">
