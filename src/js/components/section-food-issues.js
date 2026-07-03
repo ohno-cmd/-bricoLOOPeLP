@@ -59,7 +59,7 @@ class SectionFoodIssues {
                     <div style="margin-top: var(--space-4xl); padding: var(--space-3xl); background: white; border-radius: var(--radius-lg); text-align: center; border-left: 6px solid var(--color-accent-gold);">
                         <p style="font-size: var(--fs-lg); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
                             犬は飼い主の皆さんが与えるものしか食べることができません。<br>
-                            <span class="food-issues-cta" style="color: var(--color-primary-red); font-weight: var(--fw-bold); animation: ctaPulse 2s ease-in-out infinite;">1日約194円で愛犬の健康を守ってあげませんか？</span>
+                            <span class="food-issues-cta" style="color: var(--color-primary-red); font-weight: var(--fw-bold); animation: ctaPulse 2s ease-in-out infinite;">1日約210円で愛犬の健康を守ってあげませんか？</span>
                         </p>
                     </div>
                 </div>
