@@ -11,7 +11,7 @@ class SectionIntroduction {
     }
 
     render() {
-        const magImage = CONSTANTS.assets.images + 'mag.jpg';
+        const magImage = CONSTANTS.assets.images + 'mag.JPG';
 
         this.section.innerHTML = `
             <div class="container">
