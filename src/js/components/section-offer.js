@@ -14,7 +14,7 @@ class SectionOffer {
         this.section.innerHTML = `
             <div class="container">
                 <div class="offer-content">
-                    <h2 class="offer-heading">
+                    <h2 class="offer-heading" style="white-space: nowrap;">
                         期間限定特別オファー
                     </h2>
 
