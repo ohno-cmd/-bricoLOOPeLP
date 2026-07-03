@@ -29,7 +29,7 @@ class SectionHero {
                 </div>
 
                 <h1 class="hero-heading" style="font-size: 2.4rem; font-weight: 900; line-height: 1.3;">
-                    1日約194円で<br>
+                    1日約210円で<br>
                     愛犬の健康を守る
                 </h1>
 

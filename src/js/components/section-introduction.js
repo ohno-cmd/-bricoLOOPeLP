@@ -16,7 +16,7 @@ class SectionIntroduction {
         this.section.innerHTML = `
             <div class="container">
                 <div class="intro-content">
-                    <h2 class="intro-heading">
+                    <h2 class="intro-heading" style="white-space: nowrap;">
                         素晴らしい愛犬家の皆様へ
                     </h2>
 
@@ -25,36 +25,43 @@ class SectionIntroduction {
                     </p>
 
                     <p class="intro-text">
-                        この商品は「<span style="color: #E63946; font-weight: bold;">brico代表：マグ</span>」が監修している最高級の鹿肉です。
+                        この商品は「<span style="font-weight: bold; color: #1A1A1A;">brico代表：マグ</span>」が監修している最高級の鹿肉です。
                     </p>
 
                     <!-- Mag Image -->
                     <div style="margin: var(--space-4xl) 0; text-align: center;">
-                        <img src="${magImage}" alt="brico代表マグ" loading="lazy" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); max-height: 350px; object-fit: cover;">
+                        <img src="${magImage}" alt="brico代表マグ" loading="lazy" style="width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); max-height: 350px; object-fit: cover;">
                     </div>
 
-                    <p class="intro-text">
-                        17年間犬の事業をしてきた中で、<br>
-                        数万人のお客様から何度も「涙やけ」や「毛のパサつき」や「口臭」などのお悩みをいただきました。
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl);">
+                        17年間犬の事業をしてきた中で、数万人のお客様から何度も「涙やけ」や「毛のパサつき」や「口臭」などのお悩みをいただきました。
                     </p>
 
                     <p class="intro-text" style="margin-bottom: var(--space-3xl);">
-                        <span class="intro-highlight" style="font-size: 1.1em; display: inline-block; margin: 8px 0; padding: 8px 16px; background: rgba(230, 57, 70, 0.08); border-radius: 8px; color: #E63946; font-weight: bold;">正直に言います。</span><br>
+                        <span class="intro-highlight" style="font-size: 1.1em; display: inline-block; margin: 8px 0; padding: 8px 16px; background: rgba(230, 57, 70, 0.08); border-radius: 8px; color: #E63946; font-weight: bold;">正直に言います。</span>
+                    </p>
+
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl);">
                         そのお悩みの原因の大部分は添加物がたっぷり入ったフードによるものです。
                     </p>
 
-                    <p class="intro-text">
-                        本来森の中で過ごす犬のような野生動物は、<br>
-                        栄養たっぷりの草食動物の内臓を喰らい、自ら病気もケガも治す強い力を持っています。
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl);">
+                        本来森の中で過ごす犬のような野生動物は、栄養たっぷりの草食動物の内臓を喰らい、自ら病気もケガも治す強い力を持っています。
                     </p>
 
                     <p class="intro-text" style="margin-bottom: var(--space-3xl);">
-                        しかし現在の犬は飼い主が与えるものしか食べることができません。<br>
+                        しかし現在の犬は飼い主が与えるものしか食べることができません。
+                    </p>
+
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl);">
                         <span class="intro-highlight" style="font-size: 1.1em; display: inline-block; margin: 8px 0; padding: 8px 16px; background: rgba(230, 57, 70, 0.08); border-radius: 8px; color: #E63946; font-weight: bold;">飼い主の選択が、愛犬の健康と寿命を決めます。</span>
                     </p>
 
-                    <p class="intro-text" style="font-size: var(--fs-lg); margin-top: var(--space-3xl); color: var(--color-primary-red);">
-                        LOOPeの鹿肉を食べて愛犬が変わっていく様子をご自身の目でご体験してください。<br>
+                    <p class="intro-text" style="margin-bottom: var(--space-3xl);">
+                        LOOPeの鹿肉を食べて愛犬が変わっていく様子をご自身の目でご体験してください。
+                    </p>
+
+                    <p class="intro-text" style="font-size: var(--fs-lg); color: var(--color-primary-red);">
                         <span style="font-weight: bold;">1日210円で愛犬の笑顔を守りましょう。</span>
                     </p>
                 </div>
