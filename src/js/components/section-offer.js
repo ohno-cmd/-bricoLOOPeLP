@@ -15,7 +15,7 @@ class SectionOffer {
             <div class="container">
                 <div class="offer-content">
                     <h2 class="offer-heading">
-                        bricoのフォロワー様限定オファー
+                        期間限定特別オファー
                     </h2>
 
                     <div class="offer-price-box">
