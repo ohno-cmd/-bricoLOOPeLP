@@ -34,12 +34,6 @@ class SectionClosing {
                         それは、この瞬間に決められます。
                     </p>
 
-                    <div class="closing-highlight">
-                        <div id="countdown" style="font-size: 24px; font-weight: bold; color: var(--color-primary-red); margin-top: 12px;">
-                            カウントダウン中...
-                        </div>
-                    </div>
-
                     <p class="closing-text" style="margin-bottom: var(--space-4xl);">
                         愛犬を幸せにする<span style="color: #E63946; font-weight: bold;">グッドオーナー</span>の皆様に<br>
                         この<span style="color: #E63946; font-weight: bold;">最高級の鹿肉</span>が届きますように
@@ -53,43 +47,11 @@ class SectionClosing {
         this.setupAnimations();
     }
 
-    setupCountdown() {
-        // Offer period: June 27, 2026 10:30 ~ June 28, 2026 22:00 JST
-        const endDate = new Date('2026-06-28T22:00:00+09:00').getTime();
-
-        const updateCountdown = () => {
-            const now = new Date().getTime();
-            const timeLeft = endDate - now;
-
-            if (timeLeft <= 0) {
-                const countdownEl = document.getElementById('countdown');
-                if (countdownEl) countdownEl.textContent = 'オファー終了';
-                return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            const countdownEl = document.getElementById('countdown');
-            if (countdownEl) {
-                countdownEl.innerHTML = `オファー終了まで<br>${days}日　${hours}時間　${minutes}分　${seconds}秒`;
-            }
-        };
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    }
-
     setupAnimations() {
         const heroImage = this.section.querySelector('[style*="max-height: 400px"]');
         const heading = this.section.querySelector('.closing-heading');
         const texts = this.section.querySelectorAll('.closing-text');
-        const highlight = this.section.querySelector('.closing-highlight');
-        const emoji = this.section.querySelector('[style*="font-size: 24px"]');
-
-        this.setupCountdown();
+        const emoji = this.section.querySelector('[style*="font-size: 20px"]');
 
         // Hero image reveal
         if (heroImage) {
@@ -153,38 +115,6 @@ class SectionClosing {
                     },
                 }
             );
-        }
-
-        // Countdown highlight box with scale and glow
-        if (highlight) {
-            gsap.fromTo(
-                highlight,
-                { opacity: 0, scale: 0.85, y: 30 },
-                {
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                    duration: 0.9,
-                    ease: 'back.out',
-                    scrollTrigger: {
-                        trigger: this.section,
-                        start: 'top 50%',
-                        end: 'top 15%',
-                        scrub: false,
-                        markers: false,
-                    },
-                }
-            );
-
-            // Add subtle pulsing glow effect to highlight
-            gsap.to(highlight, {
-                boxShadow: '0 0 20px rgba(230, 57, 70, 0.3)',
-                duration: 2,
-                ease: 'sine.inOut',
-                yoyo: true,
-                repeat: -1,
-                delay: 0.5,
-            });
         }
 
         // Emoji entrance with bounce
