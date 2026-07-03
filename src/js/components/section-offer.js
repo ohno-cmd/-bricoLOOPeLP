@@ -15,25 +15,25 @@ class SectionOffer {
             <div class="container">
                 <div class="offer-content">
                     <h2 class="offer-heading">
-                        クラファン支援者様・リピーター様 限定オファー
+                        bricoのフォロワー様限定オファー
                     </h2>
 
                     <div class="offer-price-box">
                         <div class="offer-price-label">
-                            初回価格
+                            初回価格 (通常7,260円から 10% OFF)
                         </div>
                         <div class="offer-price" style="color: #E63946; font-weight: bold; letter-spacing: 2px; display: flex; align-items: baseline; justify-content: center; gap: 4px;">
-                            <span style="font-size: 1.75rem; line-height: 1;">¥</span><span style="font-size: 3.5rem; line-height: 1;">5,808</span><span style="font-size: 1.2rem; line-height: 1; margin-left: 8px;">(税込)</span>
+                            <span style="font-size: 1.75rem; line-height: 1;">¥</span><span style="font-size: 3.5rem; line-height: 1;">6,534</span><span style="font-size: 1.2rem; line-height: 1; margin-left: 8px;">(税込)</span>
                         </div>
                         <div class="offer-price-note">
                             通常送料880円（税込）が<br>特別価格で500円（税込）
                         </div>
                         <div class="offer-price-details">
                             <p style="margin-bottom: var(--space-lg); color: #D4AF37; font-weight: bold; font-size: 16px;">
-                                1日あたり約194円
+                                1日あたり約210円
                             </p>
                             <p style="margin-bottom: var(--space-lg);">
-                                <strong>2回目以降：¥6,534（税込）<br>1日約218円</strong>
+                                <strong>2回目以降：¥6,534（税込）<br>1日約210円</strong>
                             </p>
                             <p style="background: rgba(255,255,255,0.1); padding: var(--space-lg); border-radius: var(--radius-md); border-left: 3px solid #D4AF37;">
                                 <strong>コーヒー1杯分の価格で、<br>愛犬の人生が変わります。</strong>

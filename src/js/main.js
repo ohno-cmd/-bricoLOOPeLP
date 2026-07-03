@@ -155,7 +155,7 @@ class App {
                 <img src="${productImagePath}" alt="3種セット" class="floating-banner-image" />
                 <div class="floating-banner-text">
                     <div class="floating-banner-label">内臓3種セット</div>
-                    <div class="floating-banner-main">1日約<span class="floating-banner-price">194円</span>で<br>愛犬が生まれ変わる</div>
+                    <div class="floating-banner-main">1日約<span class="floating-banner-price">210円</span>で<br>愛犬が生まれ変わる</div>
                     <div class="floating-banner-sub">2日間限定 20% OFF • 3ヶ月返金保証</div>
                 </div>
                 <button id="floating-banner-btn" class="floating-banner-btn">> 1ヶ月試してみる</button>
