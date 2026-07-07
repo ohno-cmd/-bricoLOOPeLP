@@ -26,7 +26,7 @@ class SectionOffer {
                             <span style="font-size: 1.75rem; line-height: 1;">¥</span><span style="font-size: 3.5rem; line-height: 1;">6,534</span><span style="font-size: 1.2rem; line-height: 1; margin-left: 8px;">(税込)</span>
                         </div>
                         <div class="offer-price-note">
-                            通常送料880円（税込）が<br>特別価格で500円（税込）
+                            通常送料880円が<br><span style="color: #D4AF37; font-weight: bold;">送料無料</span>
                         </div>
                         <div class="offer-price-details">
                             <p style="margin-bottom: var(--space-lg); color: #D4AF37; font-weight: bold; font-size: 16px;">
@@ -49,7 +49,7 @@ class SectionOffer {
                             いつでも休止・解約可能
                         </div>
                         <div class="feature-item">
-                            送料500円（税込）・手数料無料
+                            <span style="color: #D4AF37; font-weight: bold;">送料無料</span>・手数料無料
                         </div>
                         <div class="feature-item guarantee-highlight-box">
                             3ヶ月返金保証付き

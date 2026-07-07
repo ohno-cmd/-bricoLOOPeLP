@@ -42,7 +42,7 @@ class SectionGuarantee {
                         <p style="font-size: var(--fs-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed);">
                             <strong>返金条件：</strong><br>
                             ・定期購入を3回お受け取りいただいた後、お申し出ください<br>
-                            ・返送の送料はお客様負担となります<br>
+                            ・返送の送料は無料です<br>
                             ・返金理由を教えていただくと、今後の改善の参考になります<br>
                             ・返金処理は申請後10営業日以内に完了いたします
                         </p>
