@@ -146,7 +146,7 @@ class App {
 
     setupFloatingBanner() {
         const banner = document.createElement('div');
-        banner.id = floating-banner';
+        banner.id = 'floating-banner';
         banner.innerHTML = `
             <div class="fb-hearts"></div>
 
