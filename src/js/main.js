@@ -150,11 +150,57 @@ class App {
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
-            <img src="${bannerImagePath}" alt="banner" class="floating-banner-image" />
+            <div class="floating-banner-wrapper">
+                <img src="${bannerImagePath}" alt="banner" class="floating-banner-image" />
+                <button id="floating-banner-cta" class="floating-banner-cta">詳しく見る</button>
+            </div>
         `;
 
         document.body.appendChild(banner);
         console.log('✓ Floating banner created');
+
+        // Setup button interaction
+        const ctaBtn = document.getElementById('floating-banner-cta');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', () => {
+                if (window.gtag) {
+                    gtag('event', 'floating_banner_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'floating_banner_cta_button',
+                        'value': 1
+                    });
+                }
+                window.location.href = 'https://bricodog.official.ec/items/148533123';
+            });
+
+            ctaBtn.addEventListener('mouseover', () => {
+                gsap.to(ctaBtn, {
+                    scale: 1.08,
+                    boxShadow: '0 8px 20px rgba(230, 57, 70, 0.6)',
+                    duration: 0.2,
+                    ease: 'power2.out'
+                });
+            });
+
+            ctaBtn.addEventListener('mouseout', () => {
+                gsap.to(ctaBtn, {
+                    scale: 1,
+                    boxShadow: '0 4px 12px rgba(230, 57, 70, 0.4)',
+                    duration: 0.2,
+                    ease: 'power2.out'
+                });
+            });
+
+            // Breathing animation
+            gsap.to(ctaBtn, {
+                scale: 1.05,
+                boxShadow: '0 6px 16px rgba(230, 57, 70, 0.5)',
+                duration: 1.5,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+            });
+        }
 
         // Add CSS styles
         const style = document.createElement('style');
@@ -170,24 +216,97 @@ class App {
                 }
             }
 
+            @keyframes subtle-pulse {
+                0%, 100% {
+                    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4);
+                }
+                50% {
+                    box-shadow: 0 0 0 8px rgba(230, 57, 70, 0);
+                }
+            }
+
             #floating-banner {
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 right: 0;
                 z-index: 1000;
-                animation: slideUp 0.4s ease-out;
+                animation: slideUp 0.5s ease-out;
                 width: 100%;
                 box-sizing: border-box;
-                background-size: cover;
-                background-position: center;
+                background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+                padding-bottom: 8px;
+            }
+
+            .floating-banner-wrapper {
+                position: relative;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
             }
 
             .floating-banner-image {
                 width: 100%;
                 height: auto;
                 display: block;
-                max-height: 180px;
+                max-height: 200px;
+                object-fit: contain;
+            }
+
+            .floating-banner-cta {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                background: linear-gradient(135deg, #E63946, #d32c38);
+                color: white;
+                border: none;
+                padding: 12px 28px;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 14px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+                transition: all 0.2s ease;
+                white-space: nowrap;
+                letter-spacing: 0.5px;
+                z-index: 1001;
+            }
+
+            .floating-banner-cta:active {
+                transform: scale(0.95);
+            }
+
+            @media (max-width: 768px) {
+                #floating-banner {
+                    padding-bottom: 4px;
+                }
+
+                .floating-banner-image {
+                    max-height: 150px;
+                }
+
+                .floating-banner-cta {
+                    bottom: 12px;
+                    right: 12px;
+                    padding: 10px 20px;
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .floating-banner-image {
+                    max-height: 120px;
+                }
+
+                .floating-banner-cta {
+                    bottom: 8px;
+                    right: 8px;
+                    padding: 8px 16px;
+                    font-size: 11px;
+                }
             }
         `;
         document.head.appendChild(style);

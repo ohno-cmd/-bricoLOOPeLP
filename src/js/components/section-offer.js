@@ -56,6 +56,24 @@ class SectionOffer {
                         </div>
                     </div>
 
+                    <div class="offer-special-bonus" style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(230, 57, 70, 0.1)); border-radius: var(--radius-lg); border: 2px solid #D4AF37; text-align: center;">
+                        <div style="margin-bottom: var(--space-lg);">
+                            <span style="background: #D4AF37; color: #1a1a1a; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; letter-spacing: 1px;">期間限定特典</span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--space-lg); font-weight: bold;">
+                            <span style="color: #FFD700;">8月末までのご購入で</span><br><span style="color: #FFD700;">LOOPeジャーキーを</span><br><span style="color: #FFD700;">無料プレゼント！</span>
+                        </h3>
+                        <div style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
+                            <img src="/image/jerky.png" alt="LOOPeジャーキー" style="max-width: 200px; height: auto;">
+                        </div>
+                        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-md);">
+                            通常価格 2,000円相当のLOOPeジャーキー
+                        </div>
+                        <p style="font-size: 13px; color: rgba(255, 255, 255, 0.8); margin: 0; border-top: 1px solid rgba(212, 175, 55, 0.3); padding-top: var(--space-md); margin-top: var(--space-md);">
+                            ※ 定期便初回注文の方限定<br>※ 毎月先着100名様
+                        </p>
+                    </div>
+
                     <p style="margin-top: var(--space-3xl); font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.7); text-align: center;">
                         ※ クレジットカード、銀行振込に対応しています
                     </p>
@@ -246,6 +264,42 @@ class SectionOffer {
                     yoyo: true,
                     repeat: -1,
                     delay: 0.4,
+                }
+            );
+        }
+
+        // Special bonus section entrance
+        const specialBonus = this.section.querySelector('.offer-special-bonus');
+        if (specialBonus) {
+            gsap.fromTo(
+                specialBonus,
+                { opacity: 0, y: 40, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: 'back.out',
+                    scrollTrigger: {
+                        trigger: this.section,
+                        start: 'top 45%',
+                        end: 'top 25%',
+                        scrub: false,
+                        markers: false,
+                    },
+                }
+            );
+
+            // Bonus box glow animation
+            gsap.to(
+                specialBonus,
+                {
+                    boxShadow: '0 0 30px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.1)',
+                    duration: 2,
+                    ease: 'sine.inOut',
+                    yoyo: true,
+                    repeat: -1,
+                    delay: 0.6,
                 }
             );
         }
