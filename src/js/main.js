@@ -145,91 +145,16 @@ class App {
     }
 
     setupFloatingBanner() {
-        // Create code-based floating banner matching LP colors
-        const productImagePath = CONSTANTS.assets.images + '3set.png';
+        const bannerImagePath = CONSTANTS.assets.images + 'banner.jpg';
 
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
         banner.innerHTML = `
-            <div class="floating-banner-inner">
-                <img src="${productImagePath}" alt="3種セット" class="floating-banner-image" />
-                <div class="floating-banner-text">
-                    <div class="floating-banner-label">内臓3種セット</div>
-                    <div class="floating-banner-main">1日約<span class="floating-banner-price">210円</span>で<br>愛犬が生まれ変わる</div>
-                    <div class="floating-banner-sub">3ヶ月返金保証</div>
-                </div>
-                <button id="floating-banner-btn" class="floating-banner-btn">> 1ヶ月試してみる</button>
-            </div>
+            <img src="${bannerImagePath}" alt="banner" class="floating-banner-image" />
         `;
 
         document.body.appendChild(banner);
         console.log('✓ Floating banner created');
-
-        // Setup button interaction
-        const btn = document.getElementById('floating-banner-btn');
-        if (btn) {
-            // Hover effect with scale and shadow
-            btn.addEventListener('mouseover', () => {
-                gsap.to(btn, {
-                    background: '#d32c38',
-                    boxShadow: '0 6px 16px rgba(230, 57, 70, 0.5)',
-                    scale: 1.05,
-                    duration: 0.2,
-                    ease: 'power2.out'
-                });
-            });
-
-            btn.addEventListener('mouseout', () => {
-                gsap.to(btn, {
-                    background: '#E63946',
-                    boxShadow: '0 2px 8px rgba(230, 57, 70, 0.3)',
-                    scale: 1,
-                    duration: 0.2,
-                    ease: 'power2.out'
-                });
-            });
-
-            // Click animation - ripple effect
-            btn.addEventListener('click', () => {
-                // Track event in Google Analytics
-                if (window.gtag) {
-                    gtag('event', 'floating_banner_click', {
-                        'event_category': 'engagement',
-                        'event_label': 'floating_banner_cta_button',
-                        'value': 1
-                    });
-                }
-
-                gsap.timeline()
-                    .to(btn, {
-                        scale: 0.95,
-                        duration: 0.1
-                    }, 0)
-                    .to(btn, {
-                        scale: 1.05,
-                        duration: 0.2
-                    }, 0.1)
-                    .to(btn, {
-                        scale: 1,
-                        duration: 0.1
-                    }, 0.3);
-
-                // Navigate to external link
-                setTimeout(() => {
-                    window.location.href = 'https://bricodog.official.ec/items/148533123';
-                }, 100);
-            });
-
-            // Continuous breathing animation (always active)
-            gsap.to(btn, {
-                scale: 1.08,
-                boxShadow: '0 4px 16px rgba(230, 57, 70, 0.6)',
-                duration: 1.5,
-                ease: 'sine.inOut',
-                yoyo: true,
-                repeat: -1,
-            });
-        }
 
         // Add CSS styles
         const style = document.createElement('style');
@@ -250,149 +175,19 @@ class App {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: #1A1A1A;
-                border-top: 2px solid #E63946;
                 z-index: 1000;
                 animation: slideUp 0.4s ease-out;
-                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
                 width: 100%;
                 box-sizing: border-box;
-            }
-
-            .floating-banner-inner {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0;
-                display: grid;
-                grid-template-columns: 140px 1fr auto;
-                grid-template-rows: 1fr;
-                gap: 0;
-                align-items: center;
-                width: 100%;
-                box-sizing: border-box;
-                height: 100%;
+                background-size: cover;
+                background-position: center;
             }
 
             .floating-banner-image {
-                width: 140px;
-                height: 140px;
-                object-fit: contain;
-                flex-shrink: 0;
-                grid-column: 1;
-                grid-row: 1;
-                padding: 8px;
-            }
-
-            .floating-banner-text {
-                color: white;
-                min-width: 0;
-                text-align: left;
-                grid-column: 2;
-                grid-row: 1;
-                padding: 8px 12px 8px 0;
-            }
-
-            .floating-banner-label {
-                font-size: 12px;
-                color: rgba(255, 255, 255, 0.7);
-                margin-bottom: 2px;
-                line-height: 1;
-            }
-
-            .floating-banner-main {
-                font-size: 22px;
-                font-weight: 700;
-                color: white;
-                line-height: 1.2;
-                margin-bottom: 2px;
-            }
-
-            .floating-banner-price {
-                color: #E63946;
-                font-size: 26px;
-                margin: 0 2px;
-            }
-
-            .floating-banner-sub {
-                font-size: 11px;
-                color: rgba(255, 255, 255, 0.7);
-                margin-top: 2px;
-                line-height: 1.1;
-            }
-
-            .floating-banner-btn {
-                background: #E63946;
-                color: white;
-                border: none;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-weight: 700;
-                font-size: 15px;
-                cursor: pointer;
-                white-space: nowrap;
-                flex-shrink: 0;
-                box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
-                letter-spacing: 0.5px;
-                transition: all 0.2s ease;
-                grid-column: 3;
-                grid-row: 1;
-                margin: 8px 12px 8px 0;
-                height: fit-content;
-            }
-
-            @media (max-width: 768px) {
-                .floating-banner-inner {
-                    grid-template-columns: 110px 1fr auto;
-                    grid-template-rows: 1fr;
-                    gap: 0;
-                    padding: 0;
-                }
-
-                .floating-banner-image {
-                    width: 110px;
-                    height: 110px;
-                    grid-column: 1;
-                    grid-row: 1;
-                    padding: 6px;
-                }
-
-                .floating-banner-text {
-                    grid-column: 2;
-                    grid-row: 1;
-                    padding: 6px 10px 6px 0;
-                }
-
-                .floating-banner-btn {
-                    grid-column: 3;
-                    grid-row: 1;
-                    padding: 8px 16px;
-                    font-size: 13px;
-                    margin: 6px 8px;
-                    min-width: fit-content;
-                }
-
-                .floating-banner-label {
-                    font-size: 10px;
-                    margin-bottom: 0;
-                    line-height: 1;
-                }
-
-                .floating-banner-main {
-                    font-size: 16px;
-                    margin-bottom: 0;
-                    line-height: 1.1;
-                }
-
-                .floating-banner-price {
-                    font-size: 20px;
-                    margin: 0;
-                }
-
-                .floating-banner-sub {
-                    font-size: 9px;
-                    margin-top: 1px;
-                    line-height: 1;
-                }
+                width: 100%;
+                height: auto;
+                display: block;
+                max-height: 180px;
             }
         `;
         document.head.appendChild(style);
