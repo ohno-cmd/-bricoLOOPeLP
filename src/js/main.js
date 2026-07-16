@@ -289,13 +289,15 @@ class App {
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                height: 110px;
                 z-index: 999999;
                 background: linear-gradient(135deg, #ff0037 0%, #d9002c 100%);
-                overflow: hidden;
                 display: flex;
                 flex-direction: column;
                 animation: slideUp 0.4s ease-out;
+                animation-keyframes: slideUp {
+                    from { transform: translateY(200px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
             }
 
             /* Heart Background Pattern */
@@ -317,7 +319,7 @@ class App {
             .fb-container {
                 position: relative;
                 width: 100%;
-                height: 100%;
+                height: 110px;
                 display: flex;
                 align-items: stretch;
                 gap: 8px;
@@ -545,11 +547,10 @@ class App {
 
             /* Bottom: CTA Button */
             .fb-cta-button {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 110px;
+                position: relative;
+                width: calc(100% - 32px);
+                height: 50px;
+                margin: 6px 16px 8px 16px;
                 background: linear-gradient(135deg, #48d64c 0%, #1b9d2d 100%);
                 border: 3px solid white;
                 border-radius: 20px;
@@ -563,6 +564,7 @@ class App {
                 animation: ctaBreathe 2s ease-in-out infinite;
                 font-weight: bold;
                 color: white;
+                flex-shrink: 0;
             }
 
             .fb-cta-button:hover {
