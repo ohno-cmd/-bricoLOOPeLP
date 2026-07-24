@@ -145,13 +145,53 @@ class App {
     }
 
     setupFloatingBanner() {
-        const bannerImagePath = CONSTANTS.assets.images + 'banner.jpg';
+        const imagePath = CONSTANTS.assets.images;
+        const linkUrl = 'https://bricodog.official.ec/items/148533123';
 
         const banner = document.createElement('div');
         banner.id = 'floating-banner';
+        banner.className = 'floating-banner-container';
         banner.innerHTML = `
-            <a href="https://bricodog.official.ec/items/148533123" class="floating-banner-link">
-                <img src="${bannerImagePath}" alt="banner" class="floating-banner-image" />
+            <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="floating-banner-link" aria-label="1日210円で愛犬が生まれ変わる。初回購入で2,000円相当のジャーキー無料プレゼント。1ヶ月試してみる">
+                <div class="floating-banner-inner">
+                    <div class="floating-banner-top">
+                        <img src="${imagePath}3set.png" alt="brico 内臓ジャーキー 3袋セット" class="floating-banner-product-image" />
+
+                        <div class="floating-banner-content">
+                            <p class="floating-banner-price">
+                                1日<span class="floating-banner-amount">210円</span>で
+                            </p>
+                            <p class="floating-banner-headline">
+                                愛犬が<span class="floating-banner-highlight">生まれ変わる</span>
+                            </p>
+
+                            <div class="floating-banner-badges">
+                                <span class="floating-banner-badge">内蔵3種セット</span>
+                                <span class="floating-banner-badge guarantee">✓ 3ヶ月返金保証</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-banner-offer">
+                            <span class="floating-banner-label">期間限定</span>
+                            <div class="floating-banner-offer-content">
+                                <div>
+                                    <p class="floating-banner-offer-text">初回購入で</p>
+                                    <p class="floating-banner-offer-price">2,000円<span>相当の</span></p>
+                                    <p class="floating-banner-offer-item">ジャーキー<span>無料</span></p>
+                                    <p class="floating-banner-offer-gift">🎁 プレゼント!</p>
+                                </div>
+                                <img src="${imagePath}jerky.jpg" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-banner-bottom">
+                        <button class="floating-banner-button" aria-label="1ヶ月試してみる">
+                            <span class="floating-banner-button-text">1ヶ月試してみる</span>
+                            <span class="floating-banner-button-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
             </a>
         `;
 
@@ -186,28 +226,344 @@ class App {
                 }
             }
 
-            #floating-banner {
+            @keyframes ctaBreathe {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.035);
+                }
+            }
+
+            @keyframes ctaShine {
+                0% {
+                    transform: translateX(-160%) skewX(-20deg);
+                }
+                55%, 100% {
+                    transform: translateX(320%) skewX(-20deg);
+                }
+            }
+
+            .floating-banner-container {
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 right: 0;
                 width: 100%;
                 z-index: 999999;
+                display: flex;
+                justify-content: center;
+                padding: 8px 16px;
                 animation: slideUp 0.4s ease-out;
             }
 
             .floating-banner-link {
                 display: block;
                 width: 100%;
-                height: auto;
+                max-width: 800px;
                 text-decoration: none;
-                cursor: pointer;
+                color: inherit;
+                background: #e60023;
+                border-radius: 12px;
+                padding: 4px;
+                box-shadow: 0 10px 40px rgba(230, 57, 70, 0.3);
+                border: 2px solid #faf4e4;
+                transition: transform 0.2s ease-out;
             }
 
-            .floating-banner-image {
+            .floating-banner-link:hover {
+                transform: translateY(-4px);
+            }
+
+            .floating-banner-inner {
+                background: #e60023;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .floating-banner-top {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 12px;
+            }
+
+            .floating-banner-product-image {
+                display: none;
+                height: 80px;
+                width: auto;
+                flex-shrink: 0;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+            }
+
+            .floating-banner-content {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .floating-banner-price {
+                margin: 4px 0;
+                display: inline-flex;
+                align-items: center;
+                background: white;
+                color: #e60023;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 9px;
+                font-weight: bold;
+            }
+
+            .floating-banner-amount {
+                margin: 0 4px;
+                font-size: 11px;
+            }
+
+            .floating-banner-headline {
+                margin: 4px 0 0 0;
+                font-size: 14px;
+                font-weight: 900;
+                line-height: 1.2;
+                color: white;
+            }
+
+            .floating-banner-highlight {
+                color: #ffcf33;
+            }
+
+            .floating-banner-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 8px;
+            }
+
+            .floating-banner-badge {
+                display: inline-flex;
+                align-items: center;
+                background: white;
+                color: #e60023;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 8px;
+                font-weight: bold;
+            }
+
+            .floating-banner-badge.guarantee {
+                color: #c8961e;
+                border: 1px solid #e3c375;
+            }
+
+            .floating-banner-offer {
+                display: none;
+                flex-shrink: 0;
+                background: white;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #e3c375;
+                text-align: center;
+                position: relative;
+            }
+
+            .floating-banner-label {
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #c69524;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-size: 8px;
+                font-weight: bold;
+                white-space: nowrap;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .floating-banner-offer-content {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 4px;
+            }
+
+            .floating-banner-offer-content > div {
+                flex: 1;
+            }
+
+            .floating-banner-offer-text {
+                font-size: 8px;
+                font-weight: bold;
+                color: #555;
+                margin: 0;
+            }
+
+            .floating-banner-offer-price {
+                font-size: 12px;
+                font-weight: 900;
+                color: #e60023;
+                margin: 0;
+                line-height: 1.2;
+            }
+
+            .floating-banner-offer-price span {
+                font-size: 8px;
+                color: #555;
+            }
+
+            .floating-banner-offer-item {
+                font-size: 9px;
+                font-weight: 900;
+                color: #333;
+                margin: 0;
+                line-height: 1.2;
+            }
+
+            .floating-banner-offer-item span {
+                color: #e60023;
+            }
+
+            .floating-banner-offer-gift {
+                font-size: 9px;
+                font-weight: bold;
+                color: #333;
+                margin: 0;
+            }
+
+            .floating-banner-jerky-image {
+                width: 48px;
+                height: 48px;
+                flex-shrink: 0;
+                border-radius: 4px;
+                object-fit: cover;
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .floating-banner-bottom {
+                padding: 8px 12px;
+            }
+
+            .floating-banner-button {
                 width: 100%;
-                height: auto;
-                display: block;
+                background: #39b54a;
+                border: 1px solid #2c8f39;
+                color: white;
+                padding: 10px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 900;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: ctaBreathe 1.5s ease-in-out infinite;
+                transition: box-shadow 0.2s ease-out;
+            }
+
+            .floating-banner-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 33%;
+                background: rgba(255,255,255,0.3);
+                filter: blur(12px);
+                animation: ctaShine 2.6s ease-in-out infinite;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .floating-banner-button-text,
+            .floating-banner-button-arrow {
+                position: relative;
+                z-index: 2;
+            }
+
+            .floating-banner-button:hover {
+                box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            }
+
+            @media (min-width: 640px) {
+                .floating-banner-container {
+                    padding: 12px 24px;
+                }
+
+                .floating-banner-link {
+                    border-radius: 16px;
+                    padding: 6px;
+                }
+
+                .floating-banner-inner {
+                    border-radius: 10px;
+                }
+
+                .floating-banner-top {
+                    gap: 16px;
+                    padding: 10px 16px;
+                }
+
+                .floating-banner-product-image {
+                    display: block;
+                    height: 96px;
+                }
+
+                .floating-banner-price {
+                    font-size: 10px;
+                    padding: 6px 12px;
+                }
+
+                .floating-banner-amount {
+                    font-size: 13px;
+                }
+
+                .floating-banner-headline {
+                    font-size: 16px;
+                }
+
+                .floating-banner-badge {
+                    font-size: 9px;
+                    padding: 6px 8px;
+                }
+
+                .floating-banner-offer {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8px 12px;
+                }
+
+                .floating-banner-label {
+                    font-size: 9px;
+                }
+
+                .floating-banner-jerky-image {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                .floating-banner-button {
+                    font-size: 15px;
+                    padding: 12px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .floating-banner-container {
+                    animation: none;
+                }
+                .floating-banner-link {
+                    transition: none;
+                }
+                .floating-banner-button {
+                    animation: none;
+                }
+                .floating-banner-button::before {
+                    animation: none;
+                }
             }
         `;
         document.head.appendChild(style);
