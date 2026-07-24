@@ -149,44 +149,50 @@ class App {
         const linkUrl = 'https://bricodog.official.ec/items/148533123';
 
         const banner = document.createElement('div');
-        banner.id = 'floating-banner-wrapper';
-        banner.className = 'floating-banner-wrapper';
+        banner.id = 'floating-banner';
+        banner.className = 'floating-banner-container';
         banner.innerHTML = `
-            <div style="pointer-events: none; position: fixed; inset-x: 0; bottom: 0; z-index: 50; display: flex; justify-content: center; padding: 8px; padding-bottom: 8px; gap: 12px;">
-                <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" style="pointer-events: auto; display: block; width: 100%; max-width: 900px; overflow: hidden; border-radius: 16px; background: #e60023; padding: 4px; box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25); border: 2px solid #faf4e4; text-decoration: none; color: inherit; transition: all 0.2s ease-out; cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 40px rgba(230, 57, 70, 0.35)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 32px rgba(230, 57, 70, 0.25)';" aria-label="1日210円で愛犬が生まれ変わる。初回購入で2,000円相当のジャーキー無料プレゼント。1ヶ月試してみる">
-                    <div style="background: #e60023; border-radius: 12px; overflow: hidden;">
-                        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px;">
-                            <img src="${imagePath}3set.png" alt="brico 内臓ジャーキー 3袋セット" style="display: none; height: 72px; width: auto; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));" />
-                            <div style="flex: 1; min-width: 0;">
-                                <p style="margin: 2px 0 4px 0; display: inline-flex; align-items: center; background: white; color: #e60023; padding: 3px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; line-height: 1;">1日<span style="margin: 0 3px; font-size: 12px; font-weight: 900;">210円</span>で</p>
-                                <p style="margin: 2px 0 0 0; font-size: 15px; font-weight: 900; line-height: 1.25; color: white;">愛犬が<span style="color: #ffcf33;">生まれ変わる</span></p>
-                                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;">
-                                    <span style="display: inline-flex; align-items: center; gap: 2px; background: white; color: #e60023; padding: 3px 7px; border-radius: 3px; font-size: 9px; font-weight: 700;">内蔵3種セット</span>
-                                    <span style="display: inline-flex; align-items: center; gap: 2px; background: white; color: #c8961e; padding: 3px 7px; border-radius: 3px; font-size: 9px; font-weight: 700; border: 1px solid #e3c375;">✓ 3ヶ月返金保証</span>
-                                </div>
-                            </div>
-                            <div style="display: none; flex-shrink: 0; background: white; padding: 6px 8px; border-radius: 8px; border: 1px solid #e3c375; position: relative; text-align: left;">
-                                <span style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background: #c69524; color: white; padding: 2px 8px; border-radius: 10px; font-size: 8px; font-weight: 700; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">期間限定</span>
-                                <div style="display: flex; align-items: center; gap: 8px; margin-top: 2px;">
-                                    <div>
-                                        <p style="font-size: 8px; font-weight: 700; color: #555; margin: 0;">初回購入で</p>
-                                        <p style="font-size: 13px; font-weight: 900; color: #e60023; margin: 0; line-height: 1.1;">2,000円<span style="font-size: 8px; color: #777; font-weight: 500;">相当の</span></p>
-                                        <p style="font-size: 10px; font-weight: 900; color: #333; margin: 0; line-height: 1.1;">ジャーキー<span style="color: #e60023;">無料</span></p>
-                                        <p style="font-size: 9px; font-weight: 700; color: #333; margin: 0;">🎁 プレゼント!</p>
-                                    </div>
-                                    <img src="${imagePath}jerky.jpg" alt="特典の無添加ジャーキー" style="width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; object-fit: cover; border: 1px solid rgba(0,0,0,0.08);" />
-                                </div>
+            <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="floating-banner-link" aria-label="1日210円で愛犬が生まれ変わる。初回購入で2,000円相当のジャーキー無料プレゼント。1ヶ月試してみる">
+                <div class="floating-banner-inner">
+                    <div class="floating-banner-top">
+                        <img src="${imagePath}3set.png" alt="brico 内臓ジャーキー 3袋セット" class="floating-banner-product-image" />
+
+                        <div class="floating-banner-content">
+                            <p class="floating-banner-price">
+                                1日<span class="floating-banner-amount">210円</span>で
+                            </p>
+                            <p class="floating-banner-headline">
+                                愛犬が<span class="floating-banner-highlight">生まれ変わる</span>
+                            </p>
+
+                            <div class="floating-banner-badges">
+                                <span class="floating-banner-badge">内蔵3種セット</span>
+                                <span class="floating-banner-badge guarantee">✓ 3ヶ月返金保証</span>
                             </div>
                         </div>
-                        <div style="padding: 6px 12px 8px 12px;">
-                            <div style="width: 100%; background: #39b54a; border: 1px solid #2c8f39; color: white; padding: 9px 12px; border-radius: 24px; font-size: 14px; font-weight: 900; display: flex; align-items: center; justify-content: center; gap: 6px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(57, 181, 74, 0.2); cursor: pointer; text-decoration: none; animation: ctaBreathe 1.5s ease-in-out infinite; transition: all 0.2s ease-out;" onmouseover="this.style.boxShadow='0 6px 16px rgba(57, 181, 74, 0.3)';" onmouseout="this.style.boxShadow='0 4px 12px rgba(57, 181, 74, 0.2)';">
-                                <span style="position: relative; z-index: 2; display: inline;">1ヶ月試してみる</span>
-                                <span style="position: relative; z-index: 2; display: inline;">→</span>
+
+                        <div class="floating-banner-offer">
+                            <span class="floating-banner-label">期間限定</span>
+                            <div class="floating-banner-offer-content">
+                                <div>
+                                    <p class="floating-banner-offer-text">初回購入で</p>
+                                    <p class="floating-banner-offer-price">2,000円<span>相当の</span></p>
+                                    <p class="floating-banner-offer-item">ジャーキー<span>無料</span></p>
+                                    <p class="floating-banner-offer-gift">🎁 プレゼント!</p>
+                                </div>
+                                <img src="${imagePath}jerky.jpg" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
                             </div>
                         </div>
                     </div>
-                </a>
-            </div>
+
+                    <div class="floating-banner-bottom">
+                        <div class="floating-banner-button">
+                            <span class="floating-banner-button-text">1ヶ月試してみる</span>
+                            <span class="floating-banner-button-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
         `;
 
         document.body.appendChild(banner);
@@ -206,30 +212,346 @@ class App {
             });
         }
 
-        // Add CSS animation keyframes
+        // Add CSS styles
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideUp {
-                from { transform: translateY(100%); opacity: 0; }
-                to { transform: translateY(0); opacity: 1; }
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
+
             @keyframes ctaBreathe {
                 0%, 100% { transform: scale(1); }
                 50% { transform: scale(1.035); }
             }
+
             @keyframes ctaShine {
                 0% { transform: translateX(-160%) skewX(-20deg); }
                 55%, 100% { transform: translateX(320%) skewX(-20deg); }
             }
-            #floating-banner-wrapper {
+
+            .floating-banner-container {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 999999;
+                display: flex;
+                justify-content: center;
+                padding: 8px;
                 animation: slideUp 0.4s ease-out;
             }
-            @media (min-width: 640px) {
-                #floating-banner-wrapper img[alt*="3set"] { display: block !important; }
-                #floating-banner-wrapper > a > div > div:nth-child(2) > div > div:nth-child(3) { display: flex !important; }
+
+            .floating-banner-link {
+                display: block;
+                width: 100%;
+                max-width: 900px;
+                text-decoration: none;
+                color: inherit;
+                background: #e60023;
+                border-radius: 16px;
+                padding: 4px;
+                box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
+                border: 2px solid #faf4e4;
+                transition: all 0.2s ease-out;
             }
+
+            .floating-banner-link:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 40px rgba(230, 57, 70, 0.35);
+            }
+
+            .floating-banner-inner {
+                background: #e60023;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .floating-banner-top {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 12px;
+            }
+
+            .floating-banner-product-image {
+                display: none;
+                height: 72px;
+                width: auto;
+                flex-shrink: 0;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+            }
+
+            .floating-banner-content {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .floating-banner-price {
+                margin: 2px 0 4px 0;
+                display: inline-flex;
+                align-items: center;
+                background: white;
+                color: #e60023;
+                padding: 3px 8px;
+                border-radius: 20px;
+                font-size: 10px;
+                font-weight: 700;
+                line-height: 1;
+            }
+
+            .floating-banner-amount {
+                margin: 0 3px;
+                font-size: 12px;
+                font-weight: 900;
+            }
+
+            .floating-banner-headline {
+                margin: 2px 0 0 0;
+                font-size: 15px;
+                font-weight: 900;
+                line-height: 1.25;
+                color: white;
+            }
+
+            .floating-banner-highlight {
+                color: #ffcf33;
+            }
+
+            .floating-banner-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-top: 6px;
+            }
+
+            .floating-banner-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 2px;
+                background: white;
+                color: #e60023;
+                padding: 3px 7px;
+                border-radius: 3px;
+                font-size: 9px;
+                font-weight: 700;
+            }
+
+            .floating-banner-badge.guarantee {
+                color: #c8961e;
+                border: 1px solid #e3c375;
+            }
+
+            .floating-banner-offer {
+                display: none;
+                flex-shrink: 0;
+                background: white;
+                padding: 6px 8px;
+                border-radius: 8px;
+                border: 1px solid #e3c375;
+                position: relative;
+            }
+
+            .floating-banner-label {
+                position: absolute;
+                top: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #c69524;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 10px;
+                font-size: 8px;
+                font-weight: 700;
+                white-space: nowrap;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            }
+
+            .floating-banner-offer-content {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 2px;
+            }
+
+            .floating-banner-offer-content > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .floating-banner-offer-text {
+                font-size: 8px;
+                font-weight: 700;
+                color: #555;
+                margin: 0;
+            }
+
+            .floating-banner-offer-price {
+                font-size: 13px;
+                font-weight: 900;
+                color: #e60023;
+                margin: 0;
+                line-height: 1.1;
+            }
+
+            .floating-banner-offer-price span {
+                font-size: 8px;
+                color: #777;
+                font-weight: 500;
+            }
+
+            .floating-banner-offer-item {
+                font-size: 10px;
+                font-weight: 900;
+                color: #333;
+                margin: 0;
+                line-height: 1.1;
+            }
+
+            .floating-banner-offer-item span {
+                color: #e60023;
+            }
+
+            .floating-banner-offer-gift {
+                font-size: 9px;
+                font-weight: 700;
+                color: #333;
+                margin: 0;
+            }
+
+            .floating-banner-jerky-image {
+                width: 50px;
+                height: 50px;
+                flex-shrink: 0;
+                border-radius: 6px;
+                object-fit: cover;
+                border: 1px solid rgba(0,0,0,0.08);
+            }
+
+            .floating-banner-bottom {
+                padding: 6px 12px 8px 12px;
+            }
+
+            .floating-banner-button {
+                width: 100%;
+                background: #39b54a;
+                border: 1px solid #2c8f39;
+                color: white;
+                padding: 9px 12px;
+                border-radius: 24px;
+                font-size: 14px;
+                font-weight: 900;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(57, 181, 74, 0.2);
+                animation: ctaBreathe 1.5s ease-in-out infinite;
+                transition: all 0.2s ease-out;
+            }
+
+            .floating-banner-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 33%;
+                background: rgba(255,255,255,0.3);
+                filter: blur(12px);
+                animation: ctaShine 2.6s ease-in-out infinite;
+                z-index: 1;
+            }
+
+            .floating-banner-button-text,
+            .floating-banner-button-arrow {
+                position: relative;
+                z-index: 2;
+            }
+
+            .floating-banner-button:hover {
+                box-shadow: 0 6px 16px rgba(57, 181, 74, 0.3);
+            }
+
+            @media (min-width: 640px) {
+                .floating-banner-container {
+                    padding: 12px 12px;
+                }
+
+                .floating-banner-link {
+                    border-radius: 16px;
+                    padding: 6px;
+                }
+
+                .floating-banner-inner {
+                    border-radius: 10px;
+                }
+
+                .floating-banner-top {
+                    gap: 12px;
+                    padding: 10px 16px;
+                }
+
+                .floating-banner-product-image {
+                    display: block;
+                    height: 96px;
+                }
+
+                .floating-banner-price {
+                    font-size: 11px;
+                    padding: 4px 10px;
+                }
+
+                .floating-banner-amount {
+                    font-size: 14px;
+                }
+
+                .floating-banner-headline {
+                    font-size: 18px;
+                }
+
+                .floating-banner-badge {
+                    font-size: 10px;
+                    padding: 4px 8px;
+                }
+
+                .floating-banner-offer {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8px 10px;
+                }
+
+                .floating-banner-offer-content {
+                    gap: 10px;
+                    margin-top: 4px;
+                }
+
+                .floating-banner-jerky-image {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                .floating-banner-button {
+                    font-size: 16px;
+                    padding: 10px 16px;
+                }
+            }
+
             @media (prefers-reduced-motion: reduce) {
-                #floating-banner-wrapper { animation: none; }
+                .floating-banner-container { animation: none; }
+                .floating-banner-link { transition: none; }
+                .floating-banner-button { animation: none; }
+                .floating-banner-button::before { animation: none; }
             }
         `;
         document.head.appendChild(style);
