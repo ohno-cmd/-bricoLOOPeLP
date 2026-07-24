@@ -61,7 +61,7 @@ class SectionOffer {
                             <span style="background: #D4AF37; color: #1a1a1a; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; letter-spacing: 1px;">期間限定特典</span>
                         </div>
                         <h3 style="font-size: 1.5rem; margin-bottom: var(--space-lg); font-weight: bold;">
-                            <span style="color: #FFD700;">8月末までのご購入で</span><br><span style="color: #FFD700;">LOOPeジャーキーを</span><br><span style="color: #FFD700;">無料プレゼント！</span>
+                            <span style="color: #FFD700;">7月末までのご購入で</span><br><span style="color: #FFD700;">LOOPeジャーキーを</span><br><span style="color: #FFD700;">無料プレゼント！</span>
                         </h3>
                         <div style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
                             <img src="/image/2.png" alt="LOOPeジャーキー" style="max-width: 200px; height: auto;">
