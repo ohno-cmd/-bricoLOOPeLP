@@ -164,8 +164,7 @@ class App {
                             </p>
 
                             <div class="floating-banner-badges">
-                                <span class="floating-banner-badge">内蔵3種セット</span>
-                                <span class="floating-banner-badge guarantee">✓ 3ヶ月返金保証</span>
+                                <span class="floating-banner-badge">LOOPe内臓3種セット</span>
                             </div>
                         </div>
 
@@ -279,7 +278,7 @@ class App {
                 display: flex;
                 align-items: center;
                 gap: 6px;
-                padding: 4px 8px;
+                padding: 8px 8px 4px 8px;
                 flex: 1;
                 overflow: visible;
                 position: relative;
@@ -303,10 +302,10 @@ class App {
                 margin: 1px 0 2px 0;
                 display: inline-flex;
                 align-items: center;
-                background: white;
-                color: #e60023;
-                padding: 4px 10px;
-                border-radius: 16px;
+                background: transparent;
+                color: #FFD700;
+                padding: 0;
+                border-radius: 0;
                 font-size: 11px;
                 font-weight: 700;
                 line-height: 1;
@@ -449,7 +448,7 @@ class App {
             }
 
             .floating-banner-bottom {
-                padding: 2px 6px 3px 6px;
+                padding: 1px 6px 2px 6px;
             }
 
             .floating-banner-button {
