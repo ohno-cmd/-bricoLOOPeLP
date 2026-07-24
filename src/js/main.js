@@ -334,10 +334,10 @@ class App {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 2px;
-                margin-top: -2px;
+                margin-top: 0;
                 position: absolute;
                 left: 8px;
-                top: -8px;
+                top: -14px;
                 z-index: 10;
             }
 
