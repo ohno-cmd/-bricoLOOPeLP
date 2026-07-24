@@ -278,7 +278,7 @@ class App {
                 display: flex;
                 align-items: center;
                 gap: 6px;
-                padding: 8px 8px 4px 8px;
+                padding: 10px 8px 4px 8px;
                 flex: 1;
                 overflow: visible;
                 position: relative;
@@ -337,7 +337,7 @@ class App {
                 margin-top: 0;
                 position: absolute;
                 left: 8px;
-                top: -2px;
+                top: 3px;
                 z-index: 10;
             }
 
