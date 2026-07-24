@@ -59,9 +59,9 @@ const CONSTANTS = {
 
     /* Asset Paths */
     assets: {
-        images: 'image/',
-        videos: 'video/',
-        reviews: 'review/',
+        images: '/image/',
+        videos: '/video/',
+        reviews: '/review/',
     },
 
     /* Copy Text */
