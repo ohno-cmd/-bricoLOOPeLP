@@ -257,7 +257,7 @@ class App {
                 box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
                 border: 2px solid #faf4e4;
                 transition: all 0.2s ease-out;
-                height: 120px !important;
+                height: 125px !important;
             }
 
             .floating-banner-link:hover {
@@ -337,7 +337,7 @@ class App {
                 margin-top: 0;
                 position: absolute;
                 left: 8px;
-                top: 3px;
+                top: 7px;
                 z-index: 10;
             }
 
