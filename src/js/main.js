@@ -279,12 +279,11 @@ class App {
 
             .floating-banner-top {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 gap: 6px;
                 padding: 4px 8px;
                 flex: 1;
-                overflow: visible;
-                position: relative;
+                overflow: hidden;
             }
 
             .floating-banner-product-image {
@@ -336,13 +335,8 @@ class App {
             .floating-banner-badges {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 3px;
-                margin-top: 2px;
-                position: absolute;
-                left: 8px;
-                top: 6px;
-                flex-direction: column;
-                width: 55px;
+                gap: 2px;
+                margin-top: 1px;
             }
 
             .floating-banner-badge {
@@ -355,12 +349,13 @@ class App {
                 border-radius: 3px;
                 font-size: 8px;
                 font-weight: 700;
+                white-space: nowrap;
             }
 
             .floating-banner-badge.guarantee {
-                color: #c8961e;
-                border: 1px solid #e3c375;
+                display: none;
             }
+
 
             .floating-banner-offer {
                 display: flex;
