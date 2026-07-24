@@ -64,7 +64,7 @@ class SectionOffer {
                             <span style="color: #FFD700;">8月末までのご購入で</span><br><span style="color: #FFD700;">LOOPeジャーキーを</span><br><span style="color: #FFD700;">無料プレゼント！</span>
                         </h3>
                         <div style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
-                            <img src="/image/jerky.png" alt="LOOPeジャーキー" style="max-width: 200px; height: auto;">
+                            <img src="/image/2.png" alt="LOOPeジャーキー" style="max-width: 200px; height: auto;">
                         </div>
                         <div style="font-size: 14px; color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-md);">
                             通常価格 2,000円相当のLOOPeジャーキー
