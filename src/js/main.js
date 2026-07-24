@@ -155,8 +155,6 @@ class App {
             <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="floating-banner-link" aria-label="1日210円で愛犬が生まれ変わる。初回購入で2,000円相当のジャーキー無料プレゼント。1ヶ月試してみる">
                 <div class="floating-banner-inner">
                     <div class="floating-banner-top">
-                        <img src="${imagePath}1.png" alt="brico 内臓ジャーキー 3袋セット" class="floating-banner-product-image" style="display: block; height: 80px; width: auto; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));" />
-
                         <div class="floating-banner-content">
                             <p class="floating-banner-price">
                                 1日<span class="floating-banner-amount">210円</span>で
@@ -302,27 +300,27 @@ class App {
             }
 
             .floating-banner-price {
-                margin: 1px 0 1px 0;
+                margin: 1px 0 2px 0;
                 display: inline-flex;
                 align-items: center;
                 background: white;
                 color: #e60023;
-                padding: 3px 8px;
+                padding: 4px 10px;
                 border-radius: 16px;
-                font-size: 10px;
+                font-size: 11px;
                 font-weight: 700;
                 line-height: 1;
             }
 
             .floating-banner-amount {
-                margin: 0 2px;
-                font-size: 12px;
+                margin: 0 3px;
+                font-size: 14px;
                 font-weight: 900;
             }
 
             .floating-banner-headline {
-                margin: 1px 0 0 0;
-                font-size: 15px;
+                margin: 2px 0 0 0;
+                font-size: 18px;
                 font-weight: 900;
                 line-height: 1.1;
                 color: white;
@@ -350,9 +348,9 @@ class App {
                 gap: 2px;
                 background: white;
                 color: #e60023;
-                padding: 2px 5px;
-                border-radius: 3px;
-                font-size: 8px;
+                padding: 3px 7px;
+                border-radius: 4px;
+                font-size: 9px;
                 font-weight: 700;
                 white-space: nowrap;
             }
@@ -401,14 +399,14 @@ class App {
             }
 
             .floating-banner-offer-text {
-                font-size: 7px;
+                font-size: 8px;
                 font-weight: 700;
                 color: #555;
                 margin: 0;
             }
 
             .floating-banner-offer-price {
-                font-size: 11px;
+                font-size: 13px;
                 font-weight: 900;
                 color: #e60023;
                 margin: 0;
@@ -422,7 +420,7 @@ class App {
             }
 
             .floating-banner-offer-item {
-                font-size: 9px;
+                font-size: 11px;
                 font-weight: 900;
                 color: #333;
                 margin: 0;
@@ -459,9 +457,9 @@ class App {
                 background: #39b54a;
                 border: 1px solid #2c8f39;
                 color: white;
-                padding: 6px 10px;
+                padding: 8px 12px;
                 border-radius: 20px;
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: 900;
                 cursor: pointer;
                 display: flex;
