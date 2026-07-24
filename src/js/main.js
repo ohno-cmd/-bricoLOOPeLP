@@ -260,7 +260,7 @@ class App {
                 box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
                 border: 2px solid #faf4e4;
                 transition: all 0.2s ease-out;
-                height: 110px;
+                height: 120px;
             }
 
             .floating-banner-link:hover {
@@ -283,12 +283,13 @@ class App {
                 gap: 6px;
                 padding: 4px 8px;
                 flex: 1;
-                overflow: hidden;
+                overflow: visible;
+                position: relative;
             }
 
             .floating-banner-product-image {
-                display: none;
-                height: 72px;
+                display: block !important;
+                height: 50px !important;
                 width: auto;
                 flex-shrink: 0;
                 object-fit: contain;
@@ -301,7 +302,7 @@ class App {
             }
 
             .floating-banner-price {
-                margin: 0 0 2px 0;
+                margin: 1px 0 1px 0;
                 display: inline-flex;
                 align-items: center;
                 background: white;
@@ -325,6 +326,7 @@ class App {
                 font-weight: 900;
                 line-height: 1.15;
                 color: white;
+                white-space: nowrap;
             }
 
             .floating-banner-highlight {
@@ -336,6 +338,11 @@ class App {
                 flex-wrap: wrap;
                 gap: 3px;
                 margin-top: 2px;
+                position: absolute;
+                left: 8px;
+                top: 6px;
+                flex-direction: column;
+                width: 55px;
             }
 
             .floating-banner-badge {
@@ -443,7 +450,7 @@ class App {
             }
 
             .floating-banner-bottom {
-                padding: 3px 6px 4px 6px;
+                padding: 2px 6px 3px 6px;
             }
 
             .floating-banner-button {
