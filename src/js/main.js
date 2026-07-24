@@ -340,7 +340,7 @@ class App {
                 margin-top: 1px;
                 position: absolute;
                 left: 8px;
-                top: -16px;
+                top: -8px;
                 z-index: 10;
             }
 
