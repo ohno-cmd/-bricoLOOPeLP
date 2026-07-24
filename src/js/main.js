@@ -257,7 +257,7 @@ class App {
                 box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
                 border: 2px solid #faf4e4;
                 transition: all 0.2s ease-out;
-                height: 120px;
+                height: 120px !important;
             }
 
             .floating-banner-link:hover {
@@ -334,7 +334,7 @@ class App {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 2px;
-                margin-top: 1px;
+                margin-top: -2px;
                 position: absolute;
                 left: 8px;
                 top: -8px;
@@ -448,7 +448,7 @@ class App {
             }
 
             .floating-banner-bottom {
-                padding: 1px 6px 2px 6px;
+                padding: 2px 6px 3px 6px;
             }
 
             .floating-banner-button {
