@@ -180,7 +180,7 @@ class App {
                                     <p class="floating-banner-offer-item">ジャーキー<span>無料</span></p>
                                     <p class="floating-banner-offer-gift">🎁 プレゼント!</p>
                                 </div>
-                                <img src="${imagePath}2.png" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
+                                <img src="${imagePath}jerky1.png" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
                             </div>
                         </div>
                     </div>
