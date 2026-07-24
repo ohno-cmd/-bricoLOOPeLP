@@ -3,10 +3,20 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
-  "public": ".",
+  "headers": [
+    {
+      "source": "/image/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
-      "source": "/(?!image/|video/|review/|src/|.*\\.html|.*\\.js|.*\\.css).*",
+      "source": "/api/(.*)",
       "destination": "/index.html"
     }
   ]
