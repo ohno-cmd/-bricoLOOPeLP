@@ -256,10 +256,11 @@ class App {
                 color: inherit;
                 background: #e60023;
                 border-radius: 16px;
-                padding: 4px;
+                padding: 2px;
                 box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
                 border: 2px solid #faf4e4;
                 transition: all 0.2s ease-out;
+                height: 110px;
             }
 
             .floating-banner-link:hover {
@@ -271,13 +272,18 @@ class App {
                 background: #e60023;
                 border-radius: 12px;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
             }
 
             .floating-banner-top {
                 display: flex;
                 align-items: center;
-                gap: 8px;
-                padding: 8px 12px;
+                gap: 6px;
+                padding: 4px 8px;
+                flex: 1;
+                overflow: hidden;
             }
 
             .floating-banner-product-image {
@@ -295,29 +301,29 @@ class App {
             }
 
             .floating-banner-price {
-                margin: 2px 0 4px 0;
+                margin: 0 0 2px 0;
                 display: inline-flex;
                 align-items: center;
                 background: white;
                 color: #e60023;
-                padding: 3px 8px;
-                border-radius: 20px;
-                font-size: 10px;
+                padding: 2px 6px;
+                border-radius: 16px;
+                font-size: 9px;
                 font-weight: 700;
                 line-height: 1;
             }
 
             .floating-banner-amount {
-                margin: 0 3px;
-                font-size: 12px;
+                margin: 0 2px;
+                font-size: 11px;
                 font-weight: 900;
             }
 
             .floating-banner-headline {
-                margin: 2px 0 0 0;
-                font-size: 15px;
+                margin: 1px 0 0 0;
+                font-size: 13px;
                 font-weight: 900;
-                line-height: 1.25;
+                line-height: 1.15;
                 color: white;
             }
 
@@ -328,8 +334,8 @@ class App {
             .floating-banner-badges {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 6px;
-                margin-top: 6px;
+                gap: 3px;
+                margin-top: 2px;
             }
 
             .floating-banner-badge {
@@ -338,9 +344,9 @@ class App {
                 gap: 2px;
                 background: white;
                 color: #e60023;
-                padding: 3px 7px;
+                padding: 2px 5px;
                 border-radius: 3px;
-                font-size: 9px;
+                font-size: 8px;
                 font-weight: 700;
             }
 
@@ -354,8 +360,8 @@ class App {
                 flex-direction: column;
                 flex-shrink: 0;
                 background: white;
-                padding: 6px 8px;
-                border-radius: 8px;
+                padding: 4px 6px;
+                border-radius: 6px;
                 border: 1px solid #e3c375;
                 position: relative;
             }
@@ -378,8 +384,8 @@ class App {
             .floating-banner-offer-content {
                 display: flex;
                 align-items: center;
-                gap: 8px;
-                margin-top: 2px;
+                gap: 5px;
+                margin-top: 1px;
             }
 
             .floating-banner-offer-content > div {
@@ -388,18 +394,18 @@ class App {
             }
 
             .floating-banner-offer-text {
-                font-size: 8px;
+                font-size: 7px;
                 font-weight: 700;
                 color: #555;
                 margin: 0;
             }
 
             .floating-banner-offer-price {
-                font-size: 13px;
+                font-size: 11px;
                 font-weight: 900;
                 color: #e60023;
                 margin: 0;
-                line-height: 1.1;
+                line-height: 1.05;
             }
 
             .floating-banner-offer-price span {
@@ -409,11 +415,11 @@ class App {
             }
 
             .floating-banner-offer-item {
-                font-size: 10px;
+                font-size: 9px;
                 font-weight: 900;
                 color: #333;
                 margin: 0;
-                line-height: 1.1;
+                line-height: 1.05;
             }
 
             .floating-banner-offer-item span {
@@ -421,23 +427,23 @@ class App {
             }
 
             .floating-banner-offer-gift {
-                font-size: 9px;
+                font-size: 8px;
                 font-weight: 700;
                 color: #333;
                 margin: 0;
             }
 
             .floating-banner-jerky-image {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 flex-shrink: 0;
-                border-radius: 6px;
+                border-radius: 5px;
                 object-fit: cover;
                 border: 1px solid rgba(0,0,0,0.08);
             }
 
             .floating-banner-bottom {
-                padding: 6px 12px 8px 12px;
+                padding: 3px 6px 4px 6px;
             }
 
             .floating-banner-button {
@@ -445,15 +451,15 @@ class App {
                 background: #39b54a;
                 border: 1px solid #2c8f39;
                 color: white;
-                padding: 9px 12px;
-                border-radius: 24px;
-                font-size: 14px;
+                padding: 6px 10px;
+                border-radius: 20px;
+                font-size: 12px;
                 font-weight: 900;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 6px;
+                gap: 4px;
                 position: relative;
                 overflow: hidden;
                 box-shadow: 0 4px 12px rgba(57, 181, 74, 0.2);
