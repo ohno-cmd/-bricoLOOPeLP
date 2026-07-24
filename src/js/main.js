@@ -278,7 +278,7 @@ class App {
                 display: flex;
                 align-items: center;
                 gap: 6px;
-                padding: 10px 8px 4px 8px;
+                padding: 14px 8px 0px 8px;
                 flex: 1;
                 overflow: visible;
                 position: relative;
@@ -448,7 +448,7 @@ class App {
             }
 
             .floating-banner-bottom {
-                padding: 2px 6px 3px 6px;
+                padding: 1px 6px 2px 6px;
             }
 
             .floating-banner-button {
@@ -456,7 +456,7 @@ class App {
                 background: #39b54a;
                 border: 1px solid #2c8f39;
                 color: white;
-                padding: 8px 12px;
+                padding: 6px 12px;
                 border-radius: 20px;
                 font-size: 13px;
                 font-weight: 900;
