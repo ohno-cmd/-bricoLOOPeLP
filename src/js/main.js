@@ -186,10 +186,10 @@ class App {
                     </div>
 
                     <div class="floating-banner-bottom">
-                        <button class="floating-banner-button" aria-label="1ヶ月試してみる">
+                        <div class="floating-banner-button">
                             <span class="floating-banner-button-text">1ヶ月試してみる</span>
                             <span class="floating-banner-button-arrow">→</span>
-                        </button>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -227,21 +227,13 @@ class App {
             }
 
             @keyframes ctaBreathe {
-                0%, 100% {
-                    transform: scale(1);
-                }
-                50% {
-                    transform: scale(1.035);
-                }
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.035); }
             }
 
             @keyframes ctaShine {
-                0% {
-                    transform: translateX(-160%) skewX(-20deg);
-                }
-                55%, 100% {
-                    transform: translateX(320%) skewX(-20deg);
-                }
+                0% { transform: translateX(-160%) skewX(-20deg); }
+                55%, 100% { transform: translateX(320%) skewX(-20deg); }
             }
 
             .floating-banner-container {
@@ -249,52 +241,52 @@ class App {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                width: 100%;
                 z-index: 999999;
                 display: flex;
                 justify-content: center;
-                padding: 8px 16px;
+                padding: 8px;
                 animation: slideUp 0.4s ease-out;
             }
 
             .floating-banner-link {
                 display: block;
                 width: 100%;
-                max-width: 800px;
+                max-width: 900px;
                 text-decoration: none;
                 color: inherit;
                 background: #e60023;
-                border-radius: 12px;
+                border-radius: 16px;
                 padding: 4px;
-                box-shadow: 0 10px 40px rgba(230, 57, 70, 0.3);
+                box-shadow: 0 8px 32px rgba(230, 57, 70, 0.25);
                 border: 2px solid #faf4e4;
-                transition: transform 0.2s ease-out;
+                transition: all 0.2s ease-out;
             }
 
             .floating-banner-link:hover {
-                transform: translateY(-4px);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 40px rgba(230, 57, 70, 0.35);
             }
 
             .floating-banner-inner {
                 background: #e60023;
-                border-radius: 8px;
+                border-radius: 12px;
                 overflow: hidden;
             }
 
             .floating-banner-top {
                 display: flex;
                 align-items: center;
-                gap: 12px;
-                padding: 10px 12px;
+                gap: 8px;
+                padding: 8px 12px;
             }
 
             .floating-banner-product-image {
                 display: none;
-                height: 80px;
+                height: 72px;
                 width: auto;
                 flex-shrink: 0;
                 object-fit: contain;
-                filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+                filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
             }
 
             .floating-banner-content {
@@ -303,27 +295,29 @@ class App {
             }
 
             .floating-banner-price {
-                margin: 4px 0;
+                margin: 2px 0 4px 0;
                 display: inline-flex;
                 align-items: center;
                 background: white;
                 color: #e60023;
-                padding: 4px 10px;
+                padding: 3px 8px;
                 border-radius: 20px;
-                font-size: 9px;
-                font-weight: bold;
+                font-size: 10px;
+                font-weight: 700;
+                line-height: 1;
             }
 
             .floating-banner-amount {
-                margin: 0 4px;
-                font-size: 11px;
+                margin: 0 3px;
+                font-size: 12px;
+                font-weight: 900;
             }
 
             .floating-banner-headline {
-                margin: 4px 0 0 0;
-                font-size: 14px;
+                margin: 2px 0 0 0;
+                font-size: 15px;
                 font-weight: 900;
-                line-height: 1.2;
+                line-height: 1.25;
                 color: white;
             }
 
@@ -334,19 +328,20 @@ class App {
             .floating-banner-badges {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 8px;
-                margin-top: 8px;
+                gap: 6px;
+                margin-top: 6px;
             }
 
             .floating-banner-badge {
                 display: inline-flex;
                 align-items: center;
+                gap: 2px;
                 background: white;
                 color: #e60023;
-                padding: 4px 8px;
-                border-radius: 4px;
-                font-size: 8px;
-                font-weight: bold;
+                padding: 3px 7px;
+                border-radius: 3px;
+                font-size: 9px;
+                font-weight: 700;
             }
 
             .floating-banner-badge.guarantee {
@@ -358,65 +353,66 @@ class App {
                 display: none;
                 flex-shrink: 0;
                 background: white;
-                padding: 8px;
-                border-radius: 6px;
+                padding: 6px 8px;
+                border-radius: 8px;
                 border: 1px solid #e3c375;
-                text-align: center;
                 position: relative;
             }
 
             .floating-banner-label {
                 position: absolute;
-                top: -10px;
+                top: -8px;
                 left: 50%;
                 transform: translateX(-50%);
                 background: #c69524;
                 color: white;
                 padding: 2px 8px;
-                border-radius: 12px;
+                border-radius: 10px;
                 font-size: 8px;
-                font-weight: bold;
+                font-weight: 700;
                 white-space: nowrap;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.15);
             }
 
             .floating-banner-offer-content {
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                margin-top: 4px;
+                margin-top: 2px;
             }
 
             .floating-banner-offer-content > div {
                 flex: 1;
+                text-align: left;
             }
 
             .floating-banner-offer-text {
                 font-size: 8px;
-                font-weight: bold;
+                font-weight: 700;
                 color: #555;
                 margin: 0;
             }
 
             .floating-banner-offer-price {
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: 900;
                 color: #e60023;
                 margin: 0;
-                line-height: 1.2;
+                line-height: 1.1;
             }
 
             .floating-banner-offer-price span {
                 font-size: 8px;
-                color: #555;
+                color: #777;
+                font-weight: 500;
             }
 
             .floating-banner-offer-item {
-                font-size: 9px;
+                font-size: 10px;
                 font-weight: 900;
                 color: #333;
                 margin: 0;
-                line-height: 1.2;
+                line-height: 1.1;
             }
 
             .floating-banner-offer-item span {
@@ -425,22 +421,22 @@ class App {
 
             .floating-banner-offer-gift {
                 font-size: 9px;
-                font-weight: bold;
+                font-weight: 700;
                 color: #333;
                 margin: 0;
             }
 
             .floating-banner-jerky-image {
-                width: 48px;
-                height: 48px;
+                width: 50px;
+                height: 50px;
                 flex-shrink: 0;
-                border-radius: 4px;
+                border-radius: 6px;
                 object-fit: cover;
-                border: 1px solid rgba(0,0,0,0.1);
+                border: 1px solid rgba(0,0,0,0.08);
             }
 
             .floating-banner-bottom {
-                padding: 8px 12px;
+                padding: 6px 12px 8px 12px;
             }
 
             .floating-banner-button {
@@ -448,20 +444,20 @@ class App {
                 background: #39b54a;
                 border: 1px solid #2c8f39;
                 color: white;
-                padding: 10px;
-                border-radius: 20px;
-                font-size: 13px;
+                padding: 9px 12px;
+                border-radius: 24px;
+                font-size: 14px;
                 font-weight: 900;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 8px;
+                gap: 6px;
                 position: relative;
                 overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                box-shadow: 0 4px 12px rgba(57, 181, 74, 0.2);
                 animation: ctaBreathe 1.5s ease-in-out infinite;
-                transition: box-shadow 0.2s ease-out;
+                transition: all 0.2s ease-out;
             }
 
             .floating-banner-button::before {
@@ -475,7 +471,6 @@ class App {
                 filter: blur(12px);
                 animation: ctaShine 2.6s ease-in-out infinite;
                 z-index: 1;
-                pointer-events: none;
             }
 
             .floating-banner-button-text,
@@ -485,12 +480,12 @@ class App {
             }
 
             .floating-banner-button:hover {
-                box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+                box-shadow: 0 6px 16px rgba(57, 181, 74, 0.3);
             }
 
             @media (min-width: 640px) {
                 .floating-banner-container {
-                    padding: 12px 24px;
+                    padding: 12px 12px;
                 }
 
                 .floating-banner-link {
@@ -503,7 +498,7 @@ class App {
                 }
 
                 .floating-banner-top {
-                    gap: 16px;
+                    gap: 12px;
                     padding: 10px 16px;
                 }
 
@@ -513,31 +508,32 @@ class App {
                 }
 
                 .floating-banner-price {
-                    font-size: 10px;
-                    padding: 6px 12px;
+                    font-size: 11px;
+                    padding: 4px 10px;
                 }
 
                 .floating-banner-amount {
-                    font-size: 13px;
+                    font-size: 14px;
                 }
 
                 .floating-banner-headline {
-                    font-size: 16px;
+                    font-size: 18px;
                 }
 
                 .floating-banner-badge {
-                    font-size: 9px;
-                    padding: 6px 8px;
+                    font-size: 10px;
+                    padding: 4px 8px;
                 }
 
                 .floating-banner-offer {
                     display: flex;
                     flex-direction: column;
-                    padding: 8px 12px;
+                    padding: 8px 10px;
                 }
 
-                .floating-banner-label {
-                    font-size: 9px;
+                .floating-banner-offer-content {
+                    gap: 10px;
+                    margin-top: 4px;
                 }
 
                 .floating-banner-jerky-image {
@@ -546,24 +542,16 @@ class App {
                 }
 
                 .floating-banner-button {
-                    font-size: 15px;
-                    padding: 12px;
+                    font-size: 16px;
+                    padding: 10px 16px;
                 }
             }
 
             @media (prefers-reduced-motion: reduce) {
-                .floating-banner-container {
-                    animation: none;
-                }
-                .floating-banner-link {
-                    transition: none;
-                }
-                .floating-banner-button {
-                    animation: none;
-                }
-                .floating-banner-button::before {
-                    animation: none;
-                }
+                .floating-banner-container { animation: none; }
+                .floating-banner-link { transition: none; }
+                .floating-banner-button { animation: none; }
+                .floating-banner-button::before { animation: none; }
             }
         `;
         document.head.appendChild(style);
