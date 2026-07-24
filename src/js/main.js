@@ -279,7 +279,7 @@ class App {
 
             .floating-banner-top {
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 gap: 6px;
                 padding: 4px 8px;
                 flex: 1;
