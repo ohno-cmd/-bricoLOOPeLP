@@ -6,7 +6,7 @@
   "public": ".",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/(?!image/|video/|review/|src/|.*\\.html|.*\\.js|.*\\.css).*",
       "destination": "/index.html"
     }
   ]
