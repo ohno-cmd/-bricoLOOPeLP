@@ -180,7 +180,7 @@ class App {
                                     <p class="floating-banner-offer-item">ジャーキー<span>無料</span></p>
                                     <p class="floating-banner-offer-gift">🎁 プレゼント!</p>
                                 </div>
-                                <img src="${imagePath}jerky.jpg" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
+                                <img src="${imagePath}jerky1.jpg" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
                             </div>
                         </div>
                     </div>
@@ -350,7 +350,8 @@ class App {
             }
 
             .floating-banner-offer {
-                display: none;
+                display: flex;
+                flex-direction: column;
                 flex-shrink: 0;
                 background: white;
                 padding: 6px 8px;
