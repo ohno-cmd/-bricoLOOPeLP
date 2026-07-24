@@ -155,7 +155,7 @@ class App {
             <a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="floating-banner-link" aria-label="1日210円で愛犬が生まれ変わる。初回購入で2,000円相当のジャーキー無料プレゼント。1ヶ月試してみる">
                 <div class="floating-banner-inner">
                     <div class="floating-banner-top">
-                        <img src="${imagePath}1.png" alt="brico 内臓ジャーキー 3袋セット" class="floating-banner-product-image" style="display: block; height: 80px; width: auto; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));" />
+                        <img src="${imagePath}3set_banner.png" alt="brico 内臓ジャーキー 3袋セット" class="floating-banner-product-image" style="display: block; height: 80px; width: auto; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));" />
 
                         <div class="floating-banner-content">
                             <p class="floating-banner-price">
@@ -180,7 +180,7 @@ class App {
                                     <p class="floating-banner-offer-item">ジャーキー<span>無料</span></p>
                                     <p class="floating-banner-offer-gift">🎁 プレゼント!</p>
                                 </div>
-                                <img src="${imagePath}2.png" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
+                                <img src="${imagePath}jerky_bonus.png" alt="特典の無添加ジャーキー" class="floating-banner-jerky-image" />
                             </div>
                         </div>
                     </div>
