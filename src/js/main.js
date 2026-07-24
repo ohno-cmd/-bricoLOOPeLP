@@ -283,7 +283,8 @@ class App {
                 gap: 6px;
                 padding: 4px 8px;
                 flex: 1;
-                overflow: hidden;
+                overflow: visible;
+                position: relative;
             }
 
             .floating-banner-product-image {
@@ -306,24 +307,24 @@ class App {
                 align-items: center;
                 background: white;
                 color: #e60023;
-                padding: 2px 6px;
+                padding: 3px 8px;
                 border-radius: 16px;
-                font-size: 9px;
+                font-size: 10px;
                 font-weight: 700;
                 line-height: 1;
             }
 
             .floating-banner-amount {
                 margin: 0 2px;
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: 900;
             }
 
             .floating-banner-headline {
                 margin: 1px 0 0 0;
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: 900;
-                line-height: 1.15;
+                line-height: 1.1;
                 color: white;
                 white-space: nowrap;
             }
@@ -337,6 +338,10 @@ class App {
                 flex-wrap: wrap;
                 gap: 2px;
                 margin-top: 1px;
+                position: absolute;
+                left: 8px;
+                top: -16px;
+                z-index: 10;
             }
 
             .floating-banner-badge {
@@ -362,7 +367,7 @@ class App {
                 flex-direction: column;
                 flex-shrink: 0;
                 background: white;
-                padding: 4px 6px;
+                padding: 5px 6px;
                 border-radius: 6px;
                 border: 1px solid #e3c375;
                 position: relative;
@@ -386,7 +391,7 @@ class App {
             .floating-banner-offer-content {
                 display: flex;
                 align-items: center;
-                gap: 5px;
+                gap: 4px;
                 margin-top: 1px;
             }
 
@@ -436,12 +441,13 @@ class App {
             }
 
             .floating-banner-jerky-image {
-                width: 40px;
-                height: 40px;
+                width: 55px;
+                height: 55px;
                 flex-shrink: 0;
                 border-radius: 5px;
-                object-fit: cover;
-                border: 1px solid rgba(0,0,0,0.08);
+                object-fit: contain;
+                border: none;
+                background: transparent;
             }
 
             .floating-banner-bottom {
