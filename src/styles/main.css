@@ -74,11 +74,12 @@
     letter-spacing: -0.5px;
 }
 
-@media (max-width: 768px) {
+/* Disabled for mobile-only LP */
+/* @media (max-width: 768px) {
     .hero-heading {
         font-size: var(--fs-3xl);
     }
-}
+} */
 
 .hero-subheading {
     font-size: var(--fs-base);
@@ -212,12 +213,13 @@
     align-items: center;
 }
 
-@media (max-width: 768px) {
+/* Disabled for mobile-only LP */
+/* @media (max-width: 768px) {
     .wild-truth-grid {
         grid-template-columns: 1fr;
         gap: var(--space-2xl);
     }
-}
+} */
 
 .wild-truth-image {
     width: 100%;
@@ -322,18 +324,19 @@
 
 .parts-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3xl);
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
     max-width: 1200px;
     margin: 0 auto;
 }
 
-@media (max-width: 968px) {
+/* Disabled for mobile-only LP */
+/* @media (max-width: 968px) {
     .parts-grid {
         grid-template-columns: 1fr;
         gap: var(--space-2xl);
     }
-}
+} */
 
 .part-card {
     background: var(--color-cream-white);
@@ -519,17 +522,18 @@
 
 .commitment-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-3xl);
     max-width: 1000px;
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+/* Disabled for mobile-only LP */
+/* @media (max-width: 768px) {
     .commitment-grid {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 .commitment-item {
     text-align: center;
@@ -787,6 +791,8 @@
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* Mobile-only LP: Disabled responsive adjustments as always on mobile */
+/*
 @media (max-width: 768px) {
     #header-section {
         display: none !important;
@@ -821,3 +827,4 @@
         font-size: var(--fs-2xl);
     }
 }
+*/

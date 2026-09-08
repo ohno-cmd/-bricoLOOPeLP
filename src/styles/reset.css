@@ -72,15 +72,18 @@ input, textarea, select {
 body {
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
-    padding-top: max(0px, env(safe-area-inset-top));
-    padding-bottom: calc(max(0px, env(safe-area-inset-bottom)) + 100px);
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: calc(max(0px, env(safe-area-inset-bottom)) + 120px);
 }
 
-@media (max-width: 768px) {
+/* Disabled for mobile-only LP - always use mobile padding */
+/* @media (max-width: 768px) {
     body {
         padding-top: 0 !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
         padding-bottom: calc(max(0px, env(safe-area-inset-bottom)) + 120px);
     }
-}
+} */

@@ -1,6 +1,14 @@
 /* Layout System */
 
-/* Container */
+/* Container - Mobile-only LP */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
     max-width: var(--size-container-mobile);
@@ -8,7 +16,8 @@
     padding: 0 var(--space-lg);
 }
 
-@media (min-width: 640px) {
+/* Disabled desktop breakpoints for mobile-only LP */
+/* @media (min-width: 640px) {
     .container {
         max-width: var(--size-container-sm);
     }
@@ -25,7 +34,7 @@
     .container {
         max-width: var(--size-container-lg);
     }
-}
+} */
 
 .container-fluid {
     width: 100%;
@@ -53,30 +62,33 @@
 }
 
 .grid-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
-@media (max-width: 768px) {
+/* Disabled desktop layout for mobile-only LP */
+/* @media (max-width: 768px) {
     .grid-2 {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
 }
 
-@media (max-width: 768px) {
+/* Disabled desktop layout for mobile-only LP */
+/* @media (max-width: 768px) {
     .grid-3 {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
 }
 
-@media (max-width: 1024px) {
+/* Disabled desktop layout for mobile-only LP */
+/* @media (max-width: 1024px) {
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -86,7 +98,7 @@
     .grid-4 {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 /* Flexbox Utilities */
 .flex {
@@ -375,7 +387,17 @@
 }
 
 /* Visibility - Responsive */
-@media (max-width: 768px) {
+/* Mobile-only LP: only show mobile elements */
+.hidden-mobile {
+    display: block !important;
+}
+
+.hidden-desktop {
+    display: none !important;
+}
+
+/* Disabled desktop visibility for mobile-only LP */
+/* @media (max-width: 768px) {
     .hidden-mobile {
         display: none !important;
     }
@@ -385,7 +407,7 @@
     .hidden-desktop {
         display: none !important;
     }
-}
+} */
 
 /* Opacity */
 .opacity-0 {
