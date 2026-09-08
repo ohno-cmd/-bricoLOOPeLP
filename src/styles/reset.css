@@ -12,12 +12,14 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: inherit;
     background-color: #fff;
     color: #2c2c2c;
     overflow-x: hidden;
+    max-width: 428px;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
