@@ -16,6 +16,22 @@
     window.fbq('track', 'PageView');
   }
 
+  /* ---------- 広告のクリックIDとUTMを商品ページ(BASE)へ引き継ぐ ----------
+     LPとBASEはドメインが違うため、Meta広告の fbclid をURLで渡さないと
+     BASEでの購入が広告クリックに結び付きにくくなる */
+  var passKeys = ['fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var incoming = new URLSearchParams(window.location.search);
+  document.querySelectorAll('[data-cta]').forEach(function (link) {
+    try {
+      var u = new URL(link.href);
+      passKeys.forEach(function (k) {
+        var v = incoming.get(k);
+        if (v && !u.searchParams.has(k)) u.searchParams.set(k, v);
+      });
+      link.href = u.toString();
+    } catch (e) { /* URL未対応の古いブラウザはそのまま遷移 */ }
+  });
+
   /* ---------- CTAクリック計測(hero / sticky / offer / closing) ---------- */
   document.querySelectorAll('[data-cta]').forEach(function (link) {
     link.addEventListener('click', function (ev) {
