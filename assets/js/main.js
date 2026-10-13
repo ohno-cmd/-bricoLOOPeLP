@@ -18,18 +18,42 @@
 
   /* ---------- CTAクリック計測(hero / sticky / offer / closing) ---------- */
   document.querySelectorAll('[data-cta]').forEach(function (link) {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (ev) {
       var position = link.getAttribute('data-cta');
+      var url = link.href;
+
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'cta_click', {
           cta_position: position,
-          link_url: link.href,
+          link_url: url,
           transport_type: 'beacon'
         });
       }
-      if (typeof window.fbq === 'function') {
+      // LP側でピクセルを読み込んだときだけ直接送る(GTMで入れている場合はGTM側で送るので二重にしない)
+      if (config.metaPixelId && typeof window.fbq === 'function') {
         window.fbq('trackCustom', 'CTAClick', { cta_position: position });
       }
+
+      // GTM用(トリガー:カスタムイベント cta_click、変数:cta_position)
+      window.dataLayer = window.dataLayer || [];
+      var gtmReady = !!(window.google_tag_manager && window.google_tag_manager['GTM-WRBTSJSZ']);
+      var newTab = ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.button === 1 || link.target === '_blank';
+      if (!gtmReady || newTab) {
+        window.dataLayer.push({ event: 'cta_click', cta_position: position, link_url: url });
+        return;
+      }
+      // GTMのタグ(Metaのコンバージョン)が送信し終わってから遷移する。最大0.8秒で必ず遷移
+      ev.preventDefault();
+      var done = false;
+      function go() { if (done) return; done = true; window.location.href = url; }
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_position: position,
+        link_url: url,
+        eventCallback: function (id) { if (!id || id === 'GTM-WRBTSJSZ') go(); },
+        eventTimeout: 800
+      });
+      setTimeout(go, 1000);
     });
   });
 
