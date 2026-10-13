@@ -5,7 +5,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/image/(.*)",
+      "source": "/assets/(image|review|video)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "/src/styles/(.*)",
+      "source": "/assets/(css|js)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

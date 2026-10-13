@@ -1,96 +1,538 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="愛犬の寿命は、飼い主の選択で変わります。天然鹿内臓サブスクリプション bricoLOOPe">
-    <title>bricoLOOPe | 愛犬の人生を変える天然鹿内臓定期便</title>
-    <!-- Mobile-only LP v2.0 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>bricoLOOPe | 愛犬の人生を変える天然鹿内臓定期便</title>
+<meta name="description" content="愛犬の寿命は、飼い主の選択で変わります。天然鹿内臓サブスクリプション bricoLOOPe">
+<meta name="theme-color" content="#1A1A1A">
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK4VJFQ04S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-MK4VJFQ04S');
-    </script>
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="bricoLOOPe">
+<meta property="og:title" content="bricoLOOPe | 1日約206円で愛犬の健康を守る">
+<meta property="og:description" content="愛犬の寿命は、飼い主の選択で変わります。天然鹿の内臓3種セット(心臓・肺・肝臓)の定期便。">
+<meta property="og:image" content="https://brico-loo-pe-lp.vercel.app/assets/image/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="icon" href="assets/image/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/image/apple-touch-icon.png">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="src/styles/reset.css">
-    <link rel="stylesheet" href="src/styles/variables.css">
-    <link rel="stylesheet" href="src/styles/typography.css">
-    <link rel="stylesheet" href="src/styles/layout.css">
-    <link rel="stylesheet" href="src/styles/animations.css">
-    <link rel="stylesheet" href="src/styles/main.css">
+<!-- LCP:ヒーロー画像を先読み -->
+<link rel="preload" as="image" href="assets/image/mountain.webp" type="image/webp" fetchpriority="high">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>document.documentElement.classList.add('js');</script>
+
+<!--
+  ================================================================
+  設定値(変わりやすい値はここで管理)
+  ----------------------------------------------------------------
+  ・計測ID ........ 下の LP_CONFIG(GA4 / Metaピクセル)
+  ・遷移先URL ..... すべての CTA は data-cta 属性付きの <a>。
+                    href を一括置換する:
+                    https://bricodog.official.ec/items/148533123
+  ・価格・特典 .... 本文中の値は data-lp 属性で印を付けてある。
+                    変更時は data-lp="キー" で検索して全箇所を直す。
+      price-regular   通常価格        7,260
+      discount-first  初回割引率      15% OFF
+      price-first     初回価格        6,171
+      daily-first     初回の1日あたり 206   (= 6,171 ÷ 30)
+      price-repeat    2回目以降の価格 6,534
+      daily-repeat    2回目以降の1日  218   (= 6,534 ÷ 30)
+      shipping        通常送料        880
+      bonus-limit     特典2の対象     毎月先着100名様
+      bonus-value     特典2の価値     2,000
+      ranking-source  ランキング根拠  CAMPFIRE 人気ランキング(総合)1位 2026年4月2日
+  ================================================================
+-->
+<script>
+  window.LP_CONFIG = {
+    ga4Id: 'G-MK4VJFQ04S',
+    metaPixelId: '' // MetaピクセルIDが決まったらここに入れる(空なら読み込まない)
+  };
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK4VJFQ04S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', window.LP_CONFIG.ga4Id);
+</script>
 </head>
 <body>
-    <div id="app">
-        <!-- Header/Navigation -->
-        <header id="header-section"></header>
+<div class="page">
 
-        <!-- ① Hero Section -->
-        <section id="hero-section" class="section section-hero"></section>
-
-        <!-- ② Introduction Section -->
-        <section id="introduction-section" class="section section-introduction"></section>
-
-        <!-- ③ Subscription Reason Section -->
-        <section id="subscription-section" class="section section-subscription"></section>
-
-        <!-- ④ Wild Truth Section (KILLER SECTION) -->
-        <section id="wild-truth-section" class="section section-wild-truth"></section>
-
-        <!-- ⑤ Modern Food Issues Section -->
-        <section id="food-issues-section" class="section section-food-issues"></section>
-
-        <!-- ⑥ Three Parts Section -->
-        <section id="three-parts-section" class="section section-three-parts"></section>
-
-        <!-- ⑦ Four Changes Timeline Section -->
-        <section id="timeline-section" class="section section-timeline"></section>
-
-        <!-- ⑦-2 Customer Reviews Section -->
-        <section id="reviews-section" class="section section-reviews"></section>
-
-        <!-- ⑧ Commitment Section -->
-        <section id="commitment-section" class="section section-commitment"></section>
-
-        <!-- ⑨ Special Offer Section -->
-        <section id="offer-section" class="section section-offer"></section>
-
-        <!-- ⑩ Guarantee Section -->
-        <section id="guarantee-section" class="section section-guarantee"></section>
-
-        <!-- ⑪ Closing Message Section -->
-        <section id="closing-section" class="section section-closing"></section>
+  <!-- 0. ヘッダー -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <img class="site-header__logo site-header__logo--light" src="assets/image/logo.webp" width="480" height="160" alt="bricoLOOPe">
+      <img class="site-header__logo site-header__logo--dark" src="assets/image/logo-dark.webp" width="480" height="160" alt="" aria-hidden="true">
     </div>
+  </header>
 
-    <!-- JavaScript Modules -->
-    <script src="src/js/utils/constants.js"></script>
-    <script src="src/js/utils/review-data.js"></script>
-    <script src="src/js/config.js"></script>
-    <script src="src/js/animations/micro-interactions.js"></script>
-    <script src="src/js/animations/scroll-animations.js"></script>
-    <script src="src/js/animations/section-enhancements.js"></script>
-    <script src="src/js/animations/hero-animation.js"></script>
-    <script src="src/js/animations/counter-animation.js"></script>
-    <script src="src/js/components/section-hero.js"></script>
-    <script src="src/js/components/section-introduction.js"></script>
-    <script src="src/js/components/section-subscription.js"></script>
-    <script src="src/js/components/section-wild-truth.js"></script>
-    <script src="src/js/components/section-food-issues.js"></script>
-    <script src="src/js/components/section-three-parts.js"></script>
-    <script src="src/js/components/section-timeline.js"></script>
-    <script src="src/js/components/section-reviews.js"></script>
-    <script src="src/js/components/section-commitment.js"></script>
-    <script src="src/js/components/section-offer.js"></script>
-    <script src="src/js/components/section-guarantee.js"></script>
-    <script src="src/js/components/section-closing.js"></script>
-    <script src="src/js/main.js"></script>
+  <main>
+
+    <!-- 1. ヒーロー -->
+    <section class="hero" id="hero">
+      <img class="hero__bg" src="assets/image/mountain.webp" width="860" height="1147" alt="" fetchpriority="high">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="laurel" viewBox="0 0 28 64">
+          <path d="M22 62C10 52 6 38 9 22 10 14 13 8 17 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <g fill="currentColor">
+            <ellipse cx="13" cy="54" rx="6.5" ry="2.8" transform="rotate(-35 13 54)"/>
+            <ellipse cx="8.5" cy="44" rx="6.5" ry="2.8" transform="rotate(-55 8.5 44)"/>
+            <ellipse cx="7" cy="33" rx="6.5" ry="2.8" transform="rotate(-75 7 33)"/>
+            <ellipse cx="8" cy="22" rx="6" ry="2.6" transform="rotate(-95 8 22)"/>
+            <ellipse cx="11.5" cy="12" rx="5.5" ry="2.4" transform="rotate(-115 11.5 12)"/>
+            <ellipse cx="18" cy="49" rx="5.5" ry="2.4" transform="rotate(20 18 49)"/>
+            <ellipse cx="15" cy="38" rx="5.5" ry="2.4" transform="rotate(0 15 38)"/>
+            <ellipse cx="14.5" cy="27" rx="5" ry="2.2" transform="rotate(-20 14.5 27)"/>
+            <ellipse cx="17" cy="16" rx="4.5" ry="2" transform="rotate(-40 17 16)"/>
+          </g>
+        </symbol>
+      </svg>
+      <div class="hero__content">
+        <img class="hero__logo" src="assets/image/logo.webp" width="480" height="160" alt="bricoLOOPe">
+
+        <!-- 実績バッジ:根拠(サイト名・集計日)の注記は下の hero__source に入れる -->
+        <div class="rank">
+          <svg class="rank__laurel" width="28" height="64" aria-hidden="true"><use href="#laurel"/></svg>
+          <p class="rank__text">
+            <span class="rank__sub">キャンプファイヤー</span>
+            <span class="rank__main">日別総合ランキング</span>
+            <span class="rank__no"><span class="rank__num">1</span>位</span>
+          </p>
+          <svg class="rank__laurel rank__laurel--r" width="28" height="64" aria-hidden="true"><use href="#laurel"/></svg>
+        </div>
+
+        <p class="hero__eyebrow">常識が覆される<span>内臓3種セットのご案内</span></p>
+        <h1 class="hero__title">1日約<span class="num" data-lp="daily-first">206</span>円で<br>愛犬の健康を守る</h1>
+        <p class="hero__lead">犬の寿命は、飼い主の選択で変わります。</p>
+
+        <ul class="perks">
+          <!-- メダル画像版(旧アイコン版は下のコメント内。戻すときはメダル3つを消してコメントを外す) -->
+          <li class="perk perk--medal"><img src="assets/image/medal-free-shipping.webp" width="260" height="345" alt="毎回 送料無料"></li>
+          <li class="perk perk--medal"><img src="assets/image/medal-guarantee.webp" width="260" height="345" alt="3ヶ月 返金保証"></li>
+          <li class="perk perk--medal"><img src="assets/image/medal-cancel.webp" width="260" height="345" alt="いつでも 解約OK"></li>
+          <!-- 旧アイコン版
+          <li class="perk">
+            <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 8h16v14H3zM19 12h5l5 6v4H19z"/><circle cx="9" cy="24" r="2.6" fill="#1A1A1A"/><circle cx="24" cy="24" r="2.6" fill="#1A1A1A"/></g></svg>
+            <span class="perk__main">送料無料</span>
+          </li>
+          <li class="perk">
+            <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path d="M11 16l4 4 7-8"/></g></svg>
+            <span class="perk__main">3ヶ月間<br>返金保証</span>
+          </li>
+          <li class="perk">
+            <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M11 11l10 10M21 11L11 21"/></g></svg>
+            <span class="perk__main">即解約<br>可能</span>
+          </li>
+          -->
+          <li class="perk perk--gift">
+            <img src="assets/image/jerky.webp" width="400" height="400" alt="LOOPeジャーキー">
+            <p>
+              <span class="tag tag--limit" data-lp="bonus-limit">毎月先着100名様</span>
+              <span class="perk__gift">食いつき抜群！LOOPeジャーキー<br><strong>無料プレゼント!</strong></span>
+            </p>
+          </li>
+        </ul>
+
+        <a class="cta" href="https://bricodog.official.ec/items/148533123" data-cta="hero">1ヶ月試してみる<span class="cta__arrow" aria-hidden="true">→</span></a>
+        <p class="hero__source" data-lp="ranking-source">※ CAMPFIRE「人気ランキング(総合)」1位(2026年4月2日時点)</p>
+      </div>
+    </section>
+
+    <!-- 2. ご挨拶 -->
+    <section class="section section--cream" id="introduction">
+      <div class="container">
+        <h2 data-label="MESSAGE" class="h2 reveal">素晴らしい愛犬家の皆様へ</h2>
+        <div class="prose reveal">
+          <p>LOOPeに興味を持っていただき、誠にありがとうございます。</p>
+          <p>この商品は総SNSフォロワー10万人の「brico代表:マグ」が監修している最高級の鹿肉です。</p>
+        </div>
+
+        <div class="letter reveal">
+          <img class="letter__photo" src="assets/image/mag.webp" width="480" height="480" alt="愛犬と並んで立つbrico代表のマグ" loading="lazy">
+          <h3 class="eyebrow eyebrow--dark">マグからのメッセージ</h3>
+          <div class="prose">
+            <p>皆さん、こんにちはマグです。</p>
+            <p>17年間犬の事業をしてきた中で、数万人のお客様から何度も「涙やけ」や「毛のパサつき」や「口臭」などのお悩みをいただきました。</p>
+            <p class="strong">正直に言います。</p>
+            <p>そのお悩みの原因の大部分は<em class="em-red">添加物がたっぷり入ったフード</em>によるものです。</p>
+            <p>本来森の中で過ごす犬のような野生動物は、栄養たっぷりの草食動物の内臓を喰らい、自ら病気もケガも治す強い力を持っています。</p>
+            <p>しかし犬は飼い主が与えるものしか食べることができません。</p>
+            <p class="pull">飼い主の選択が、<br>愛犬の健康と寿命を決めます。</p>
+            <p>LOOPeの鹿肉を食べて愛犬が変わっていく様子をご自身の目でご体験してください。</p>
+            <p class="strong">1日<span data-lp="daily-first">206</span>円で愛犬の笑顔を守りましょう。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. なぜ、定期便なのか -->
+    <section class="section section--dark section--photo" id="subscription">
+      <img class="section__bg" src="assets/image/trapped-deer.webp" width="780" height="1040" alt="" loading="lazy">
+      <div class="container center">
+        <h2 data-label="WHY SUBSCRIPTION" class="h2 reveal">なぜ、定期便なのか</h2>
+        <div class="stack reveal">
+          <p>天然の鹿は、<br>狩猟の時期と量に<br>大きく左右されます。</p>
+          <p>愛犬の命を支える<br><strong class="key">「毎日の必須栄養源」</strong><br>だからこそ。</p>
+          <p>この内臓の価値を理解している<wbr>愛犬家の皆様に<wbr>確実に届けたい。</p>
+          <p>そこで私たちは、<br>在庫を最優先で確保し、<br>お届けする定期便<br>という形を選びました。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 野生の真実 -->
+    <section class="section section--dark" id="wild-truth">
+      <div class="container">
+        <div class="center reveal">
+          <h2 data-label="WILD TRUTH" class="h2 h2--lg">森の中に、<br>動物病院はありません。</h2>
+          <p class="question">ではどうやって、<br>野生の動物は病気を治しているのか?</p>
+        </div>
+
+        <figure class="reveal-photo reveal" id="reveal-photo">
+          <button class="reveal-photo__btn" type="button" aria-pressed="false" aria-controls="reveal-photo">
+            <img src="assets/image/raw-organs.webp" width="780" height="780" alt="手袋をした手に載せられた鹿の生の内臓" loading="lazy">
+            <span class="reveal-photo__label">☝ タップして内臓の画像を見る</span>
+          </button>
+        </figure>
+
+        <div class="center reveal">
+          <h3 class="h3 h3--answer">答えは、<em class="em-red">内臓</em>にあります。</h3>
+          <div class="stack">
+            <p>肉食動物は、<br>獲物を倒した瞬間、<br>まず最初に内臓を食べます。</p>
+            <p>筋肉(普通のお肉)ではなく、<br>生きた酵素・乳酸菌・<br>ビタミンが凝縮した内臓<br>こそが、野生が教える<br><strong>究極の栄養源。</strong></p>
+            <p>これらの栄養素は、<br>犬が体内で作り出すことができない<wbr>必須栄養素であり、<br>食事からの補給が絶対に必要です。</p>
+          </div>
+        </div>
+
+        <ul class="checklist reveal">
+          <li><strong>生きた酵素</strong><span>→ 消化吸収力が圧倒的</span></li>
+          <li><strong>天然のビタミン・ミネラル</strong><span>→ 自然のバランスのまま</span></li>
+          <li><strong>必須アミノ酸</strong><span>→ 毛艶・肌・筋肉の源</span></li>
+          <li><strong>本能を揺さぶる香り</strong><span>→ 袋を開けた瞬間に目の色が変わる</span></li>
+        </ul>
+
+        <p class="closing-lines center reveal">愛犬の本能が求める、<br>本当の食べものがここにある。</p>
+      </div>
+    </section>
+
+    <!-- 5. 本当の原因 -->
+    <section class="section section--gray" id="food-issues">
+      <div class="container">
+        <h2 data-label="PROBLEM" class="h2 center reveal">なんとなく体調が悪い<br>その本当の原因</h2>
+        <img class="photo reveal" src="assets/image/dryfood.webp" width="780" height="585" alt="器に盛られたドライフード" loading="lazy">
+
+        <ol class="causes">
+          <li class="card cause reveal">
+            <span class="cause__num" aria-hidden="true">01</span>
+            <h3 class="h3">ドライフード + お肉だけ<br>= 栄養不足</h3>
+            <p>人間に例えるなら、毎日「カロリーメイトとお肉だけで生きている」ようなもの。<br>十分なカロリーはあるかもしれませんが、本当に必要な微量栄養素が圧倒的に不足しています。</p>
+          </li>
+          <li class="card cause reveal">
+            <span class="cause__num" aria-hidden="true">02</span>
+            <h3 class="h3">人間都合の添加物フード</h3>
+            <p>長期保存のための化学薬品、流通管理のための着色料や香料。<br>犬の本能は、これらを「本物の食べもの」として認識していません。</p>
+          </li>
+          <li class="card cause reveal">
+            <span class="cause__num" aria-hidden="true">03</span>
+            <h3 class="h3">腸内環境の悪化</h3>
+            <p>野生の食べもの(内臓に含まれる生きた乳酸菌や酵素)がないと、<br>腸内の善玉菌が減少。免疫低下、皮膚トラブル、歯周病...が増える。</p>
+          </li>
+        </ol>
+
+        <p class="closing-lines center reveal">犬は飼い主の皆さんが与えるものしか<wbr>食べることができません。<br>1日約<em class="em-red"><span data-lp="daily-first">206</span>円</em>で愛犬の健康を<wbr>守ってあげませんか?</p>
+      </div>
+    </section>
+
+    <!-- 6. なぜ「鹿の内臓3種」なのか -->
+    <section class="section section--white" id="three-parts">
+      <div class="container">
+        <h2 data-label="3 PARTS" class="h2 center reveal">なぜ「鹿の内臓3種」なのか</h2>
+        <img class="photo reveal" src="assets/image/product.webp" width="780" height="585" alt="LOOPe内臓3種セットの3つのパッケージ" loading="lazy">
+
+        <div class="parts">
+          <article class="card part reveal">
+            <img src="assets/image/heart.webp" width="780" height="585" alt="乾燥させた鹿の心臓(ハツ)" loading="lazy">
+            <div class="part__body">
+              <h3 class="h3">心臓(ハツ)</h3>
+              <p class="part__catch">毎日を元気に走り回る</p>
+              <p>タウリンやコエンザイムQ10の宝庫。心臓の強さと、全身への酸素供給を支える最高の栄養源。<br>愛犬のエネルギッシュな毎日を支えます。</p>
+            </div>
+          </article>
+          <article class="card part reveal">
+            <img src="assets/image/lung.webp" width="780" height="585" alt="乾燥させた鹿の肺(ラング)" loading="lazy">
+            <div class="part__body">
+              <h3 class="h3">肺(ラング)</h3>
+              <p class="part__catch">食いつきと健康サポート</p>
+              <p>抜群の食いつきと、サクサクとした心地よい噛み応え。<br>低カロリーでヘルシーなので、毎日のご褒美として最適です。</p>
+            </div>
+          </article>
+          <article class="card part reveal">
+            <img src="assets/image/liver.webp" width="780" height="585" alt="乾燥させた鹿の肝臓(レバー)" loading="lazy">
+            <div class="part__body">
+              <h3 class="h3">肝臓(レバー)</h3>
+              <p class="part__catch">毛艶と皮膚の輝き</p>
+              <p>天然のビタミンAや鉄分の塊。毛艶や皮膚の健康維持をサポート。<br>本能を揺さぶる最高のご褒美です。</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="closing-lines center reveal">この3つが揃うことで、初めて<br><strong>野生のチカラが解き放たれる。</strong></p>
+      </div>
+    </section>
+
+    <!-- 7. 4つの変化 -->
+    <section class="section section--gray" id="timeline">
+      <div class="container">
+        <h2 data-label="CHANGES" class="h2 center reveal">飼い主様が目撃する、<br>4つの変化</h2>
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">1</span>
+            <div class="timeline__body">
+              <h3 class="h3">食べた瞬間</h3>
+              <p><strong>目の色が変わる。おねだりの顔が変わる。</strong><br>本能的に「本物」だと認識した愛犬の反応は、<br>いままでとは全く違う熱さと喜びに満ちています。</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">2</span>
+            <div class="timeline__body">
+              <h3 class="h3">数日後</h3>
+              <p><strong>口臭の改善が顕著。歯石ケアのストレスが軽減。</strong><br>内臓に含まれる生きた酵素が、口腔内の環境を自然に整えます。<br>毎日の付き添いが、少し楽になります。</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">3</span>
+            <div class="timeline__body">
+              <h3 class="h3">1ヶ月後</h3>
+              <p><strong>毛並みがフカフカに。毛艶が戻る。</strong><br>皮膚の調子が安定してくるのが、触れた瞬間に分かります。<br>すれ違う人からも「毛並みキレイですね」と声をかけられるように。</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">4</span>
+            <div class="timeline__body">
+              <h3 class="h3">その先へ</h3>
+              <p><strong>体の芯から元気がみなぎる。イキイキとした笑顔。</strong><br>散歩での反応が変わり、運動量が増える。<br>「うちの子、本当はこんなに元気だったんだ」という発見が、<br>飼い主さんの人生まで変えます。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 8. 試食シーン -->
+    <section class="section section--dark" id="tasting">
+      <div class="container center">
+        <h2 data-label="MOVIE" class="h2 reveal">LOOPe試食シーン</h2>
+        <div class="video reveal">
+          <video src="assets/video/dog.mp4" poster="assets/video/dog-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="LOOPeを食べる犬の試食シーン"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 喜びの声 -->
+    <section class="section section--white" id="reviews">
+      <div class="container">
+        <h2 data-label="VOICE" class="h2 center reveal">お客様からの、<br>リアルな喜びの声</h2>
+      </div>
+      <div class="reviews reveal" data-carousel>
+        <ul class="reviews__track" data-carousel-track tabindex="0" aria-label="お客様の声(横にスワイプ)">
+          <li><img src="assets/review/S__10477573_0.webp" width="520" height="920" alt="お客様の声 1" loading="lazy"></li>
+          <li><img src="assets/review/S__10477574_0.webp" width="520" height="920" alt="お客様の声 2" loading="lazy"></li>
+          <li><img src="assets/review/S__10477575_0.webp" width="520" height="920" alt="お客様の声 3" loading="lazy"></li>
+          <li><img src="assets/review/S__10477576_0.webp" width="520" height="920" alt="お客様の声 4" loading="lazy"></li>
+          <li><img src="assets/review/S__10477577_0.webp" width="520" height="920" alt="お客様の声 5" loading="lazy"></li>
+          <li><img src="assets/review/S__10477579_0.webp" width="520" height="920" alt="お客様の声 6" loading="lazy"></li>
+          <li><img src="assets/review/S__10477580_0.webp" width="520" height="920" alt="お客様の声 7" loading="lazy"></li>
+          <li><img src="assets/review/S__10477582_0.webp" width="520" height="920" alt="お客様の声 8" loading="lazy"></li>
+          <li><img src="assets/review/S__10477583_0.webp" width="520" height="920" alt="お客様の声 9" loading="lazy"></li>
+          <li><img src="assets/review/S__10477584_0.webp" width="520" height="920" alt="お客様の声 10" loading="lazy"></li>
+          <li><img src="assets/review/S__10477585_0.webp" width="520" height="920" alt="お客様の声 11" loading="lazy"></li>
+          <li><img src="assets/review/S__10477586_0.webp" width="520" height="920" alt="お客様の声 12" loading="lazy"></li>
+          <li><img src="assets/review/S__10477587_0.webp" width="520" height="920" alt="お客様の声 13" loading="lazy"></li>
+          <li><img src="assets/review/S__10477588_0.webp" width="520" height="920" alt="お客様の声 14" loading="lazy"></li>
+          <li><img src="assets/review/S__10477589_0.webp" width="520" height="920" alt="お客様の声 15" loading="lazy"></li>
+          <li><img src="assets/review/S__10477590_0.webp" width="520" height="920" alt="お客様の声 16" loading="lazy"></li>
+          <li><img src="assets/review/S__10477591_0.webp" width="520" height="920" alt="お客様の声 17" loading="lazy"></li>
+          <li><img src="assets/review/S__10477593_0.webp" width="520" height="920" alt="お客様の声 18" loading="lazy"></li>
+          <li><img src="assets/review/S__10477594_0.webp" width="520" height="920" alt="お客様の声 19" loading="lazy"></li>
+          <li><img src="assets/review/S__10477595_0.webp" width="520" height="920" alt="お客様の声 20" loading="lazy"></li>
+          <li><img src="assets/review/S__10477596_0.webp" width="520" height="920" alt="お客様の声 21" loading="lazy"></li>
+          <li><img src="assets/review/S__10477597_0.webp" width="520" height="920" alt="お客様の声 22" loading="lazy"></li>
+          <li><img src="assets/review/S__10477598_0.webp" width="520" height="920" alt="お客様の声 23" loading="lazy"></li>
+          <li><img src="assets/review/S__10477599_0.webp" width="520" height="920" alt="お客様の声 24" loading="lazy"></li>
+          <li><img src="assets/review/S__10477600_0.webp" width="520" height="920" alt="お客様の声 25" loading="lazy"></li>
+          <li><img src="assets/review/S__10477601_0.webp" width="520" height="920" alt="お客様の声 26" loading="lazy"></li>
+          <li><img src="assets/review/S__10477602_0.webp" width="520" height="920" alt="お客様の声 27" loading="lazy"></li>
+          <li><img src="assets/review/S__10477604_0.webp" width="520" height="920" alt="お客様の声 28" loading="lazy"></li>
+          <li><img src="assets/review/S__10477605_0.webp" width="520" height="920" alt="お客様の声 29" loading="lazy"></li>
+          <li><img src="assets/review/S__10477606_0.webp" width="520" height="920" alt="お客様の声 30" loading="lazy"></li>
+          <li><img src="assets/review/S__10477607_0.webp" width="520" height="920" alt="お客様の声 31" loading="lazy"></li>
+          <li><img src="assets/review/S__10477608_0.webp" width="520" height="920" alt="お客様の声 32" loading="lazy"></li>
+          <li><img src="assets/review/S__10477609_0.webp" width="520" height="920" alt="お客様の声 33" loading="lazy"></li>
+          <li><img src="assets/review/S__10477610_0.webp" width="520" height="920" alt="お客様の声 34" loading="lazy"></li>
+          <li><img src="assets/review/S__10477611_0.webp" width="520" height="920" alt="お客様の声 35" loading="lazy"></li>
+        </ul>
+        <div class="reviews__nav">
+          <button class="reviews__arrow" type="button" data-carousel-prev aria-label="前の口コミ">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="reviews__count" aria-live="polite"><span data-carousel-current>1</span> / <span data-carousel-total>35</span></p>
+          <button class="reviews__arrow" type="button" data-carousel-next aria-label="次の口コミ">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. こだわり -->
+    <section class="section section--cream" id="commitment">
+      <div class="container">
+        <h2 data-label="COMMITMENT" class="h2 center reveal">LOOPeのこだわり</h2>
+        <div class="commit">
+          <article class="commit__item reveal">
+            <img class="photo" src="assets/image/processing-within-24-hours.webp" width="780" height="585" alt="加工場で鹿の内臓を処理するスタッフ" loading="lazy">
+            <h3 class="h3"><span class="commit__num" aria-hidden="true">01</span>狩猟から24時間以内に商品化</h3>
+            <p>鮮度が命。狩猟から加工まで、<br>圧倒的な速度で処理。<br>生きた酵素が最大限に保たれます。</p>
+          </article>
+          <article class="commit__item reveal">
+            <img class="photo" src="assets/image/dried-venison.webp" width="780" height="585" alt="乾燥トレーに並べられた鹿肉" loading="lazy">
+            <h3 class="h3"><span class="commit__num" aria-hidden="true">02</span>部位ごとの最適温度乾燥</h3>
+            <p>心臓・肺・肝臓は、それぞれ異なる。<br>科学的に証明された最適温度で、<br>栄養価を逃さない乾燥を実現。</p>
+          </article>
+          <article class="commit__item reveal">
+            <img class="photo" src="assets/image/product.webp" width="780" height="585" alt="完全無添加のLOOPe内臓3種セット" loading="lazy">
+            <h3 class="h3"><span class="commit__num" aria-hidden="true">03</span>完全無添加</h3>
+            <p>化学薬品・着色料・香料・保存料。<br>一切加えない。<br>鹿の内臓そのものの力が全てです。</p>
+          </article>
+        </div>
+        <p class="closing-lines center reveal">わたしたちが選んだのは、<br><strong>人間都合の加工をしない<wbr>自然そのものの鹿の内臓</strong><br>を愛犬に届けることです。</p>
+      </div>
+    </section>
+
+    <!-- 11. オファー -->
+    <section class="section section--dark" id="offer">
+      <div class="container">
+        <h2 data-label="SPECIAL OFFER" class="h2 h2--lg center reveal">特別オファー</h2>
+        <div class="rank rank--sm reveal">
+          <svg class="rank__laurel" width="28" height="64" aria-hidden="true"><use href="#laurel"/></svg>
+          <p class="rank__text"><span class="rank__sub">キャンプファイヤー</span><span class="rank__main">日別総合ランキング</span><span class="rank__no"><span class="rank__num">1</span>位</span></p>
+          <svg class="rank__laurel rank__laurel--r" width="28" height="64" aria-hidden="true"><use href="#laurel"/></svg>
+        </div>
+        <p class="rank-source" data-lp="ranking-source">※ CAMPFIRE「人気ランキング(総合)」1位(2026年4月2日時点)</p>
+
+        <div class="price-card reveal">
+          <p class="price-card__label">初回限定価格 <span class="nowrap">(通常<span data-lp="price-regular">7,260</span>円から <span data-lp="discount-first">15% OFF</span>)</span></p>
+          <p class="price-card__price"><span class="yen">¥</span><span data-lp="price-first">6,171</span><span class="tax">(税込)</span></p>
+          <p class="price-card__ship">通常送料<span data-lp="shipping">880</span>円が <strong>送料無料</strong></p>
+
+          <div class="price-card__daily">
+            <p class="price-card__daily-main">1日あたり約<span data-lp="daily-first">206</span>円</p>
+            <p class="price-card__repeat">2回目以降:¥<span data-lp="price-repeat">6,534</span>(税込)<br>1日約<span data-lp="daily-repeat">218</span>円</p>
+          </div>
+
+          <p class="price-card__quote">コーヒー1杯分の価格で、<br>愛犬の人生が変わります。</p>
+
+          <ul class="price-card__list">
+            <li>毎月自動配送(定期便)</li>
+            <li>いつでも休止・解約可能</li>
+            <li>送料無料・手数料無料</li>
+            <li>3ヶ月返金保証付き</li>
+          </ul>
+        </div>
+
+        <!-- 特典:LOOPeジャーキー -->
+        <article class="gift reveal">
+          <p class="gift__head"><span class="gift__label">特典</span><span class="tag tag--limit" data-lp="bonus-limit">毎月先着100名様</span></p>
+          <div class="gift__media">
+            <img src="assets/image/jerky-lg.webp" width="720" height="540" alt="LOOPeジャーキーのパッケージ" loading="lazy">
+            <p class="gift__stamp"><span><span data-lp="bonus-value">2,000</span>円相当</span><strong>無料</strong></p>
+          </div>
+          <h3 class="gift__title">食いつき抜群！<br>LOOPeジャーキーを<br><span>無料プレゼント!</span></h3>
+          <p class="gift__value">通常価格 <span data-lp="bonus-value">2,000</span>円相当のLOOPeジャーキー</p>
+          <p class="gift__note">※ 特典は定期便初回注文の方限定</p>
+        </article>
+
+        <div class="offer-cta reveal" id="offer-cta">
+          <a class="cta cta--lg" href="https://bricodog.official.ec/items/148533123" data-cta="offer">1ヶ月試してみる<span class="cta__arrow" aria-hidden="true">→</span></a>
+          <p class="note center">※ クレジットカード、銀行振込に対応しています</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. 返金保証 -->
+    <section class="section section--cream" id="guarantee">
+      <div class="container">
+        <img class="guarantee__img reveal" src="assets/image/guarantee.webp" width="780" height="390" alt="安心の保証 3ヶ月間全額返金保証" loading="lazy">
+        <h2 data-label="GUARANTEE" class="h2 center reveal">3ヶ月続けて効果を<br>感じられなかったら、<br><em class="em-red">全額返金</em>します。</h2>
+        <div class="prose reveal">
+          <p>わたしたちは、この商品の効果に絶対的な確信を持っています。</p>
+          <p>もし3ヶ月間、毎日与え続けて「効果が全く感じられない」という場合は、<br>理由なく全額返金いたします。</p>
+        </div>
+        <p class="guarantee__point reveal">✓ 初回～3回目の料金を返金</p>
+        <div class="guarantee__terms reveal">
+          <p class="guarantee__terms-title">返金条件:</p>
+          <ul>
+            <li>定期購入を3回お受け取りいただいた後、お申し出ください</li>
+            <li>返送の送料は無料です</li>
+            <li>返金理由を教えていただくと、今後の改善の参考になります</li>
+            <li>返金処理は申請後10営業日以内に完了いたします</li>
+          </ul>
+        </div>
+        <p class="closing-lines center reveal">つまり、リスクはお客様にはありません。<br><strong>この確信と自信が、証拠です。</strong></p>
+      </div>
+    </section>
+
+    <!-- 13. 締め -->
+    <section class="section section--dark section--photo closing" id="closing">
+      <img class="section__bg" src="assets/image/cheerful-dog.webp" width="860" height="860" alt="" loading="lazy">
+      <div class="container center">
+        <h2 class="h2 h2--lg reveal">愛犬の笑顔と身体を<br>守れるのは、<br>世界であなただけです。</h2>
+        <div class="stack reveal">
+          <p>今日、何を食べさせるか。</p>
+          <p>それは、この瞬間に決められます。</p>
+          <p>愛犬を幸せにする<strong class="key-light">グッドオーナー</strong>の皆様に<br>この<strong class="key-light">最高級の鹿肉</strong>が届きますように</p>
+        </div>
+        <p class="signature reveal">マグ</p>
+        <a class="cta cta--lg reveal" href="https://bricodog.official.ec/items/148533123" data-cta="closing">1ヶ月試してみる<span class="cta__arrow" aria-hidden="true">→</span></a>
+        <ul class="trust reveal">
+          <li>送料無料</li>
+          <li>3ヶ月間返金保証</li>
+          <li>即解約可能</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 14. フッター -->
+  <footer class="site-footer">
+    <img src="assets/image/logo.webp" width="480" height="160" alt="bricoLOOPe" loading="lazy">
+    <p><small>&copy; bricoLOOPe</small></p>
+  </footer>
+
+  <!-- 追従バー -->
+  <div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-bar__text">
+      <p class="sticky-bar__label">初回限定</p>
+      <p class="sticky-bar__price">1日約<span data-lp="daily-first">206</span>円</p>
+      <p class="sticky-bar__sub">送料無料・3ヶ月返金保証</p>
+    </div>
+    <a class="cta cta--sticky" href="https://bricodog.official.ec/items/148533123" data-cta="sticky">1ヶ月試してみる<span class="cta__arrow" aria-hidden="true">→</span></a>
+  </div>
+
+</div>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
